@@ -395,10 +395,9 @@
 
       
         
-          
-            <p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
+          <p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
 <p><strong>以下资料出自于实验楼</strong></p>
-<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><blockquote>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
 <p>泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。</p>
 </blockquote>
 <p>定义泛型的规则：</p>
@@ -408,10 +407,13 @@
 <li>可以用使用 extends 语句或者 super 语句 如<code>&lt;T extends superClass&gt;</code>表示类型的上界，T 只能是 superClass 或其子类， <code>&lt;K super childClass&gt;</code>表示类型的下界，K 只能是 childClass 或其父类。</li>
 <li>可以是通配符类型，比如常见的 <code>Class&lt;?&gt;</code></li>
 </ul>
-<h2 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。</span></span><br><span class="line"><span class="comment">    注意，父类定义的类型参数不能被子类继承。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//getter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//setter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义泛型类 Test 的一个Integer版本</span></span><br><span class="line">        Test&lt;Integer&gt; intOb = <span class="keyword">new</span> Test&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">        intOb.showType();</span><br><span class="line">        <span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">        System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line">        <span class="comment">// 定义泛型类Test的一个String版本</span></span><br><span class="line">        Test&lt;String&gt; strOb = <span class="keyword">new</span> Test&lt;String&gt;(<span class="string">"String!"</span>);</span><br><span class="line">        strOb.showType();</span><br><span class="line">        String s = strOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像<code>ArrayList</code>。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/05/泛型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -791,6 +793,8 @@
             <p>强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。</p>
 <p>“Wise VPN”</p>
 <p>不是很贵，一季35RMB而已。</p>
+<p>Wise涨价了👋</p>
+<p>……最后还是用了小飞机……</p>
 
           
         
@@ -1313,6 +1317,11 @@
 </ol>
 <hr>
 <p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
+<p>2019.7.5：</p>
+<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
+<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
+<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
+<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
 
           
         

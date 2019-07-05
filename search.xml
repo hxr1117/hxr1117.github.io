@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[安利一个Mac的翻墙app]]></title>
     <url>%2F2018%2F08%2F27%2F%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAMac%E7%9A%84%E7%BF%BB%E5%A2%99app%2F</url>
-    <content type="text"><![CDATA[强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。 “Wise VPN” 不是很贵，一季35RMB而已。]]></content>
+    <content type="text"><![CDATA[强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。 “Wise VPN” 不是很贵，一季35RMB而已。 Wise涨价了👋 ……最后还是用了小飞机……]]></content>
   </entry>
   <entry>
     <title><![CDATA[SQLite3在python3中的基础用法]]></title>
@@ -43,8 +43,8 @@
     <url>%2F2018%2F06%2F09%2FDjango%2F</url>
     <content type="text"><![CDATA[当初没有持之以恒的用Django搭博客的结果就是，换个时间学。 溜了溜了。]]></content>
       <tags>
-        <tag>python</tag>
         <tag>生活</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -58,7 +58,7 @@
   <entry>
     <title><![CDATA[git@github.com: Permission denied (publickey)]]></title>
     <url>%2F2018%2F05%2F27%2Fgit%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[遇到Error: git@github.com: Permission denied (publickey).如何解决： ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot; 生成新的密匙 eval &quot;$(ssh-agent -s)&quot; 添加密匙到ssh-agent ssh-add -K ~/.ssh/id_rsa 添加生成的SSH key到ssh-agent 把id_rsa.pub里的复制上git的ssh的key里就好了。 Windows下可以用xclip -sel c ~/.ssh/id_rsa.pub复制到剪贴板。 运行完以上命令，重启终端！！！ 越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。]]></content>
+    <content type="text"><![CDATA[遇到Error: git@github.com: Permission denied (publickey).如何解决： ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot; 生成新的密匙 eval &quot;$(ssh-agent -s)&quot; 添加密匙到ssh-agent ssh-add -K ~/.ssh/id_rsa 添加生成的SSH key到ssh-agent 把id_rsa.pub里的复制上git的ssh的key里就好了。 Windows下可以用xclip -sel c ~/.ssh/id_rsa.pub复制到剪贴板。 运行完以上命令，重启终端！！！ 越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。 2019.7.5： 以上方法无法解决该问题时，可以尝试改_config.yml文件里的deploy。 把`git@github.com:yourname/yourname.github.io.git`改成 https://yourname:yourpassword@github.com/yourname/yourname.github.io.git 也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。]]></content>
       <tags>
         <tag>git</tag>
       </tags>
@@ -143,8 +143,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -155,8 +155,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -167,8 +167,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
 </search>

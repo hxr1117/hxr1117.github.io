@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="遇到Error: git@github.com: Permission denied (publickey).如何解决：  ssh-keygen -t rsa -b 4096 -C &amp;quot;yourcount@example.com&amp;quot; 生成新的密匙 eval &amp;quot;$(ssh-agent -s)&amp;quot; 添加密匙到ssh-agent ssh-add -K ~/.ssh/id">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-23T05:57:28.724Z">
+<meta property="og:updated_time" content="2019-07-05T10:05:32.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git@github.com: Permission denied (publickey)">
 <meta name="twitter:description" content="遇到Error: git@github.com: Permission denied (publickey).如何解决：  ssh-keygen -t rsa -b 4096 -C &amp;quot;yourcount@example.com&amp;quot; 生成新的密匙 eval &amp;quot;$(ssh-agent -s)&amp;quot; 添加密匙到ssh-agent ssh-add -K ~/.ssh/id">
@@ -409,6 +409,11 @@
 </ol>
 <hr>
 <p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
+<p>2019.7.5：</p>
+<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
+<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
+<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
+<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
 
       
     </div>
