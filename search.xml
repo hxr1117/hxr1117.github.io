@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git操作]]></title>
+    <url>%2F2019%2F08%2F16%2FGit%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[Git 安装配置用户信息配置个人信息 $ git config --global user.name “username” $ git config --global user.email youremailaccount 文本编辑器$ git config --global core.editor 差异分析$ git config --global merge.tool vimdiff 查看配置信息$ git config --list Git 工作流程 克隆Git资源作为工作目录 在克隆的资源上添加或修改文件 更新资源 提交前的查看修改 提交 撤回修改再次提交]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[泛型]]></title>
     <url>%2F2019%2F07%2F05%2F%E6%B3%9B%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[总要学点新东西嘛，所以从头开始捡Java…QwQ 以下资料出自于实验楼 泛型 泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。 定义泛型的规则： 只能是类类型，不能是简单数据类型 泛型参数可以有多个 可以用使用 extends 语句或者 super 语句 如&lt;T extends superClass&gt;表示类型的上界，T 只能是 superClass 或其子类， &lt;K super childClass&gt;表示类型的下界，K 只能是 childClass 或其父类。 可以是通配符类型，比如常见的 Class&lt;?&gt; 定义泛型类12345678910111213141516171819202122232425262728293031323334353637383940/*使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。*/class Test&lt;T&gt; &#123; private T ob; /* 定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。 注意，父类定义的类型参数不能被子类继承。 */ //构造函数 public Test(T ob) &#123; this.ob = ob; &#125; //getter 方法 public T getOb() &#123; return ob; &#125; //setter 方法 public void setOb(T ob) &#123; this.ob = ob; &#125; public void showType() &#123; System.out.println("T的实际类型是: " + ob.getClass().getName()); &#125;&#125;public class TestDemo &#123; public static void main(String[] args) &#123; // 定义泛型类 Test 的一个Integer版本 Test&lt;Integer&gt; intOb = new Test&lt;Integer&gt;(88); intOb.showType(); int i = intOb.getOb(); System.out.println("value= " + i); System.out.println("----------------------------------"); // 定义泛型类Test的一个String版本 Test&lt;String&gt; strOb = new Test&lt;String&gt;("String!"); strOb.showType(); String s = strOb.getOb(); System.out.println("value= " + s); &#125;&#125; emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像ArrayList。]]></content>
