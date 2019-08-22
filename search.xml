@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[新建Java Web项目的小小小问题]]></title>
+    <url>%2F2019%2F08%2F22%2F%E6%96%B0%E5%BB%BAJava-Web%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%B0%8F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[这个问题真的是一言难尽 maven里面居然有两个webapp！！！]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[配置文件properties]]></title>
+    <url>%2F2019%2F08%2F20%2F%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6properties%2F</url>
+    <content type="text"><![CDATA[配置文件：xxx.properties 文件中的格式：key=value 1234driverClass=com.mysql.cj.jdbc.DriverjdbcUrl=jdbc:mysql://localhost:端口号/库名user=mysql用户名password=mysql密码 类中的调用形式： 1234static ResourceBundle rb = null; static&#123; rb = ResourceBundle.getBundle("jdbc"); &#125; 123456789Class.forName(rb.getString("driverClass"));String url = rb.getString("jdbcUrl"); // getString的参数和文件里面的key对应String user = rb.getString("user");String password = rb.getString("password");Connection conn = DriverManager.getConnection( url, user, password);]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[连接池]]></title>
+    <url>%2F2019%2F08%2F20%2F%E8%BF%9E%E6%8E%A5%E6%B1%A0%2F</url>
+    <content type="text"><![CDATA[C3P0连接池的基础使用12345678ComboPooledDataSource cpds = new ComboPooledDataSource();cpds.setDriverClass( "org.postgresql.Driver" ); //loads the jdbc driver cpds.setJdbcUrl( "jdbc:postgresql://localhost/testdb" );cpds.setUser("dbuser"); cpds.setPassword("dbpassword"); cpds.setMaxStatements( 180 ); // 可选cpds.close();]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[jdbc批处理]]></title>
     <url>%2F2019%2F08%2F20%2Fjdbc%E6%89%B9%E5%A4%84%E7%90%86%2F</url>
-    <content type="text"><![CDATA[当需要向数据库插入大量SQL时需要用到jdbc批处理。 不一定能提高执行效率。 流程： 将大量SQL打成多个批次addBatch()，统一发送给数据库服务器executeBatch()，减少数据库的开关次数。 实现方式； Statement对象 st.addBatch(sql); // 在for循环里面加 st.executeBatch(); // 循环外面 PreparedStatement对象 ps.conn.prepareStatement(sql); ps.setString(num, str); // 在循环里面设 ps.addBatch(); // 就写在setString下面 ps.executeBatch(); // 循环外面 事务优化： 一般情况：一开启，执行SQL，一提交。 关闭jdbc的事务管理 获取connection对象之后conn.setAutoCommit() 手动提交事务 addBatch()循环外面conn.commit()]]></content>
+    <content type="text"><![CDATA[当需要向数据库插入大量SQL时需要用到jdbc批处理。 ==不一定能提高执行效率。== 流程： 将大量SQL打成多个批次addBatch()，统一发送给数据库服务器executeBatch()，减少数据库的开关次数。 实现方式； Statement对象 st.addBatch(sql); // 在for循环里面加 st.executeBatch(); // 循环外面 PreparedStatement对象 ps.conn.prepareStatement(sql); ps.setString(num, str); // 在循环里面设 ps.addBatch(); // 就写在setString下面 ps.executeBatch(); // 循环外面 事务优化： 一般情况：一开启，执行SQL，一提交。 关闭jdbc的事务管理 获取connection对象之后conn.setAutoCommit() 手动提交事务 addBatch()循环外面conn.commit()]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -83,8 +107,8 @@
     <url>%2F2018%2F06%2F09%2FDjango%2F</url>
     <content type="text"><![CDATA[当初没有持之以恒的用Django搭博客的结果就是，换个时间学。 溜了溜了。]]></content>
       <tags>
-        <tag>生活</tag>
         <tag>python</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -183,8 +207,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>数值分析</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -195,8 +219,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>数值分析</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -207,8 +231,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>数值分析</tag>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>
