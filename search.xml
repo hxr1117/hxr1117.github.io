@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[we bare bears]]></title>
+    <url>%2F2019%2F09%2F21%2Fwe-bare-bears%2F</url>
+    <content type="text"><![CDATA[BLOW UP暴风雨, （暴风雨）开始, 愤怒 其他例句： When a storm blows up, it begins. I don’t see any kind of blowup event(a problem) that’s going to cause the market to lose value. GET SUCKED INto become involved in a situation when you do not want to be involved: 其他例句： I got sucked into the argument because I was a friend of the family. FITNESS TRACKER健身追踪器 QUADS股四头肌（仅限复数） BUMMER a thing that is annoying or disappointing. a loafer or vagrant. 游手好闲的人/流浪汉 其他例句： the party was a real bummer OFF-BALANCE失去平衡的 WARRANTY保修 guarantee: “a formal assurance that certain conditions will be fulfilled, especially that a product will be of a specified quality” warranty: “a written guarantee promising to repair or replace an article if necessary within a specified period.” HOT HEADED急性子]]></content>
+      <tags>
+        <tag>英语</tag>
+        <tag>口语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[新建Java Web项目的小小小问题]]></title>
     <url>%2F2019%2F08%2F22%2F%E6%96%B0%E5%BB%BAJava-Web%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%B0%8F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[这个问题真的是一言难尽 maven里面居然有两个webapp！！！]]></content>
@@ -107,8 +116,8 @@
     <url>%2F2018%2F06%2F09%2FDjango%2F</url>
     <content type="text"><![CDATA[当初没有持之以恒的用Django搭博客的结果就是，换个时间学。 溜了溜了。]]></content>
       <tags>
-        <tag>python</tag>
         <tag>生活</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -207,8 +216,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -219,8 +228,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -231,8 +240,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
 </search>

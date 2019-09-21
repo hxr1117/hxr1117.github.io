@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -111,18 +111,13 @@
 
 
 
-<meta name="description" content="PreparedStatement可以使用占位符?来进行数据库的操作。 包含了?的SQL叫SQL骨架。 PreparedStatement继承Statement，且对象已预编译过，速度更快，而且可以避免SQL注入（把SQL关键字当作一个普通的字符串来处理）。">
-<meta name="keywords" content="Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PreparedStatement">
-<meta property="og:url" content="http://yoursite.com/2019/08/20/PreparedStatement/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BLOG">
+<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="PreparedStatement可以使用占位符?来进行数据库的操作。 包含了?的SQL叫SQL骨架。 PreparedStatement继承Statement，且对象已预编译过，速度更快，而且可以避免SQL注入（把SQL关键字当作一个普通的字符串来处理）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-20T01:47:48.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PreparedStatement">
-<meta name="twitter:description" content="PreparedStatement可以使用占位符?来进行数据库的操作。 包含了?的SQL叫SQL骨架。 PreparedStatement继承Statement，且对象已预编译过，速度更快，而且可以避免SQL注入（把SQL关键字当作一个普通的字符串来处理）。">
+<meta name="twitter:title" content="BLOG">
 
 
 
@@ -152,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/20/PreparedStatement/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2019/09/"/>
 
 
 
 
 
-  <title>PreparedStatement | BLOG</title>
+  <title>归档 | BLOG</title>
   
 
 
@@ -177,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -315,190 +310,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 26 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/PreparedStatement/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ala">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">PreparedStatement</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/09/21/we-bare-bears/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">we bare bears</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T08:51:31+08:00">
-                2019-08-20
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2019-09-21T14:55:22+08:00"
+              content="2019-09-21" >
+          09-21
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><code>PreparedStatement</code>可以使用占位符<code>?</code>来进行数据库的操作。</p>
-<p>包含了<code>?</code>的SQL叫SQL骨架。</p>
-<p><code>PreparedStatement</code>继承<code>Statement</code>，且对象已预编译过，速度更快，而且可以避免SQL注入（把SQL关键字当作一个普通的字符串来处理）。</p>
-<a id="more"></a>
-<p>引用的包:</p>
-<ol>
-<li><code>import java.sql.PreparedStatement;</code></li>
-<li><code>import java.sql.ResultSet;</code></li>
-</ol>
-<p>实例化对象:</p>
-<ol>
-<li><code>PreparedStatement ps = null;</code></li>
-<li><code>ResultSet rs = null;</code></li>
-</ol>
-<p>得到SQL语句:</p>
-<ol>
-<li><code>String sql = “search * from user where name=? and pw=?”;</code></li>
-<li><code>ps = connection.prepareStatement(sql);</code></li>
-<li><code>ps.setString(1, name);  //1表示问号的位置，name是参数的值</code></li>
-<li><code>ps.setString(2, pw);</code></li>
-</ol>
-<p>执行SQL</p>
-<ol>
-<li><code>rs = ps.executeQuery();</code></li>
-</ol>
-<p>对比：</p>
-<ul>
-<li><p><code>Statement</code>对象：</p>
-<ul>
-<li>缺点：无法防止SQL注入，慢</li>
-<li>优点：在一次批处理中，SQL表现形式灵活。</li>
-</ul>
-</li>
-<li><p><code>PreparedStatement</code>对象：</p>
-<ul>
-<li>优点：防止SQL注入，缓存骨架，语句简洁</li>
-<li>缺点：在一次批处理中，只能用来处理骨架相同的SQL。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/08/19/AOP/" rel="next" title="AOP">
-                <i class="fa fa-chevron-left"></i> AOP
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/20/jdbc批处理/" rel="prev" title="jdbc批处理">
-                jdbc批处理 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -506,10 +385,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -759,10 +634,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
