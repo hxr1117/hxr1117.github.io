@@ -1,130 +1,50 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="python,OS,">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="要求：利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。 提示：用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。">
+  <meta name="description" content="要求：利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。 提示：用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。">
 <meta name="keywords" content="python,OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进程控制">
 <meta property="og:url" content="http://yoursite.com/2018/04/27/进程控制/index.html">
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="要求：利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。 提示：用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-04-27T14:00:49.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程控制">
 <meta name="twitter:description" content="要求：利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。 提示：用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。">
 
+<link rel="canonical" href="http://yoursite.com/2018/04/27/进程控制/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/04/27/进程控制/">
-
-
-
-
 
   <title>进程控制 | BLOG</title>
   
@@ -134,184 +54,186 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">BLOG</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
-  
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
- </div>
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/进程控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ala">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ala">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="BLOG">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">进程控制</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          进程控制
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
+              <span class="post-meta-item-text">发表于</span>
               
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T19:08:07+08:00">
-                2018-04-27
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="创建时间：2018-04-27 19:08:07 / 修改时间：22:00:49" itemprop="dateCreated datePublished" datetime="2018-04-27T19:08:07+08:00">2018-04-27</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -319,268 +241,186 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。</p>
 <h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。</p>
 <a id="more"></a>
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">MAX = <span class="number">0</span></span><br><span class="line">ram_list = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PCB</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, length)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.length = length</span><br><span class="line">        self.start = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">distribution</span><span class="params">(p)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])</span><br><span class="line">    <span class="comment"># site = 0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 找到第一个空闲比他大的位置</span></span><br><span class="line">        <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &gt;= p.length:</span><br><span class="line">            p.start = ram_list[i][<span class="number">0</span>]</span><br><span class="line">            ram_list[i][<span class="number">0</span>] += p.length  <span class="comment"># 空闲的起始忘后挪</span></span><br><span class="line">            ram_list[i][<span class="number">1</span>] -= p.length</span><br><span class="line">            <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &lt;= <span class="number">2</span>:</span><br><span class="line">                p.length += ram_list[i][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(i)</span><br><span class="line">            <span class="keyword">global</span> MAX</span><br><span class="line">            <span class="keyword">if</span> ram_list:</span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                MAX = <span class="number">0</span></span><br><span class="line">            <span class="comment"># print(MAX)</span></span><br><span class="line">            <span class="comment"># print(ram_list)</span></span><br><span class="line">            <span class="comment"># site = i</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(ready, run, p)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> name_list</span><br><span class="line">    l = len(name_list)</span><br><span class="line">    name_list[p.name] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> l == len(name_list):</span><br><span class="line">        print(<span class="string">'不能创建同名进程！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> p.length &gt; max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]:</span><br><span class="line">        print(<span class="string">'内存不足！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    ready.append(p)</span><br><span class="line">    ready_to_run(ready, run)</span><br><span class="line">    distribution(p)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ready_to_run</span><span class="params">(ready, run)</span>:</span></span><br><span class="line">    <span class="comment"># print(type(run))</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> run <span class="keyword">and</span> ready:</span><br><span class="line">        p = ready.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># print(type(p))</span></span><br><span class="line">        run.append(p)</span><br><span class="line">        <span class="comment"># print(ready, run)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">block</span><span class="params">(ready, blo, run)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        blo.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可以阻塞的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">times_over</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有正在运行的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wake_up</span><span class="params">(blo, ready, run)</span>:</span>  <span class="comment"># block[0]-&gt;ready</span></span><br><span class="line">    <span class="keyword">if</span> blo:</span><br><span class="line">        pro = blo.pop(<span class="number">0</span>)</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可唤醒的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exit</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        p = run.pop()</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">        <span class="keyword">del</span> name_list[p.name]</span><br><span class="line">        site = <span class="number">0</span></span><br><span class="line">        <span class="comment"># p = (p.start, p.length)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 检查前面</span></span><br><span class="line">            end = ram_list[i][<span class="number">0</span>] + ram_list[i][<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> end == p.start:</span><br><span class="line">                site = i + <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> end &gt; p.start:</span><br><span class="line">                site = i</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        ram_list.insert(site, [p.start, p.length])</span><br><span class="line">        <span class="comment"># print(site)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">global</span> MAX</span><br><span class="line">        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> site - <span class="number">1</span> &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == p.start:  <span class="comment"># 新加的空闲开始和上一个的结束相同</span></span><br><span class="line">                ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += p.length</span><br><span class="line">                ram_list.pop(site)  <span class="comment"># 合并</span></span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># print(site)</span></span><br><span class="line">                <span class="keyword">if</span> site &lt; len(ram_list):</span><br><span class="line">                    <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == ram_list[site][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                        ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += ram_list[site][<span class="number">1</span>]</span><br><span class="line">                        ram_list.pop(site)</span><br><span class="line">                        <span class="comment"># print(ram_list)</span></span><br><span class="line">                        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> site + <span class="number">1</span> &lt;= len(ram_list) - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site][<span class="number">0</span>] + ram_list[site][<span class="number">1</span>] == ram_list[site+<span class="number">1</span>][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                ram_list[site][<span class="number">1</span>] += ram_list[site+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(site+<span class="number">1</span>)</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># global MAX</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可退出的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(list)</span>:</span></span><br><span class="line">    s = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">        s += <span class="string">'('</span>+i.name+<span class="string">','</span>+str(i.start)+<span class="string">','</span>+str(i.length)+<span class="string">') '</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    ready = []</span><br><span class="line">    running = []</span><br><span class="line">    blocked = []</span><br><span class="line">    name_list = &#123;&#125;</span><br><span class="line">    strat, length = map(int, input(<span class="string">'输入开始的内存及长度:'</span>).strip().split())</span><br><span class="line">    MAX = length</span><br><span class="line">    ram_list = [[strat, length]]</span><br><span class="line">    print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">    print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">    print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">    print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">    print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">    print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">    print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">    print(<span class="string">"7.帮助"</span>)</span><br><span class="line">    print(<span class="string">"8.退出"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        a = int(input())</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"ready:"</span>, show(ready))</span><br><span class="line">            print(<span class="string">"running:"</span>, show(running))</span><br><span class="line">            print(<span class="string">'blocked:'</span>, show(blocked))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">            n, l = input(<span class="string">"输入进程的名字及内存:"</span>).strip().split()</span><br><span class="line">            l = int(l)</span><br><span class="line">            p = PCB(n, l)</span><br><span class="line">            create(ready, running, p)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">            block(ready, blocked, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">3</span>:</span><br><span class="line">            times_over(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">4</span>:</span><br><span class="line">            wake_up(blocked, ready, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">5</span>:</span><br><span class="line">            exit(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">6</span>:</span><br><span class="line">            print(sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">0</span>]))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">7</span>:</span><br><span class="line">            print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">            print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">            print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">            print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">            print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">            print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">            print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">            print(<span class="string">"7.帮助"</span>)</span><br><span class="line">            print(<span class="string">"8.退出"</span>)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/OS/" rel="tag"># OS</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/27/Hermite/" rel="next" title="Hermite">
-                <i class="fa fa-chevron-left"></i> Hermite
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/OS/" rel="tag"># OS</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/27/最大子段和/" rel="prev" title="最大子段和">
-                最大子段和 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/27/Hermite/" rel="prev" title="Hermite">
+      <i class="fa fa-chevron-left"></i> Hermite
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/27/最大子段和/" rel="next" title="最大子段和">
+      最大子段和 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Ala</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">51</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求："><span class="nav-number">1.</span> <span class="nav-text">要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示："><span class="nav-number">2.</span> <span class="nav-text">提示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ala</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求："><span class="nav-number">1.</span> <span class="nav-text">要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示："><span class="nav-number">2.</span> <span class="nav-text">提示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Ala</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hxr1117" title="GitHub → https://github.com/hxr1117" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xr971117@gmail.com" title="E-Mail → mailto:xr971117@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ala</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
 
 
 
 
 
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -589,6 +429,7 @@
 
 
 
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -597,111 +438,9 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
 
   
 
