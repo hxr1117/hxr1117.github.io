@@ -415,8 +415,7 @@
 
       
         
-          
-            <p>效果：</p>
+          <p>效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1genbs99m4jg304s05cn1z.gif" alt="未命名"></p>
 <p>重点：</p>
 <ol>
@@ -425,9 +424,13 @@
 <li>到达指定的距离按钮出现</li>
 </ol>
 <p>代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 指定的出现位置</span></span><br><span class="line">    <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 返回顶部按钮</span></span><br><span class="line">    $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">            scrollTop: <span class="number">0</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/23/返回顶部案例/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -566,13 +569,15 @@
 
       
         
-          
-            <p>响应式布局效果：</p>
+          <p>响应式布局效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75gkkc7j31i20u01kx.jpg" alt="image-20200509144701655" style="zoom: 25%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75pddy9j30uk0u0b1b.jpg" alt="image-20200509144718462" style="zoom:25%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75zctn2j30ri14wtu0.jpg" alt="image-20200509144734728" style="zoom:25%;"></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/23/Bootstrap案例-响应式布局/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -711,30 +716,14 @@
 
       
         
-          
-            <p>用户不需要刷新界面即可将数据发到服务器或从服务器取得数据。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    		<span class="comment">// 设置默认值</span></span><br><span class="line">            <span class="keyword">var</span> defaults = &#123;</span><br><span class="line">                type: <span class="string">"get"</span>,</span><br><span class="line">                url: <span class="string">""</span>,</span><br><span class="line">                data: &#123;&#125;,</span><br><span class="line">                header: &#123;</span><br><span class="line">                    <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="comment">// 使用options属性覆盖defaults的属性</span></span><br><span class="line">            <span class="built_in">Object</span>.assign(defaults, options);</span><br><span class="line">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">            <span class="keyword">var</span> params = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> defaults.data) &#123;</span><br><span class="line">                params += attr + <span class="string">"="</span> + defaults.data[attr] + <span class="string">"&amp;"</span></span><br><span class="line">            &#125;</span><br><span class="line">            params = params.substr(<span class="number">0</span>, params.length - <span class="number">1</span>);</span><br><span class="line">            <span class="built_in">console</span>.log(params);</span><br><span class="line">    		<span class="comment">// 因为post和get方法对数据的传递方法不一样，所以要进行区分</span></span><br><span class="line">            <span class="keyword">if</span> (defaults.type == <span class="string">"get"</span>) &#123;</span><br><span class="line">                defaults.url = defaults.url + <span class="string">"?"</span> + params;</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.open(defaults.type, defaults.url);</span><br><span class="line">            <span class="keyword">if</span> (defaults.type == <span class="string">"post"</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> contentType = defaults.header[<span class="string">"Content-Type"</span>];</span><br><span class="line">                xhr.setRequestHeader(<span class="string">"Content-Type"</span>, contentType);</span><br><span class="line">                <span class="comment">// 讲json数据转换成字符串再发送给服务器</span></span><br><span class="line">                <span class="keyword">if</span> (contentType == <span class="string">"application/json"</span>) &#123;</span><br><span class="line">                    xhr.send(<span class="built_in">JSON</span>.stringify(defaults.data))</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    xhr.send(params);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                xhr.send();</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> header = xhr.getAllResponseHeaders(<span class="string">"Content-Type"</span>);</span><br><span class="line">                <span class="keyword">var</span> responseText = xhr.responseText;</span><br><span class="line">                <span class="comment">// 如果服务器发送过来的数据是json格式：</span></span><br><span class="line">                <span class="keyword">if</span> (header.includes(<span class="string">"application/json"</span>)) &#123;</span><br><span class="line">                    responseText = <span class="built_in">JSON</span>.parse(responseText);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 接受成功</span></span><br><span class="line">                <span class="keyword">if</span> (xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">                    defaults.success(responseText, xhr);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 接受失败</span></span><br><span class="line">                    defaults.error(responseText, xhr);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 调用封装好的函数</span></span><br><span class="line">        ajax(&#123;</span><br><span class="line">            url: <span class="string">"http://localhost:3000/first"</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">data, xhr</span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 处理接收到的数据</span></span><br><span class="line">                ...</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>重点：</p>
-<ol>
-<li><p>讲ajax传递数据进行封装，方便之后数据的传递。</p>
-</li>
-<li><p>设置默认值，简化调用。</p>
-</li>
-<li><p>将要传递的数据拼接成字符串。</p>
-</li>
-<li><p>get：将数据拼接在url后。</p>
-</li>
-<li><p>post：作为send方法的参数传递出去。</p>
-<ol>
-<li>服务器端(express)要使用body-parser进行解析。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>);</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">"/post"</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.send(req.body);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>json：发送前将数据转换字符串，接收到json数据也要进行转换。</p>
-</li>
-</ol>
-
-          
+          <p>用户不需要刷新界面即可将数据发到服务器或从服务器取得数据。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/23/Ajax/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -873,30 +862,14 @@
 
       
         
-          
-            <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gev9xotm9sj30m60k6mz3.jpg" alt="image-20200517111327102" style="zoom:50%;"></p>
-<p>……我也不知道怎么讲，反正就是把要分离的都分离出来。</p>
-<p><code>app.js</code>里是服务器相关，包括：</p>
-<ol>
-<li>实现静态资源访问</li>
-<li>配置模版根目录</li>
-<li>连接数据库</li>
-<li>创建服务器</li>
-<li>监听端口</li>
-</ol>
-<ol>
-<li>route的index里有对URL的设置，还有对不同URL的处理，相当于MVC里的“control”。</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geva9tju0fj30nu0dmac2.jpg" alt="image-20200517112508847" style="zoom:50%;"></p>
-<ol start="2">
-<li>model就相当于数据库的设定啥的，比如说user.js里就是规定了users表里的字段该长啥样，MVC里的“model”。</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevaalkixlj30lm0rediq.jpg" alt="image-20200517112553971" style="zoom: 33%;"></p>
-<ol start="3">
-<li>views相当于MVC里的“view”。</li>
-</ol>
-
-          
+          <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gev9xotm9sj30m60k6mz3.jpg" alt="image-20200517111327102" style="zoom:50%;"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/17/MongoDB练手项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1013,38 +986,17 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li>安装。</li>
 </ol>
 <p>Mac上安装这个简直了……我用brew死活装不上，只好下源码，然后把mongodb的bin目录加到环境变量里才行。</p>
-<ol start="2">
-<li>连接</li>
-</ol>
-<p>MongoDB的叫法好奇怪😂</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 和数据库相关的操作都是异步操作</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://localhost/playground"</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected sucess"</span>))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected fail"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合规则。这不就是设定字段的类型吗……</span></span><br><span class="line"><span class="keyword">const</span> courseSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    name: <span class="built_in">String</span>,</span><br><span class="line">    author: <span class="built_in">String</span>,</span><br><span class="line">    isPublished: <span class="built_in">Boolean</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 创建集合。讲真，这不就是连表吗……</span></span><br><span class="line"><span class="comment">// 在库里面这张表实际上叫courses</span></span><br><span class="line"><span class="comment">// 返回Course构造函数，可以通过这个构造函数进行增删改查</span></span><br><span class="line"><span class="keyword">const</span> Course = mongoose.model(<span class="string">"Course"</span>, courseSchema);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>倒入json数据文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$mongoimport -d playground -c users --file ./user.json</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>增加字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Course.create(&#123;</span><br><span class="line">        name: <span class="string">"Math"</span>,</span><br><span class="line">        author: <span class="string">"Mr.He"</span>,</span><br><span class="line">        isPublished: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">course.save()</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>删除字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除一条字段</span></span><br><span class="line">User.findOneAndDelete(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line">User.remove(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>修改字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.update(&#123;<span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">15</span>&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>查找字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// select * from user;</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line"><span class="comment">// select * from user where age&gt;20 and age &lt; 40;</span></span><br><span class="line">User.find(&#123;</span><br><span class="line">    age: &#123;</span><br><span class="line">        $gt: <span class="number">20</span>, <span class="comment">// 大于</span></span><br><span class="line">        $lt: <span class="number">40</span> <span class="comment">// 小于</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result))</span><br><span class="line"><span class="comment">// 大于：$gt</span></span><br><span class="line"><span class="comment">// 小于：$lt</span></span><br><span class="line"><span class="comment">// 大于等于：$gte</span></span><br><span class="line"><span class="comment">// 小于等于：$lte</span></span><br><span class="line"><span class="comment">// 非等于：$ne</span></span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/16/MongoDB-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1183,23 +1135,16 @@
 
       
         
-          
-            <p>效果：</p>
+          <p>效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gembcsid83j30zy0ikwfp.jpg" alt="image-20200509171231775" style="zoom:50%;"></p>
 <p>重点：</p>
-<ol>
-<li>每次键盘“回车”、删除和点击checkbox都要进行判断</li>
-<li>要以JSON格式存储。</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">"todolist"</span>, <span class="built_in">JSON</span>.stringify(data));</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>提取的时候要格式转换</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = localStorage.getItem(<span class="string">"todolist"</span>);</span><br></pre></td></tr></table></figure>
-<p>jQuery代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    load();</span><br><span class="line">    $(<span class="string">"#title"</span>).on(<span class="string">"keydown"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (event.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> ($(<span class="keyword">this</span>).val() === <span class="string">""</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">let</span> local = getData();</span><br><span class="line">                local.push(&#123; <span class="attr">title</span>: $(<span class="keyword">this</span>).val(), <span class="attr">done</span>: <span class="literal">false</span> &#125;);</span><br><span class="line">                $(<span class="keyword">this</span>).val(<span class="string">""</span>);</span><br><span class="line">                saveData(local);</span><br><span class="line">                load();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 读取本地存储数据</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> data = localStorage.getItem(<span class="string">"todolist"</span>);</span><br><span class="line">        <span class="keyword">if</span> (data !== <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 存储</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">saveData</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        localStorage.setItem(<span class="string">"todolist"</span>, <span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 载入</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> todocount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> donecount = <span class="number">0</span>;</span><br><span class="line">        $(<span class="string">"ol, ul"</span>).empty();</span><br><span class="line">        <span class="keyword">let</span> data = getData();</span><br><span class="line">        $.each(data, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!item.done) &#123;</span><br><span class="line">                $(<span class="string">"ol"</span>).prepend(<span class="string">"&lt;li&gt;&lt;input type='checkbox' &gt; &lt;p&gt;"</span> + item.title + <span class="string">"&lt;/p&gt; &lt;a href='javascript:;' id="</span> + index + <span class="string">" &gt;&lt;/a&gt;&lt;/li&gt;"</span>);</span><br><span class="line">                todocount++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $(<span class="string">"ul"</span>).prepend(<span class="string">"&lt;li&gt;&lt;input type='checkbox' checked='checked' &gt; &lt;p&gt;"</span> + item.title + <span class="string">"&lt;/p&gt; &lt;a href='javascript:;' id="</span> + index + <span class="string">" &gt;&lt;/a&gt;&lt;/li&gt;"</span>);</span><br><span class="line">                donecount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        $(<span class="string">"#todocount"</span>).text(todocount);</span><br><span class="line">        $(<span class="string">"#donecount"</span>).text(donecount);</span><br><span class="line">    &#125;</span><br><span class="line">    $(<span class="string">"ol"</span>).on(<span class="string">"click"</span>, <span class="string">"a"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> data = getData();</span><br><span class="line">        <span class="keyword">let</span> index = $(<span class="keyword">this</span>).attr(<span class="string">"id"</span>);</span><br><span class="line">        data.splice(index, <span class="number">1</span>);</span><br><span class="line">        saveData(data);</span><br><span class="line">        load();</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">"ol, ul"</span>).on(<span class="string">"click"</span>, <span class="string">"input"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 先获取本地存储的数据</span></span><br><span class="line">        <span class="keyword">let</span> data = getData();</span><br><span class="line">        <span class="comment">// 修改数据</span></span><br><span class="line">        <span class="keyword">let</span> index = $(<span class="keyword">this</span>).siblings(<span class="string">"a"</span>).attr(<span class="string">"id"</span>);</span><br><span class="line">        data[index].done = $(<span class="keyword">this</span>).prop(<span class="string">"checked"</span>);</span><br><span class="line">        <span class="comment">// 保存到本地存储</span></span><br><span class="line">        saveData(data);</span><br><span class="line">        <span class="comment">// 重新渲染页面</span></span><br><span class="line">        load();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/09/本地存储案例-TODOList/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1338,224 +1283,18 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li><p><code>$</code>是jQuery中的顶级元素，是<code>jQuery</code>的代替。</p>
-</li>
-<li><p>在页内的DOM元素渲染完再执行。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DOM对象/jQuery对象</p>
-<ol>
-<li><p>用原生js获取来的对象就是DOM对象，用jQuery获取来的对象就是jQuery对象。</p>
-</li>
-<li><p>jQuery是利用$对DOM对象包装后产生的对象（伪数组形式储存）。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div);  <span class="comment">// 一个对象</span></span><br><span class="line"><span class="keyword">var</span> div2 = $(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div2);  <span class="comment">// 一个数组</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>jQuery对象只能使用jQuery方法，DOM对象只能使用原生的JavaScript属性和方法。</p>
-</li>
-<li><p>有些方法jQuery没有，这个时候需要将jQuery对象转换成DOM对象。</p>
-<ol>
-<li><p>DOM对象-&gt;jQuery对象</p>
-<p><code>$(&quot;video&quot;)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> video = <span class="built_in">document</span>.querySelector(<span class="string">"video"</span>);</span><br><span class="line">$(video).play(); <span class="comment">// 这个时候就成了jQuery对象，没有play这个方法。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>jQuery对象-&gt;DOM对象</p>
-<p><code>$(&quot;video&quot;)[0].play();</code></p>
-<p><code>$(&quot;video&quot;).get(0).play();</code></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>选择器</p>
-<ol>
-<li>子代选择器<code>$(&quot;ul&gt;li&quot;)</code></li>
-<li>后代选择器<code>$(&quot;ul li&quot;)</code></li>
-</ol>
-</li>
-<li><p>设置样式</p>
-<ol>
-<li><p><code>$(&quot;div&quot;).css(&quot;属性&quot;, &quot;值&quot;)</code></p>
-</li>
-<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).css(&#123;<span class="string">"width"</span>: <span class="number">400</span>,</span><br><span class="line">				color: <span class="string">"red"</span>&#125;)  </span><br><span class="line"><span class="comment">// 参数可以是对象</span></span><br><span class="line"><span class="comment">// 如果是复合属性，必须采取驼峰命名法：backgroundColor</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加类</p>
-<p><code>$(this).addClass(&quot;current&quot;);</code></p>
-</li>
-<li><p>删除类</p>
-<p><code>$(this).removeClass(&quot;current&quot;);</code></p>
-</li>
-<li><p>切换类</p>
-<p><code>$(this).toggleClass(&quot;current&quot;);</code> 没有这个类就加上，有就去掉。</p>
-</li>
-</ol>
-</li>
-<li><p>隐式迭代：把匹配的所有元素内部进行遍历循环。</p>
-</li>
-<li><p>jQuery筛选选择器</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>用法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:first</td>
-<td>$(“li:first”)</td>
-<td></td>
-</tr>
-<tr>
-<td>:last</td>
-<td>$(“li:last”)</td>
-<td></td>
-</tr>
-<tr>
-<td>:eq(index)</td>
-<td>$(“li:eq(2)”)</td>
-<td>索引号从0开始</td>
-</tr>
-<tr>
-<td>:odd</td>
-<td>$(“li:odd”)</td>
-<td>索引号是奇数的元素</td>
-</tr>
-<tr>
-<td>:even</td>
-<td>$(“li:even”)</td>
-<td>索引号是偶数的元素</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ol start="8">
-<li>jQuery筛选方法</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回最近的父级元素</span></span><br><span class="line">$(<span class="string">".son"</span>).parent();</span><br><span class="line"><span class="comment">// 返回亲儿子元素，类似子代选择器</span></span><br><span class="line">$(<span class="string">".father"</span>).children();</span><br><span class="line"><span class="comment">// 返回所有后代元素，类似后代选择器</span></span><br><span class="line">$(<span class="string">".grandfather"</span>).find(<span class="string">"div"</span>);</span><br><span class="line"><span class="comment">// 返回兄弟节点，不包括本身</span></span><br><span class="line">$(<span class="string">".first"</span>).siblings(<span class="string">"li"</span>);</span><br><span class="line"><span class="comment">// 相当于$(“li:eq(2)")</span></span><br><span class="line">$(<span class="string">"li"</span>).eq(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>显示隐藏切换效果</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.show([times][][callback]);</span><br><span class="line">.hide([times][][callback]);</span><br><span class="line">.toggle([times][][callback]);</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>滑动效果</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).slideDown();</span><br><span class="line">$(<span class="string">"div"</span>).slideUp();</span><br><span class="line">$(<span class="string">"div"</span>).slideToggle();</span><br></pre></td></tr></table></figure>
-<ol start="11">
-<li>事件切换</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).slideDown(<span class="number">200</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).slideUp(<span class="number">200</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).slideToggle(<span class="number">200</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol start="12">
-<li><p>停止动画排队效果</p>
-<ol>
-<li><code>stop()</code>写在动画效果前</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).stop().slideToggle(<span class="number">200</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>淡出淡入</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeTo(<span class="string">"slow"</span>, <span class="number">0.5</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeIn(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeOut(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gejxdny0yug305c03e10n.gif" alt="未命名"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".wrap li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).siblings().stop().fadeTo(<span class="number">100</span>, <span class="number">0.5</span>);</span><br><span class="line">    	&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        	$(<span class="keyword">this</span>).siblings().stop().fadeTo(<span class="number">100</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol start="14">
-<li>自定义动画效果</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以对象的形式写动画效果</span></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"div"</span>).animate(&#123;</span><br><span class="line">        left: <span class="number">500</span>,</span><br><span class="line">        top: <span class="number">200</span>,</span><br><span class="line">        opacity: <span class="number">0.4</span>,</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol start="15">
-<li><p>设置/获取属性值</p>
-<ol>
-<li>固有属性</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"img"</span>).prop(<span class="string">"src"</span>);  <span class="comment">// 获取</span></span><br><span class="line">$(<span class="string">"img"</span>).prop(<span class="string">"src"</span>, <span class="string">"...jpg"</span>);  <span class="comment">// 设置</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>自定义属性</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).attr(<span class="string">"data-index"</span>);</span><br><span class="line"><span class="comment">// 类似getAttribute</span></span><br><span class="line">$(<span class="string">"div"</span>).attr(<span class="string">"data-index"</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">// 类似setAttribute</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>数据缓存data()，数据放在元素的内存中，把元素当变量看，数据在DOM中不可见。</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"span"</span>).data(<span class="string">"uname"</span>, <span class="string">"123"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).data(<span class="string">"index"</span>);  <span class="comment">// 获取data-index h5自定义属性的时候，不用写data-，返回的是数字型。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>文本内容值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).html();  <span class="comment">//填内容就修改，空就获取</span></span><br><span class="line">$(<span class="string">"div"</span>).text();</span><br><span class="line">$(<span class="string">"input"</span>).val();  <span class="comment">// 表单的值</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>遍历元素：对同一类元素做不同操作</p>
-</li>
-</ol>
-<p><code>$.each()</code>能遍历对象，数组什么的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>]</span><br><span class="line">    $(<span class="string">"div"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index, domEle</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(domEle);</span><br><span class="line">        $(domEle).css(<span class="string">"color"</span>, arr[index]);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol start="18">
-<li><p>增删元素</p>
-<ol>
-<li>内部增加</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> li = $(<span class="string">"&lt;li&gt;???&lt;/li&gt;"</span>);</span><br><span class="line">$(<span class="string">"ul"</span>).prepend(li);</span><br><span class="line">$(<span class="string">"ul"</span>).append(li);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>外部添加</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul"</span>).after(div);</span><br><span class="line">$(<span class="string">"ul"</span>).before(div);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>删除</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul"</span>).remove();  <span class="comment">// 删除ul本身</span></span><br><span class="line">$(<span class="string">"ul"</span>).empty();  <span class="comment">// 删除ul所有子节点</span></span><br><span class="line">$(<span class="string">"ul"</span>).empty(<span class="string">""</span>);  <span class="comment">// 清空匹配的元素内容，和上面的作用一样</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>事件</p>
-<ol>
-<li>事件注册</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>事件处理On/one</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以一次性绑定多个事件，以对象的形式写。</span></span><br><span class="line">$(<span class="string">"div"</span>).on(&#123;  </span><br><span class="line">    mouseover: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    click: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 把事件委托在父元素上，触发对象是子元素。</span></span><br><span class="line">$(<span class="string">"ul"</span>).on(<span class="string">"click"</span>, <span class="string">"li"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);  </span><br><span class="line"><span class="comment">// 可以给后来动态创建的元素绑定事件（a是动态添加的）</span></span><br><span class="line">$(<span class="string">"ul"</span>).on(<span class="string">"click"</span>, <span class="string">"a"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).parents(<span class="string">"li"</span>).slideUp(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).remove();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 只出发一次的事件，使用方法同on</span></span><br><span class="line">$(<span class="string">"ul"</span>).one(<span class="string">"click"</span>, <span class="string">"li"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>事件处理off</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解除所有事件</span></span><br><span class="line">$(<span class="string">"div"</span>).off();</span><br><span class="line"><span class="comment">// 解除单个事件</span></span><br><span class="line">$(<span class="string">"div"</span>).off(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">// 解除事件委托</span></span><br><span class="line">$(<span class="string">"ul"</span>).off(<span class="string">"click"</span>, <span class="string">"li"</span>);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>自动触发</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).click();</span><br><span class="line">$(<span class="string">"div"</span>).trigger(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">// triggerHandler不会触发元素的默认行为</span></span><br><span class="line">$(<span class="string">"div"</span>).triggerHandler(<span class="string">"click"</span>);</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>事件对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"div"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"?"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">"li"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"!"</span>);</span><br><span class="line">        <span class="comment">// 阻止事件冒泡</span></span><br><span class="line">        event.stopPropagation(); </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// event.preventDefault(); 阻止默认行为，或者return false</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>拷贝对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend([deep], target, obj1, [objN])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>jQuery多库共存</p>
-<ol>
-<li><p>其他库也可能用\$符号，这个时候用jQuery代替\$</p>
-</li>
-<li><p>用户自定义$符号</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> yourchoice = $.noConflict();</span><br><span class="line">yourchoice(<span class="string">"span"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>jQuery插件</p>
-<ol>
-<li>先引入jQuery再引用这些插件</li>
-<li><a href="http://www.htmleaf.com/" target="_blank" rel="noopener">jQuery之家</a></li>
-<li><a href="http://www.jq22.com/" target="_blank" rel="noopener">jQuery插件库</a></li>
-</ol>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/jQuery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     
@@ -1691,19 +1430,19 @@
 
       
         
-          
-            <p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
+          <p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
 <ol>
-<li>Var定义全局变量</li>
-<li>let定义局部变量，只在</li>
-<li>const常量，相当于一个指针，指向的内存的内容不可以变，对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。如果不想改变const指向的<strong>对象</strong>改变，使用<code>Object.freeze</code>方法。</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekwbvmjt7j30re0uitdj.jpg" alt="IMG_095BE9D6B689-1" style="zoom: 25%;"></p>
-
-          
+<li><p>Var定义全局变量</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/var-let-const/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     
@@ -1986,47 +1725,18 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li><p>格式：<code>@color: pink;</code></p>
-</li>
-<li><p>嵌套：子元素的样式直接写到父元素里。</p>
-<ol>
-<li><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: pink;</span><br><span class="line">	<span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>使用<code>&amp;</code>表示是伪类/伪元素/交集选择器。</p>
-<ol>
-<li><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	<span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#2eaae0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>注释用<code>//</code>。</p>
-</li>
-<li><p>可以使用加减乘除。</p>
-<ol>
-<li><strong>运算符左右用空格隔开</strong>。</li>
-<li>如果只有一个数有单位，就以这个单位为结果。</li>
-<li>两个的单位不一致，以第一个单位为准。</li>
-</ol>
-</li>
-<li><p>适配方案：媒体查询。</p>
-<ol>
-<li>less+媒体查询+rem<ol>
-<li>动态设置html标签的font-size。</li>
-<li>元素大小取值方法：元素rem=（设计稿中）页面元素值px/（屏幕宽度/划分的份数）</li>
-</ol>
-</li>
-<li><strong>flexible.js+rem</strong></li>
-</ol>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/03/Less/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     

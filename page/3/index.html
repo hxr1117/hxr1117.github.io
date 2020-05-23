@@ -393,19 +393,16 @@
 
       
         
-          
-            <p>3D盒子效果：</p>
+          <p>3D盒子效果：</p>
 <p><img src="https://s1.ax1x.com/2020/04/29/J7DZLT.gif" alt="J7DZLT.gif" style="zoom:50%;"></p>
 <p>代码：</p>
-<p>⚠️perspective值越小，视觉效果越强。</p>
-<p>⚠️先旋转后平移，平移方向一致。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #e7e7e7;*/</span></span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            perspective: 2000px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">            transition: all 2s;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotate3d(1, 1, 0, -50deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">            transform: translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightcoral;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.right</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightskyblue;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>01-前面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span>05-上面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>04-右面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>另一个3D效果：</p>
-<p><img src="https://s1.ax1x.com/2020/04/29/J7r8hj.gif" alt="J7r8hj.gif"></p>
-<p>代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul li &#123;</span></span><br><span class="line"><span class="undefined">            height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 120px;</span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            perspective: 5000px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.4s</span>;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*把正面的往前走，而不是让底部的往后走*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: pink;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateZ</span>(17<span class="selector-class">.5px</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateY</span>(17<span class="selector-class">.5px</span>) <span class="selector-tag">rotateX</span>(<span class="selector-tag">-90deg</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/27/css案例4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -544,117 +541,14 @@
 
       
         
-          
-            <p><del>不得不说，Webstorm真的好好看啊！</del></p>
-<ol>
-<li>新选择器</li>
-</ol>
-<ul>
-<li><p>属性选择器[]</p>
-<ul>
-<li><code>[title]</code></li>
-<li><code>[class=“..”]</code></li>
-</ul>
-</li>
-<li><p>结构伪类选择器</p>
-<ul>
-<li><p><code>Nth-child(n)</code> 数字/公式/关键词 无视类型，可在子元素标签相同时用</p>
-</li>
-<li><p><code>Nth-of-type(n)</code> 根据类型选择，可在子元素标签不同的时候用</p>
-</li>
-</ul>
-</li>
-<li><p><code>even</code>是偶数，<code>odd</code>是奇数</p>
-<ul>
-<li>如果n是公式，n从0开始计算(但是标签的顺序从1开始)</li>
-</ul>
-</li>
-<li><p>伪元素选择器(行内元素，一般没有大小，除非转换成块)</p>
-<ul>
-<li><code>::before</code> 在元素之前加个行内元素，DOM中不显示</li>
-<li><code>::after</code></li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>2D转换（二维坐标系）</li>
-</ol>
-<ul>
-<li><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge8faaxuioj30ac08gaab.jpg" alt="image-20200427165036984" style="zoom:50%;"></p>
-</li>
-<li><p>移动Translate</p>
-<ul>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">x</span>, <span class="selector-tag">y</span>);</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(<span class="selector-tag">n</span>); </span><br><span class="line"><span class="comment">/*n=50%移动自身的50%*/</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateY</span>(<span class="selector-tag">n</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>⚠️不会影响到其他元素的位置，对行内标签<code>&lt;span&gt;</code>没有效果。</p>
-</li>
-</ul>
-</li>
-<li><p>旋转rotate</p>
-<ul>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate</span>(10<span class="selector-tag">deg</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform-origin</span>: <span class="selector-tag">x</span> <span class="selector-tag">y</span>; </span><br><span class="line"><span class="comment">/*默认50% 50%，就是center center*/</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>缩放scale</p>
-<ul>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">scale</span>(<span class="selector-tag">x</span>, <span class="selector-tag">y</span>) <span class="comment">/*x=y=1, 大小不变*/</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">scale</span>(<span class="selector-tag">x</span>) <span class="comment">/*等比缩放*/</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>改变元素的宽高往下延伸，⚠️但scale不会影响其他元素且可以设置中心的。代码同上。</p>
-</li>
-</ul>
-</li>
-<li><p>综合写法</p>
-</li>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>() <span class="selector-tag">rotate</span>() <span class="selector-tag">scale</span>()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>顺序会改变效果。</p>
-</li>
-<li><p>⚠️有其他属性的时候要把位移放到最前面。</p>
-</li>
-</ul>
-<ol start="3">
-<li>动画</li>
-</ol>
-<ul>
-<li><p>变化比过渡多，控制多。</p>
-</li>
-<li><p>步骤：先定义后使用。</p>
-</li>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*定义动画, 可以有多个过程。百分比是时间的划分。*/</span></span><br><span class="line">@<span class="keyword">keyframes</span> 动画名称 &#123;</span><br><span class="line">    0% &#123;  <span class="comment">/*动画序列*/</span></span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> 动画名称 &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;  <span class="comment">/*动画序列*/</span></span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*使用动画*/</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">animation-name</span>: move;</span><br><span class="line">    <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">    <span class="attribute">animation-timing-function</span>: <span class="string">"ease"</span>; <span class="comment">/*默认ease*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*常用属性：*/</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">animation-name</span>: move;</span><br><span class="line">    <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">    <span class="attribute">animation-timing-function</span>: <span class="string">"ease"</span>; <span class="comment">/*默认ease*/</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="number">0.3s</span>;</span><br><span class="line">    <span class="attribute">animation-iteration-count</span>: infinite;<span class="comment">/*重复，无限infinite*/</span></span><br><span class="line">    <span class="attribute">animation-direction</span>: alternate; <span class="comment">/*反向*/</span></span><br><span class="line">    <span class="attribute">animation-fill-mode</span>: forwards; <span class="comment">/*默认回到原处backwards*/</span></span><br><span class="line">    <span class="attribute">animation-play-state</span>: paused; <span class="comment">/*默认running*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*简写：*/</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">animation</span>: 名称 持续时间 运动曲线 何时开始 播放次数 是否方向 起始或结束状态;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="4">
-<li>3D转换</li>
-</ol>
-<ul>
-<li><p>移动旋转缩放同2D。</p>
-</li>
-<li><p>Z轴-垂直屏幕/物体和屏幕的距离：外是正值，里是负值。</p>
-</li>
-<li><p>⚠️透视perspective  近大远小 常用单位是<code>px</code></p>
-<ul>
-<li>透视写在被观察元素的父盒子上</li>
-<li>Persepctive 的值越小，透视效果越强</li>
-</ul>
-</li>
-<li><p>旋转 rotate3d，除绕着x/y/z轴旋转外，还可以绕着自定义轴（了解）。</p>
-<ul>
-<li><p>左手准则</p>
-</li>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotateX</span>(45<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotateY</span>(45<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotateZ</span>(45<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate3D</span>(<span class="selector-tag">x</span>, <span class="selector-tag">y</span>, <span class="selector-tag">z</span>, <span class="selector-tag">deg</span>);  <span class="comment">/*沿矢量旋转*/</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geaij7eaavj30wa08m79i.jpg" alt="image-20200429121407834"></p>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          <p><del>不得不说，Webstorm真的好好看啊！</del></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/27/CSS3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -793,40 +687,18 @@
 
       
         
-          
-            <ol>
-<li>input表单</li>
-</ol>
-<ul>
-<li><code>required</code></li>
-<li><code>type:search</code></li>
-<li><code>type:number</code></li>
-<li><code>type:tel</code></li>
-<li><code>type:email</code></li>
-</ul>
-<ol start="2">
-<li>多媒体标签</li>
-</ol>
-<ul>
-<li><code>video:autoplay/loop/controls/muted/poster</code>Chrome不允许带声音的自动播放</li>
-<li><code>audio:autoplay/loop/controls</code>chrome不能自动播放</li>
-</ul>
-<ol start="3">
-<li>语意化标签</li>
-</ol>
-<ul>
-<li><strong><code>header</code></strong></li>
-<li><strong><code>nav</code></strong></li>
-<li><strong><code>footer</code></strong></li>
-<li><strong><code>section</code></strong></li>
-<li><code>article</code></li>
-<li><code>aside</code></li>
-</ul>
-
-          
+          <ol>
+<li><p>input表单</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/27/HTML5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     
@@ -962,162 +834,21 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li><p>严格模式：采用具有限制性JavaScript变体的一种方式，从而使代码显示地 脱离“马虎模式/稀松模式/懒散模式“（sloppy）模式。</p>
 <ol>
 <li><code>“use strict”;</code></li>
 </ol>
-</li>
-<li><p>数据类型：Number/字符串/布尔值/比较运算符/null/undefined/数组/对象/变量</p>
-</li>
-<li><p>数组</p>
-<ol>
-<li><code>slice()</code>切片</li>
-<li><code>unshift()</code>往数组头部加元素</li>
-<li><code>shift()</code>删除首元素</li>
-<li><code>splice()</code>从指定索引开始删除并增加元素</li>
-<li><code>concat()</code>拼接，返回新数组</li>
-</ol>
-</li>
-<li><p>对象</p>
-<ol>
-<li><p>JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成</p>
-</li>
-<li><p>通过<code>.</code>访问属性</p>
-</li>
-<li><p>用<code>delete</code>可删除属性</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    school: <span class="string">'No.1 Middle School'</span>,</span><br><span class="line">    height: <span class="number">1.70</span>,</span><br><span class="line">    weight: <span class="number">65</span>,</span><br><span class="line">    score: <span class="literal">null</span></span><br><span class="line">&#125;;</span><br><span class="line">xiaoming.name; <span class="comment">// '小明'</span></span><br><span class="line">xiaoming.birth; <span class="comment">// 1990</span></span><br><span class="line"><span class="keyword">delete</span> xiaoming[<span class="string">'name'</span>];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>Map/Set</p>
-<ol>
-<li>Map = python.dic 键值一一对应</li>
-<li>Set = python.tuple 不过可以用<code>delete</code>删除元素</li>
-</ol>
-</li>
-<li><p>For … of 来迭代可迭代的</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="number">1</span>, <span class="string">'x'</span>], [<span class="number">2</span>, <span class="string">'y'</span>], [<span class="number">3</span>, <span class="string">'z'</span>]]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> b) &#123;</span><br><span class="line"><span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>函数</p>
-<ol>
-<li><p>函数定义：</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;  <span class="comment">// 匿名函数</span></span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;  <span class="comment">// 注意这个;</span></span><br><span class="line"><span class="comment">// 两者定义等价，调用等价</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>JavaScript允许传入任意个参数而不影响调用，因此传入的参数比定义的参数多也没有问题，虽然函数内部并不需要这些参数</p>
-</li>
-<li><p>arguments获得传进函数的所有参数</p>
-</li>
-<li><p>rest获得额外参数</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, ...rest</span>) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>方法</p>
-<ol>
-<li><p>在一个对象中绑定函数，称为这个对象的方法。</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    <span class="comment">// 这个age就是这个对象的方法</span></span><br><span class="line">    age: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">        <span class="keyword">return</span> y - <span class="keyword">this</span>.birth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 分开来写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">    <span class="keyword">return</span> y - <span class="keyword">this</span>.birth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    age: getAge</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>要保证<code>.this</code>指向正确，写法是<code>obj.func()</code>。不然直接调用函数指向的是全局对象<code>window</code>，得到undefined的结果。</p>
-</li>
-<li><p>解决方法：</p>
-<ol>
-<li><p><code>apply()</code></p>
-<ol>
-<li><p><code>getAge.apply(xiaoming, []); // 25, this指向xiaoming, 参数为空</code></p>
-</li>
-<li><p><code>apply()</code>把参数打包成<code>Array</code>再传入。</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, [<span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>]); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><code>call()</code></p>
-<ol>
-<li><p><code>call()</code>把参数按顺序传入。</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max.call(<span class="literal">null</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>高阶函数</p>
-<ol>
-<li><p>Map</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pow</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> results = arr.map(pow); </span><br><span class="line"><span class="comment">// [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br><span class="line">arr.map(<span class="built_in">String</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>Reduce </p>
-<ol>
-<li><p>效果：<code>[x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4)</code></p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;); <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>filter</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">var</span> r = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x % <span class="number">2</span> !== <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="comment">// [1, 5, 9, 15]</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>sort</p>
-<ol>
-<li><p>先把array里的元素变成String，再排序，就是按ascii排序。</p>
-</li>
-<li><p><code>[10, 20, 1, 2].sort(); // [1, 10, 2, 20]</code></p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 倒序排序</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;); <span class="comment">// [20, 10, 2, 1]</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>array</p>
-<ol>
-<li><p><code>every()</code>方法可以判断数组的所有元素是否满足测试条件。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.every(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.length &gt; <span class="number">0</span>;</span><br><span class="line">&#125;)); <span class="comment">// true, 因为每个元素都满足s.length&gt;0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.every(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.toLowerCase() === s;</span><br><span class="line">&#125;)); <span class="comment">// false, 因为不是每个元素都全部是小写</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><code>find()</code>方法用于查找符合条件的第一个元素，如果找到了，返回这个元素，否则，返回<code>undefined</code>。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.toLowerCase() === s;</span><br><span class="line">&#125;)); <span class="comment">// 'pear', 因为pear全部是小写</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.toUpperCase() === s;</span><br><span class="line">&#125;)); <span class="comment">// undefined, 因为没有全部是大写的元素</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><code>findIndex()</code>和<code>find()</code>类似，也是查找符合条件的第一个元素，不同之处在于<code>findIndex()</code>会返回这个元素的索引，如果没有找到，返回<code>-1</code>。</p>
-</li>
-<li><p><code>forEach()</code>和<code>map()</code>类似，它也把每个元素依次作用于传入的函数，但不会返回新的数组。<code>forEach()</code>常用于遍历数组，因此，传入的函数不需要返回值。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>];</span><br><span class="line">arr.forEach(<span class="built_in">console</span>.log); <span class="comment">// 依次打印每个元素</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/26/JavaScript基础笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
     
     
     
@@ -1231,107 +962,17 @@
 
       
         
-          
-            <h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
+          <h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
 <p>python3.7+Django3+Bootstrap4</p>
 <p>行了，最不稳定的就是我了！</p>
 <p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
-<p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
-<ol>
-<li>创建project</li>
-</ol>
-<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
-<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
-<p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
-<ol start="2">
-<li>创建app</li>
-</ol>
-<p>在项目里建app</p>
-<p><code>python3 manage.py startapp app_name</code></p>
-<p>在pycharm的命令行里运行👆就行。</p>
-<p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
-<p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
-<p>框里的是我的app</p>
-<ol start="3">
-<li>分离各个app的urls（方便管理</li>
-</ol>
-<p>project自带的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
-<p>app的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
-<ol start="4">
-<li>连接数据库（mysql）</li>
-</ol>
-<p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
-<p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
-<p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
-<p>在setting同级的<code>_init_.py</code>文件里写：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
-<p>……然后Django嫌弃我的mysql，行叭。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
-<p>认真的说，Django3是不是和我有仇。</p>
-<p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
-<p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
-<p>==如果用的是<strong>Django2.0+</strong>，就不用在init那个文件写东西了，直接安装mysqlclient就行。==</p>
-<ol start="5">
-<li>使用数据库（？</li>
-</ol>
-<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
-<p>对于Django来说，</p>
-<p>Views.py-&gt;MVC中的Control</p>
-<p>Models.py-&gt;MVC中的Model</p>
-<p>各种html-&gt;MVC中的View</p>
-<p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
-<p>view里面的代码⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
-<ol start="6">
-<li>提交表单（POST</li>
-</ol>
-<p>遇到问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
-<p>也给出了解答</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
-<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
-<ol start="7">
-<li>在html里面显示数据</li>
-</ol>
-<p>要具备以下条件：</p>
-<ul>
-<li>models里面有数据库表的类</li>
-<li>views里有models里面类的对象（见5⃣️</li>
-<li>将对象通过字典返回到html里</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"your_html"</span>, &#123;<span class="string">"html里变量的名字"</span>: 对象&#125;)  <span class="comment"># 这个字典里可以放多个变量，甚至是你要传递给前台的信息提示</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>前台使用Django的……我也不知道叫什么</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
-<ul>
-<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
-</ul>
-<p>例子：</p>
-<p>我的models：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
-<p>我的views：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
-<p>我的html：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
-<ol start="8">
-<li>在a标签的链接里带参数</li>
-</ol>
-<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
-<ol start="9">
-<li>Django使用session</li>
-</ol>
-<p>在Django里使用session一定要执行下面的命令……我会说我因为不知道差点重装了mysql和python吗😭</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/02/Django踩雷记录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

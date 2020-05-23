@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AOP</title>
+    <url>/2019/08/19/AOP/</url>
+    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
+<p>从某些角度来讲AOP是OOP的补充。</p>
+<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
+<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
+<a id="more"></a>
+<p>AOP的基本概念：</p>
+<ul>
+<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
+<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
+<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
+<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
+</ul>
+<p>Spring的AOP支持：</p>
+<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
+<ol>
+<li><code>aspctjweaver.jar</code></li>
+<li><code>aspectjrt.jar</code></li>
+<li><code>aopalliance.jar</code></li>
+</ol>
+<p>并在Spring配置文件中做出如下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap案例-响应式布局</title>
+    <url>/2020/05/23/Bootstrap%E6%A1%88%E4%BE%8B-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<p>响应式布局效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75gkkc7j31i20u01kx.jpg" alt="image-20200509144701655" style="zoom: 25%;"></p>
+<a id="more"></a>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75pddy9j30uk0u0b1b.jpg" alt="image-20200509144718462" style="zoom:25%;"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75zctn2j30ri14wtu0.jpg" alt="image-20200509144734728" style="zoom:25%;"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+        <tag>布局</tag>
+        <tag>响应式布局</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ajax基础练习</title>
     <url>/2020/05/23/Ajax/</url>
     <content><![CDATA[<p>用户不需要刷新界面即可将数据发到服务器或从服务器取得数据。</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    		<span class="comment">// 设置默认值</span></span><br><span class="line">            <span class="keyword">var</span> defaults = &#123;</span><br><span class="line">                type: <span class="string">"get"</span>,</span><br><span class="line">                url: <span class="string">""</span>,</span><br><span class="line">                data: &#123;&#125;,</span><br><span class="line">                header: &#123;</span><br><span class="line">                    <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="comment">// 使用options属性覆盖defaults的属性</span></span><br><span class="line">            <span class="built_in">Object</span>.assign(defaults, options);</span><br><span class="line">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">            <span class="keyword">var</span> params = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> defaults.data) &#123;</span><br><span class="line">                params += attr + <span class="string">"="</span> + defaults.data[attr] + <span class="string">"&amp;"</span></span><br><span class="line">            &#125;</span><br><span class="line">            params = params.substr(<span class="number">0</span>, params.length - <span class="number">1</span>);</span><br><span class="line">            <span class="built_in">console</span>.log(params);</span><br><span class="line">    		<span class="comment">// 因为post和get方法对数据的传递方法不一样，所以要进行区分</span></span><br><span class="line">            <span class="keyword">if</span> (defaults.type == <span class="string">"get"</span>) &#123;</span><br><span class="line">                defaults.url = defaults.url + <span class="string">"?"</span> + params;</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.open(defaults.type, defaults.url);</span><br><span class="line">            <span class="keyword">if</span> (defaults.type == <span class="string">"post"</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> contentType = defaults.header[<span class="string">"Content-Type"</span>];</span><br><span class="line">                xhr.setRequestHeader(<span class="string">"Content-Type"</span>, contentType);</span><br><span class="line">                <span class="comment">// 讲json数据转换成字符串再发送给服务器</span></span><br><span class="line">                <span class="keyword">if</span> (contentType == <span class="string">"application/json"</span>) &#123;</span><br><span class="line">                    xhr.send(<span class="built_in">JSON</span>.stringify(defaults.data))</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    xhr.send(params);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                xhr.send();</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> header = xhr.getAllResponseHeaders(<span class="string">"Content-Type"</span>);</span><br><span class="line">                <span class="keyword">var</span> responseText = xhr.responseText;</span><br><span class="line">                <span class="comment">// 如果服务器发送过来的数据是json格式：</span></span><br><span class="line">                <span class="keyword">if</span> (header.includes(<span class="string">"application/json"</span>)) &#123;</span><br><span class="line">                    responseText = <span class="built_in">JSON</span>.parse(responseText);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 接受成功</span></span><br><span class="line">                <span class="keyword">if</span> (xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">                    defaults.success(responseText, xhr);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 接受失败</span></span><br><span class="line">                    defaults.error(responseText, xhr);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 调用封装好的函数</span></span><br><span class="line">        ajax(&#123;</span><br><span class="line">            url: <span class="string">"http://localhost:3000/first"</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">data, xhr</span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 处理接收到的数据</span></span><br><span class="line">                ...</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>重点：</p>
 <ol>
@@ -36,6 +84,7 @@
     <title>CSS3</title>
     <url>/2020/04/27/CSS3/</url>
     <content><![CDATA[<p><del>不得不说，Webstorm真的好好看啊！</del></p>
+<a id="more"></a>
 <ol>
 <li>新选择器</li>
 </ol>
@@ -152,23 +201,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Django</title>
-    <url>/2018/06/09/Django/</url>
-    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
-<p>溜了溜了。</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Django（疯狂踩雷</title>
     <url>/2020/03/02/Django%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
 <p>python3.7+Django3+Bootstrap4</p>
 <p>行了，最不稳定的就是我了！</p>
 <p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
+<a id="more"></a>
 <p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
 <ol>
 <li>创建project</li>
@@ -265,8 +304,8 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>python</tag>
         <tag>Bootstrap</tag>
+        <tag>python</tag>
         <tag>Django</tag>
       </tags>
   </entry>
@@ -296,7 +335,9 @@
     <title>HTML5</title>
     <url>/2020/04/27/HTML5/</url>
     <content><![CDATA[<ol>
-<li>input表单</li>
+<li><p>input表单</p>
+<a id="more"></a>
+</li>
 </ol>
 <ul>
 <li><code>required</code></li>
@@ -332,21 +373,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hermite</title>
-    <url>/2018/04/27/Hermite/</url>
-    <content><![CDATA[<p><strong>Hermite插值多项式</strong></p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l</span><span class="params">(x, x1, k)</span>:</span></span><br><span class="line">    n = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> j != k:</span><br><span class="line">            n *= (x1 - x[j])/(x[k] - x[j])</span><br><span class="line">    <span class="keyword">return</span> n*n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l1</span><span class="params">(x, j)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> k != j:</span><br><span class="line">            n += <span class="number">1.0</span>/(x[j] - x[k])</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hermite</span><span class="params">(x, y, m, x1)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        a = (<span class="number">1</span> - <span class="number">2</span> * (x1 - x[j]) * l1(x, j)) * l(x, x1, j)</span><br><span class="line">        b = (x1 - x[j])*l(x, x1, j)</span><br><span class="line">        n += y[j] * a + m[j] * b</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">1.0</span>], np.float32)</span><br><span class="line">    y = np.array([<span class="number">0.904837</span>, <span class="number">0.818731</span>, <span class="number">0.740818</span>, <span class="number">0.670320</span>, <span class="number">0.606531</span>, <span class="number">0.548812</span>, <span class="number">0.496585</span>,</span><br><span class="line">                  <span class="number">0.449329</span>, <span class="number">0.406570</span>, <span class="number">0.367879</span>], np.float32)</span><br><span class="line">    m = np.array([<span class="number">-0.904837</span>, <span class="number">-0.818731</span>, <span class="number">-0.740818</span>, <span class="number">-0.670320</span>, <span class="number">-0.606531</span>, <span class="number">-0.548812</span>, <span class="number">-0.496585</span>,</span><br><span class="line">                  <span class="number">-0.449329</span>, <span class="number">-0.406570</span>, <span class="number">-0.367879</span>], np.float32)</span><br><span class="line">    print(hermite(x, y, m, <span class="number">0.55</span>))</span><br><span class="line">    a = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        a.append(i*<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    b = [hermite(x, y, m, i) <span class="keyword">for</span> i <span class="keyword">in</span> a]</span><br><span class="line">    <span class="comment"># print(hermite(x, y, m, 3))</span></span><br><span class="line">    plt.figure(<span class="string">"play"</span>)</span><br><span class="line">    ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">    plt.sca(ax1)</span><br><span class="line">    <span class="comment"># plt.plot(x, y, linestyle=' ', marker='o', color='b')</span></span><br><span class="line">    plt.plot(a, b, linestyle=<span class="string">'--'</span>, color=<span class="string">'r'</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数值分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数值分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript坑</title>
     <url>/2020/05/03/JavaScript%E5%9D%91/</url>
     <content><![CDATA[<ol>
@@ -364,6 +390,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Hermite</title>
+    <url>/2018/04/27/Hermite/</url>
+    <content><![CDATA[<p><strong>Hermite插值多项式</strong></p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l</span><span class="params">(x, x1, k)</span>:</span></span><br><span class="line">    n = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> j != k:</span><br><span class="line">            n *= (x1 - x[j])/(x[k] - x[j])</span><br><span class="line">    <span class="keyword">return</span> n*n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l1</span><span class="params">(x, j)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> k != j:</span><br><span class="line">            n += <span class="number">1.0</span>/(x[j] - x[k])</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hermite</span><span class="params">(x, y, m, x1)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        a = (<span class="number">1</span> - <span class="number">2</span> * (x1 - x[j]) * l1(x, j)) * l(x, x1, j)</span><br><span class="line">        b = (x1 - x[j])*l(x, x1, j)</span><br><span class="line">        n += y[j] * a + m[j] * b</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">1.0</span>], np.float32)</span><br><span class="line">    y = np.array([<span class="number">0.904837</span>, <span class="number">0.818731</span>, <span class="number">0.740818</span>, <span class="number">0.670320</span>, <span class="number">0.606531</span>, <span class="number">0.548812</span>, <span class="number">0.496585</span>,</span><br><span class="line">                  <span class="number">0.449329</span>, <span class="number">0.406570</span>, <span class="number">0.367879</span>], np.float32)</span><br><span class="line">    m = np.array([<span class="number">-0.904837</span>, <span class="number">-0.818731</span>, <span class="number">-0.740818</span>, <span class="number">-0.670320</span>, <span class="number">-0.606531</span>, <span class="number">-0.548812</span>, <span class="number">-0.496585</span>,</span><br><span class="line">                  <span class="number">-0.449329</span>, <span class="number">-0.406570</span>, <span class="number">-0.367879</span>], np.float32)</span><br><span class="line">    print(hermite(x, y, m, <span class="number">0.55</span>))</span><br><span class="line">    a = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        a.append(i*<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    b = [hermite(x, y, m, i) <span class="keyword">for</span> i <span class="keyword">in</span> a]</span><br><span class="line">    <span class="comment"># print(hermite(x, y, m, 3))</span></span><br><span class="line">    plt.figure(<span class="string">"play"</span>)</span><br><span class="line">    ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">    plt.sca(ax1)</span><br><span class="line">    <span class="comment"># plt.plot(x, y, linestyle=' ', marker='o', color='b')</span></span><br><span class="line">    plt.plot(a, b, linestyle=<span class="string">'--'</span>, color=<span class="string">'r'</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数值分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数值分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript基础笔记</title>
     <url>/2020/04/26/JavaScript%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ol>
@@ -371,6 +412,7 @@
 <ol>
 <li><code>“use strict”;</code></li>
 </ol>
+<a id="more"></a>
 </li>
 <li><p>数据类型：Number/字符串/布尔值/比较运算符/null/undefined/数组/对象/变量</p>
 </li>
@@ -543,6 +585,7 @@
     <url>/2020/05/03/Less/</url>
     <content><![CDATA[<ol>
 <li><p>格式：<code>@color: pink;</code></p>
+<a id="more"></a>
 </li>
 <li><p>嵌套：子元素的样式直接写到父元素里。</p>
 <ol>
@@ -582,47 +625,21 @@
       </categories>
   </entry>
   <entry>
-    <title>MongoDB基础</title>
-    <url>/2020/05/16/MongoDB-1/</url>
-    <content><![CDATA[<ol>
-<li>安装。</li>
-</ol>
-<p>Mac上安装这个简直了……我用brew死活装不上，只好下源码，然后把mongodb的bin目录加到环境变量里才行。</p>
-<ol start="2">
-<li>连接</li>
-</ol>
-<p>MongoDB的叫法好奇怪😂</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 和数据库相关的操作都是异步操作</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://localhost/playground"</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected sucess"</span>))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected fail"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合规则。这不就是设定字段的类型吗……</span></span><br><span class="line"><span class="keyword">const</span> courseSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    name: <span class="built_in">String</span>,</span><br><span class="line">    author: <span class="built_in">String</span>,</span><br><span class="line">    isPublished: <span class="built_in">Boolean</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 创建集合。讲真，这不就是连表吗……</span></span><br><span class="line"><span class="comment">// 在库里面这张表实际上叫courses</span></span><br><span class="line"><span class="comment">// 返回Course构造函数，可以通过这个构造函数进行增删改查</span></span><br><span class="line"><span class="keyword">const</span> Course = mongoose.model(<span class="string">"Course"</span>, courseSchema);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>倒入json数据文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$mongoimport -d playground -c users --file ./user.json</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>增加字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Course.create(&#123;</span><br><span class="line">        name: <span class="string">"Math"</span>,</span><br><span class="line">        author: <span class="string">"Mr.He"</span>,</span><br><span class="line">        isPublished: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">course.save()</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>删除字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 删除一条字段</span></span><br><span class="line">User.findOneAndDelete(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line">User.remove(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>修改字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">User.update(&#123;<span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">15</span>&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>查找字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// select * from user;</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line"><span class="comment">// select * from user where age&gt;20 and age &lt; 40;</span></span><br><span class="line">User.find(&#123;</span><br><span class="line">    age: &#123;</span><br><span class="line">        $gt: <span class="number">20</span>, <span class="comment">// 大于</span></span><br><span class="line">        $lt: <span class="number">40</span> <span class="comment">// 小于</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result))</span><br><span class="line"><span class="comment">// 大于：$gt</span></span><br><span class="line"><span class="comment">// 小于：$lt</span></span><br><span class="line"><span class="comment">// 大于等于：$gte</span></span><br><span class="line"><span class="comment">// 小于等于：$lte</span></span><br><span class="line"><span class="comment">// 非等于：$ne</span></span><br></pre></td></tr></table></figure>
+    <title>Django</title>
+    <url>/2018/06/09/Django/</url>
+    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
+<p>溜了溜了。</p>
 ]]></content>
       <tags>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
+        <tag>python</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
     <title>MongoDB练手项目</title>
     <url>/2020/05/17/MongoDB%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gev9xotm9sj30m60k6mz3.jpg" alt="image-20200517111327102" style="zoom:50%;"></p>
+<a id="more"></a>
 <p>……我也不知道怎么讲，反正就是把要分离的都分离出来。</p>
 <p><code>app.js</code>里是服务器相关，包括：</p>
 <ol>
@@ -717,6 +734,45 @@
       </tags>
   </entry>
   <entry>
+    <title>MongoDB基础</title>
+    <url>/2020/05/16/MongoDB-1/</url>
+    <content><![CDATA[<ol>
+<li>安装。</li>
+</ol>
+<p>Mac上安装这个简直了……我用brew死活装不上，只好下源码，然后把mongodb的bin目录加到环境变量里才行。</p>
+<a id="more"></a>
+<ol start="2">
+<li>连接</li>
+</ol>
+<p>MongoDB的叫法好奇怪😂</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 和数据库相关的操作都是异步操作</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://localhost/playground"</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected sucess"</span>))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected fail"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合规则。这不就是设定字段的类型吗……</span></span><br><span class="line"><span class="keyword">const</span> courseSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    name: <span class="built_in">String</span>,</span><br><span class="line">    author: <span class="built_in">String</span>,</span><br><span class="line">    isPublished: <span class="built_in">Boolean</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 创建集合。讲真，这不就是连表吗……</span></span><br><span class="line"><span class="comment">// 在库里面这张表实际上叫courses</span></span><br><span class="line"><span class="comment">// 返回Course构造函数，可以通过这个构造函数进行增删改查</span></span><br><span class="line"><span class="keyword">const</span> Course = mongoose.model(<span class="string">"Course"</span>, courseSchema);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>倒入json数据文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$mongoimport -d playground -c users --file ./user.json</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>增加字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Course.create(&#123;</span><br><span class="line">        name: <span class="string">"Math"</span>,</span><br><span class="line">        author: <span class="string">"Mr.He"</span>,</span><br><span class="line">        isPublished: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">course.save()</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>删除字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 删除一条字段</span></span><br><span class="line">User.findOneAndDelete(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line">User.remove(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>修改字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">User.update(&#123;<span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">15</span>&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>查找字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// select * from user;</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line"><span class="comment">// select * from user where age&gt;20 and age &lt; 40;</span></span><br><span class="line">User.find(&#123;</span><br><span class="line">    age: &#123;</span><br><span class="line">        $gt: <span class="number">20</span>, <span class="comment">// 大于</span></span><br><span class="line">        $lt: <span class="number">40</span> <span class="comment">// 小于</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result))</span><br><span class="line"><span class="comment">// 大于：$gt</span></span><br><span class="line"><span class="comment">// 小于：$lt</span></span><br><span class="line"><span class="comment">// 大于等于：$gte</span></span><br><span class="line"><span class="comment">// 小于等于：$lte</span></span><br><span class="line"><span class="comment">// 非等于：$ne</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pycharm可以运行但无法debug</title>
     <url>/2018/11/29/Pycharm%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E4%BD%86%E6%97%A0%E6%B3%95debug/</url>
     <content><![CDATA[<ol>
@@ -774,6 +830,7 @@
 </li>
 </ol>
 <p>⚠️不同等级没有可比性，比如多少个属性选择器都不能比ID选择器权重高。</p>
+<a id="more"></a>
 <p>建议：</p>
 <ol>
 <li>避免使用<code>!important</code></li>
@@ -790,16 +847,14 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS案例 热点图 打字机</title>
-    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B-0/</url>
-    <content><![CDATA[<p>热点图效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9c1i5l4xj31530u0tsy.jpg" alt="image-20200428114356890"></p>
-<p>代码:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"icomoon/style.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.map</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 747px;</span></span><br><span class="line"><span class="undefined">            height: 616px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">            background: url("media/map.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 237px;</span></span><br><span class="line"><span class="undefined">            right: 490px;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.tb</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 506px;</span></span><br><span class="line"><span class="undefined">            right: 377px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.gz</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 550px;</span></span><br><span class="line"><span class="undefined">            right: 482px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.dotted</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 8px;</span></span><br><span class="line"><span class="undefined">            height: 8px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-attr">[class^="pulse"]</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*不能用放大是因为不够好看*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*前四行重要*/</span></span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 50%;</span></span><br><span class="line"><span class="undefined">            left: 50%;</span></span><br><span class="line"><span class="undefined">            transform: translate(-50%, -50%);</span></span><br><span class="line"><span class="undefined">            width: 8px;</span></span><br><span class="line"><span class="undefined">            height: 8px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 0 12<span class="selector-tag">px</span> <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">pulse</span> 1<span class="selector-class">.2s</span> <span class="selector-tag">linear</span> <span class="selector-tag">infinite</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-class">.pulse2</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation-delay</span>: 0<span class="selector-class">.4s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-class">.pulse3</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation-delay</span>: 0<span class="selector-class">.6s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> pulse &#123;</span></span><br><span class="line"><span class="undefined">            70% &#123;</span></span><br><span class="line"><span class="undefined">                width: 40px;</span></span><br><span class="line"><span class="undefined">                height: 40px;</span></span><br><span class="line"><span class="undefined">                opacity: 1;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                width: 70px;</span></span><br><span class="line"><span class="undefined">                height: 70px;</span></span><br><span class="line"><span class="undefined">                opacity: 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city tb"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city gz"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>打字机效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9dia0n51g304e01k0sl.gif" alt="Apr-28-2020 12-34-08"></p>
+    <title>CSS案例2 循环滚动</title>
+    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B2/</url>
+    <content><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9gn5oox5g30j40as4ha.gif" alt="Apr-28-2020 14-22-42"></p>
+<p>问题：</p>
+<a id="more"></a>
+<p>未实现背景无缝滚动。</p>
 <p>代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            width: 0;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">            animation: move 4s steps(6) forwards;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #dcc8c8;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> move &#123;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                width: 120px;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>你今天还好吗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bear</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 270px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bear.png") no-repeat;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">bear</span> 0<span class="selector-class">.8s</span> <span class="selector-tag">steps</span>(8) <span class="selector-tag">infinite</span>, <span class="selector-tag">bear_move</span> 5<span class="selector-tag">s</span> <span class="selector-tag">forwards</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-attr">[class^="bg"]</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            animation: bg 10s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="comment">/*-webkit-animation: bg 10s linear infinite;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg1</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg1.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg2</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg2.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: -1600px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear_move &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(0, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(500px, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bg &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(0, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(-3840px, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: -3800px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -809,13 +864,17 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS案例2 循环滚动</title>
-    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B2/</url>
-    <content><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9gn5oox5g30j40as4ha.gif" alt="Apr-28-2020 14-22-42"></p>
-<p>问题：</p>
-<p>未实现背景无缝滚动。</p>
+    <title>CSS案例 热点图 打字机</title>
+    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B-0/</url>
+    <content><![CDATA[<p>热点图效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9c1i5l4xj31530u0tsy.jpg" alt="image-20200428114356890"></p>
+<p>代码:</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"icomoon/style.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.map</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 747px;</span></span><br><span class="line"><span class="undefined">            height: 616px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">            background: url("media/map.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 237px;</span></span><br><span class="line"><span class="undefined">            right: 490px;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.tb</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 506px;</span></span><br><span class="line"><span class="undefined">            right: 377px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.gz</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 550px;</span></span><br><span class="line"><span class="undefined">            right: 482px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.dotted</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 8px;</span></span><br><span class="line"><span class="undefined">            height: 8px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-attr">[class^="pulse"]</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*不能用放大是因为不够好看*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*前四行重要*/</span></span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 50%;</span></span><br><span class="line"><span class="undefined">            left: 50%;</span></span><br><span class="line"><span class="undefined">            transform: translate(-50%, -50%);</span></span><br><span class="line"><span class="undefined">            width: 8px;</span></span><br><span class="line"><span class="undefined">            height: 8px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 0 12<span class="selector-tag">px</span> <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">pulse</span> 1<span class="selector-class">.2s</span> <span class="selector-tag">linear</span> <span class="selector-tag">infinite</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-class">.pulse2</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation-delay</span>: 0<span class="selector-class">.4s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.city</span> <span class="selector-tag">div</span><span class="selector-class">.pulse3</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation-delay</span>: 0<span class="selector-class">.6s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> pulse &#123;</span></span><br><span class="line"><span class="undefined">            70% &#123;</span></span><br><span class="line"><span class="undefined">                width: 40px;</span></span><br><span class="line"><span class="undefined">                height: 40px;</span></span><br><span class="line"><span class="undefined">                opacity: 1;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                width: 70px;</span></span><br><span class="line"><span class="undefined">                height: 70px;</span></span><br><span class="line"><span class="undefined">                opacity: 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city tb"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"city gz"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dotted"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pulse3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打字机效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9dia0n51g304e01k0sl.gif" alt="Apr-28-2020 12-34-08"></p>
 <p>代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bear</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 270px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bear.png") no-repeat;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">bear</span> 0<span class="selector-class">.8s</span> <span class="selector-tag">steps</span>(8) <span class="selector-tag">infinite</span>, <span class="selector-tag">bear_move</span> 5<span class="selector-tag">s</span> <span class="selector-tag">forwards</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-attr">[class^="bg"]</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            animation: bg 10s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="comment">/*-webkit-animation: bg 10s linear infinite;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg1</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg1.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg2</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg2.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: -1600px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear_move &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(0, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(500px, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bg &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(0, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(-3840px, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: -3800px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            width: 0;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">            animation: move 4s steps(6) forwards;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #dcc8c8;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> move &#123;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                width: 120px;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>你今天还好吗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -831,6 +890,7 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9taolf6mg309m0ae4eu.gif" alt="Apr-28-2020 21-39-00" style="zoom:50%;"></p>
 <p>不知道为什么用div标签橙色就可以很好，用p标签的时候就emmmm</p>
 <p>代码：</p>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #f5f5f5;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        img &#123;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            width: 70%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        a &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            margin: 50px;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">            text-decoration: none;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.5s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="css">            <span class="comment">/*transform: translateY(-10px);*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="undefined">            -webkit-transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">            transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        p &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 14px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#333333</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span>&#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            bottom: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fe701d</span>;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">            height:  30px;</span></span><br><span class="line"><span class="undefined">            opacity: 0;</span></span><br><span class="line"><span class="undefined">            text-align: left;</span></span><br><span class="line"><span class="undefined">            padding: 10px 30px 20px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            opacity: 1;</span></span><br><span class="line"><span class="undefined">            height: 55px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#d00a0a</span>;</span></span><br><span class="line"><span class="undefined">            font-size: 16px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">del</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        em &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">            font-style: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"product"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pms_1524883847.49276938!220x220.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    小米电视4A 43英寸青春版<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">em</span>&gt;</span>全高清屏 / 人工智能语音<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"price"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>1499<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">del</span>&gt;</span>1699<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span></span><br><span class="line">                一如既往的好，小米情怀<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                来自 惊喜 的评价</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
@@ -841,29 +901,12 @@
       </tags>
   </entry>
   <entry>
-    <title>css案例4 3D</title>
-    <url>/2020/04/27/css%E6%A1%88%E4%BE%8B4/</url>
-    <content><![CDATA[<p>3D盒子效果：</p>
-<p><img src="https://s1.ax1x.com/2020/04/29/J7DZLT.gif" alt="J7DZLT.gif" style="zoom:50%;"></p>
-<p>代码：</p>
-<p>⚠️perspective值越小，视觉效果越强。</p>
-<p>⚠️先旋转后平移，平移方向一致。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #e7e7e7;*/</span></span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            perspective: 2000px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">            transition: all 2s;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotate3d(1, 1, 0, -50deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">            transform: translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightcoral;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.right</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightskyblue;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>01-前面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span>05-上面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>04-右面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>另一个3D效果：</p>
-<p><img src="https://s1.ax1x.com/2020/04/29/J7r8hj.gif" alt="J7r8hj.gif"></p>
-<p>代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul li &#123;</span></span><br><span class="line"><span class="undefined">            height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 120px;</span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            perspective: 5000px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.4s</span>;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*把正面的往前走，而不是让底部的往后走*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: pink;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateZ</span>(17<span class="selector-class">.5px</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateY</span>(17<span class="selector-class">.5px</span>) <span class="selector-tag">rotateX</span>(<span class="selector-tag">-90deg</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS案例2 新闻横向轮播</title>
     <url>/2020/04/28/css%E6%A1%88%E4%BE%8B5/</url>
     <content><![CDATA[<p>效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geayp11dkfg30d205u7dq.gif" alt="Apr-29-2020 21-32-41" style="zoom:50%;"></p>
 <p>重点：</p>
+<a id="more"></a>
 <ul>
 <li><strong>要有两段重复的文字</strong>（所以位置要是absolute，父元素relative）</li>
 <li>注意循环元素的长度</li>
@@ -878,12 +921,58 @@
       </tags>
   </entry>
   <entry>
+    <title>css案例4 3D</title>
+    <url>/2020/04/27/css%E6%A1%88%E4%BE%8B4/</url>
+    <content><![CDATA[<p>3D盒子效果：</p>
+<p><img src="https://s1.ax1x.com/2020/04/29/J7DZLT.gif" alt="J7DZLT.gif" style="zoom:50%;"></p>
+<p>代码：</p>
+<a id="more"></a>
+<p>⚠️perspective值越小，视觉效果越强。</p>
+<p>⚠️先旋转后平移，平移方向一致。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #e7e7e7;*/</span></span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            perspective: 2000px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">            transition: all 2s;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotate3d(1, 1, 0, -50deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">            transform: translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightcoral;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.right</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: lightskyblue;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>01-前面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span>05-上面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>04-右面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>另一个3D效果：</p>
+<p><img src="https://s1.ax1x.com/2020/04/29/J7r8hj.gif" alt="J7r8hj.gif"></p>
+<p>代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul &#123;</span></span><br><span class="line"><span class="undefined">            margin: 100px;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        ul li &#123;</span></span><br><span class="line"><span class="undefined">            height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 120px;</span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            perspective: 5000px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.4s</span>;</span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 35px;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*把正面的往前走，而不是让底部的往后走*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.front</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: pink;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateZ</span>(17<span class="selector-class">.5px</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bottom</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#a2d1d5</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transform</span>: <span class="selector-tag">translateY</span>(17<span class="selector-class">.5px</span>) <span class="selector-tag">rotateX</span>(<span class="selector-tag">-90deg</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>我想要<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>实习啊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git@github.com: Permission denied (publickey)</title>
+    <url>/2018/05/27/git%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>遇到<code>Error: git@github.com: Permission denied (publickey).</code>如何解决：</p>
+<ol>
+<li><code>ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot;</code> 生成新的密匙</li>
+<li><code>eval &quot;$(ssh-agent -s)&quot;</code> 添加密匙到ssh-agent</li>
+<li><code>ssh-add -K ~/.ssh/id_rsa</code>  添加生成的SSH key到ssh-agent</li>
+<li>把id_rsa.pub里的复制上git的ssh的key里就好了。<ol>
+<li>Windows下可以用<code>xclip -sel c ~/.ssh/id_rsa.pub</code>复制到剪贴板。</li>
+</ol>
+</li>
+<li>运行完以上命令，<strong>重启终端！！！</strong></li>
+</ol>
+<hr>
+<p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
+<p>2019.7.5：</p>
+<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
+<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
+<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
+<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Flex布局</title>
     <url>/2020/05/02/fix%E5%B8%83%E5%B1%80/</url>
     <content><![CDATA[<ol>
 <li><p>任何容器都可以使用flex布局。</p>
 </li>
 <li><p>父盒子设为flex后，子元素的flex，clear和vertical-align失效。</p>
+<a id="more"></a>
 </li>
 <li><p>子容器可以横向排列也可以纵向排列。</p>
 </li>
@@ -934,34 +1023,43 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Flex</tag>
         <tag>布局</tag>
+        <tag>Flex</tag>
       </tags>
   </entry>
   <entry>
-    <title>git@github.com: Permission denied (publickey)</title>
-    <url>/2018/05/27/git%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>遇到<code>Error: git@github.com: Permission denied (publickey).</code>如何解决：</p>
+    <title>python3 将带界面的py打包成Mac能用的app</title>
+    <url>/2018/12/30/python3-%E6%89%93%E5%8C%85%E6%88%90Mac%E8%83%BD%E7%94%A8%E7%9A%84app/</url>
+    <content><![CDATA[<h1 id="使用修改过的py2app打包"><a href="#使用修改过的py2app打包" class="headerlink" title="使用修改过的py2app打包"></a>使用修改过的<strong>py2app</strong>打包</h1><p>步骤：</p>
 <ol>
-<li><code>ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot;</code> 生成新的密匙</li>
-<li><code>eval &quot;$(ssh-agent -s)&quot;</code> 添加密匙到ssh-agent</li>
-<li><code>ssh-add -K ~/.ssh/id_rsa</code>  添加生成的SSH key到ssh-agent</li>
-<li>把id_rsa.pub里的复制上git的ssh的key里就好了。<ol>
-<li>Windows下可以用<code>xclip -sel c ~/.ssh/id_rsa.pub</code>复制到剪贴板。</li>
-</ol>
+<li><p>创建一个文件夹</p>
+<p><code>$mkdir FileName</code></p>
 </li>
-<li>运行完以上命令，<strong>重启终端！！！</strong></li>
+<li><p>创建一个<code>virtualenv</code>环境</p>
+<p><code>$virtualenv venv</code></p>
+<p><code>$. venv/bin/activate</code></p>
+</li>
+<li><p>将要打包的py放到上面建的文件夹中（我没试过打包多个py文件，因为我就写了个小的试试手）</p>
+<a id="more"></a>
+</li>
+<li><p>安装修改过的<code>py2app</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pip install -U git+https://github.com/metachris/py2app.git@master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建<code>setup.py</code>文件</p>
+<p><code>$py2app --make-setup filename.py</code></p>
+</li>
+<li><p>创建应用</p>
+<p><code>$python3 setup.py py2app -A</code></p>
+</li>
+<li><p>完成！app在dist子文件夹中</p>
+</li>
 </ol>
-<hr>
-<p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
-<p>2019.7.5：</p>
-<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
-<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
-<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
-<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
+<blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/afb6b2b97ce9" target="_blank" rel="noopener">https://www.jianshu.com/p/afb6b2b97ce9</a></p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>git</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -969,6 +1067,7 @@
     <url>/2020/05/08/jQuery/</url>
     <content><![CDATA[<ol>
 <li><p><code>$</code>是jQuery中的顶级元素，是<code>jQuery</code>的代替。</p>
+<a id="more"></a>
 </li>
 <li><p>在页内的DOM元素渲染完再执行。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
@@ -1230,45 +1329,11 @@
       </tags>
   </entry>
   <entry>
-    <title>python3 将带界面的py打包成Mac能用的app</title>
-    <url>/2018/12/30/python3-%E6%89%93%E5%8C%85%E6%88%90Mac%E8%83%BD%E7%94%A8%E7%9A%84app/</url>
-    <content><![CDATA[<h1 id="使用修改过的py2app打包"><a href="#使用修改过的py2app打包" class="headerlink" title="使用修改过的py2app打包"></a>使用修改过的<strong>py2app</strong>打包</h1><p>步骤：</p>
-<ol>
-<li><p>创建一个文件夹</p>
-<p><code>$mkdir FileName</code></p>
-</li>
-<li><p>创建一个<code>virtualenv</code>环境</p>
-<p><code>$virtualenv venv</code></p>
-<p><code>$. venv/bin/activate</code></p>
-</li>
-<li><p>将要打包的py放到上面建的文件夹中（我没试过打包多个py文件，因为我就写了个小的试试手）</p>
-<a id="more"></a>
-</li>
-<li><p>安装修改过的<code>py2app</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pip install -U git+https://github.com/metachris/py2app.git@master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建<code>setup.py</code>文件</p>
-<p><code>$py2app --make-setup filename.py</code></p>
-</li>
-<li><p>创建应用</p>
-<p><code>$python3 setup.py py2app -A</code></p>
-</li>
-<li><p>完成！app在dist子文件夹中</p>
-</li>
-</ol>
-<blockquote>
-<p>参考：<a href="https://www.jianshu.com/p/afb6b2b97ce9" target="_blank" rel="noopener">https://www.jianshu.com/p/afb6b2b97ce9</a></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>rem布局</title>
     <url>/2020/05/02/rem%E5%B8%83%E5%B1%80/</url>
     <content><![CDATA[<ol>
 <li><p>rem是单位</p>
+<a id="more"></a>
 </li>
 <li><p>em是相对于父元素的字体大小</p>
 </li>
@@ -1305,24 +1370,6 @@
       <tags>
         <tag>布局</tag>
         <tag>rem布局</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>var/let/const</title>
-    <url>/2020/05/08/var-let-const/</url>
-    <content><![CDATA[<p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
-<ol>
-<li>Var定义全局变量</li>
-<li>let定义局部变量，只在</li>
-<li>const常量，相当于一个指针，指向的内存的内容不可以变，对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。如果不想改变const指向的<strong>对象</strong>改变，使用<code>Object.freeze</code>方法。</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekwbvmjt7j30re0uitdj.jpg" alt="IMG_095BE9D6B689-1" style="zoom: 25%;"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1499,6 +1546,28 @@
       </tags>
   </entry>
   <entry>
+    <title>var/let/const</title>
+    <url>/2020/05/08/var-let-const/</url>
+    <content><![CDATA[<p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
+<ol>
+<li><p>Var定义全局变量</p>
+<a id="more"></a>
+</li>
+<li><p>let定义局部变量，只在</p>
+</li>
+<li><p>const常量，相当于一个指针，指向的内存的内容不可以变，对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。如果不想改变const指向的<strong>对象</strong>改变，使用<code>Object.freeze</code>方法。</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekwbvmjt7j30re0uitdj.jpg" alt="IMG_095BE9D6B689-1" style="zoom: 25%;"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分页式存储管理</title>
     <url>/2018/04/27/%E5%88%86%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>在第1部分实验基础上实现进程的分页式内存分配和地址转换过程，并进一步实现请求分页式存储分配和地址转换过程。页面置换算法至少应实现先进先出（FIFO）、最近最久未使用（LRU）等算法。</p>
@@ -1533,30 +1602,6 @@
         <tag>python</tag>
         <tag>OS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>复化求积公式</title>
-    <url>/2018/04/27/%E5%A4%8D%E5%8C%96%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)  <span class="comment"># Mac上这样才能用matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (math.e ** x) * math.cos(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">composite_integration_rule</span><span class="params">(a, b, e)</span>:</span></span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    h = b - a</span><br><span class="line">    Tn = (h / <span class="number">2</span>) * (func(a) + func(b))</span><br><span class="line">    Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">    T_2 = <span class="number">2</span> * Tn - Hn</span><br><span class="line">    T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> abs(T2n - Tn) &gt;= e:</span><br><span class="line">        Tn = T2n</span><br><span class="line">        n = <span class="number">2</span> * n</span><br><span class="line">        h = h / <span class="number">2</span></span><br><span class="line">        Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">        T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> n, h, T2n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    n, h, T2n = composite_integration_rule(<span class="number">0</span>, math.pi, <span class="number">10</span> ** (<span class="number">-6</span>))</span><br><span class="line">    print(T2n)</span><br><span class="line">    tmpx = np.arange(<span class="number">0</span>, np.pi, h)</span><br><span class="line">    plt.plot(tmpx, [func(each) <span class="keyword">for</span> each <span class="keyword">in</span> tmpx], linestyle=<span class="string">'-'</span>, color=<span class="string">'black'</span>)</span><br><span class="line">    <span class="keyword">for</span> rang <span class="keyword">in</span> range(n):</span><br><span class="line">        tmpx = [a + h * rang, a + h * rang, a + h * (rang + <span class="number">1</span>), a + h * (rang + <span class="number">1</span>)]</span><br><span class="line">        tmpy = [<span class="number">0</span>, func(tmpx[<span class="number">1</span>]), func(tmpx[<span class="number">2</span>]), <span class="number">0</span>]</span><br><span class="line">        c = [<span class="string">'r'</span>, <span class="string">'y'</span>, <span class="string">'b'</span>, <span class="string">'g'</span>]</span><br><span class="line">        plt.fill(tmpx, tmpy, color=c[rang % <span class="number">4</span>])</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数值分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数值分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安利一个Mac的翻墙app</title>
-    <url>/2018/08/27/%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAMac%E7%9A%84%E7%BF%BB%E5%A2%99app/</url>
-    <content><![CDATA[<p>强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。</p>
-<p>“Wise VPN”</p>
-<p>不是很贵，一季35RMB而已。</p>
-<p>Wise涨价了👋</p>
-<p>……最后还是用了小飞机……</p>
-<p>………………最后的最后，我投靠了坚果的怀抱</p>
-]]></content>
   </entry>
   <entry>
     <title>文件管理</title>
@@ -1597,6 +1642,30 @@
       </tags>
   </entry>
   <entry>
+    <title>安利一个Mac的翻墙app</title>
+    <url>/2018/08/27/%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAMac%E7%9A%84%E7%BF%BB%E5%A2%99app/</url>
+    <content><![CDATA[<p>强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。</p>
+<p>“Wise VPN”</p>
+<p>不是很贵，一季35RMB而已。</p>
+<p>Wise涨价了👋</p>
+<p>……最后还是用了小飞机……</p>
+<p>………………最后的最后，我投靠了坚果的怀抱</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>复化求积公式</title>
+    <url>/2018/04/27/%E5%A4%8D%E5%8C%96%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)  <span class="comment"># Mac上这样才能用matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (math.e ** x) * math.cos(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">composite_integration_rule</span><span class="params">(a, b, e)</span>:</span></span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    h = b - a</span><br><span class="line">    Tn = (h / <span class="number">2</span>) * (func(a) + func(b))</span><br><span class="line">    Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">    T_2 = <span class="number">2</span> * Tn - Hn</span><br><span class="line">    T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> abs(T2n - Tn) &gt;= e:</span><br><span class="line">        Tn = T2n</span><br><span class="line">        n = <span class="number">2</span> * n</span><br><span class="line">        h = h / <span class="number">2</span></span><br><span class="line">        Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">        T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> n, h, T2n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    n, h, T2n = composite_integration_rule(<span class="number">0</span>, math.pi, <span class="number">10</span> ** (<span class="number">-6</span>))</span><br><span class="line">    print(T2n)</span><br><span class="line">    tmpx = np.arange(<span class="number">0</span>, np.pi, h)</span><br><span class="line">    plt.plot(tmpx, [func(each) <span class="keyword">for</span> each <span class="keyword">in</span> tmpx], linestyle=<span class="string">'-'</span>, color=<span class="string">'black'</span>)</span><br><span class="line">    <span class="keyword">for</span> rang <span class="keyword">in</span> range(n):</span><br><span class="line">        tmpx = [a + h * rang, a + h * rang, a + h * (rang + <span class="number">1</span>), a + h * (rang + <span class="number">1</span>)]</span><br><span class="line">        tmpy = [<span class="number">0</span>, func(tmpx[<span class="number">1</span>]), func(tmpx[<span class="number">2</span>]), <span class="number">0</span>]</span><br><span class="line">        c = [<span class="string">'r'</span>, <span class="string">'y'</span>, <span class="string">'b'</span>, <span class="string">'g'</span>]</span><br><span class="line">        plt.fill(tmpx, tmpy, color=c[rang % <span class="number">4</span>])</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数值分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数值分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>新建Java Web项目的小小小问题</title>
     <url>/2019/08/22/%E6%96%B0%E5%BB%BAJava-Web%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>这个问题真的是一言难尽</p>
@@ -1606,6 +1675,17 @@
       <tags>
         <tag>Java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>沉迷游戏</title>
+    <url>/2018/05/31/%E6%B2%89%E8%BF%B7%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<p>最近沉迷模拟人生……过两天还有操作系统要考，怕不是凉了呀。</p>
+<p>不过捏脸是真的很好玩……</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fruvy17jsaj30ac0budip.jpg" alt="&#39;充满活力！&#39;"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
   </entry>
   <entry>
     <title>最大子段和</title>
@@ -1626,6 +1706,7 @@
     <content><![CDATA[<p>效果：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gembcsid83j30zy0ikwfp.jpg" alt="image-20200509171231775" style="zoom:50%;"></p>
 <p>重点：</p>
+<a id="more"></a>
 <ol>
 <li>每次键盘“回车”、删除和点击checkbox都要进行判断</li>
 <li>要以JSON格式存储。</li>
@@ -1646,59 +1727,12 @@
       </tags>
   </entry>
   <entry>
-    <title>沉迷游戏</title>
-    <url>/2018/05/31/%E6%B2%89%E8%BF%B7%E6%B8%B8%E6%88%8F/</url>
-    <content><![CDATA[<p>最近沉迷模拟人生……过两天还有操作系统要考，怕不是凉了呀。</p>
-<p>不过捏脸是真的很好玩……</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fruvy17jsaj30ac0budip.jpg" alt="&#39;充满活力！&#39;"></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>泛型</title>
-    <url>/2019/07/05/%E6%B3%9B%E5%9E%8B/</url>
-    <content><![CDATA[<p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
-<p><strong>以下资料出自于实验楼</strong></p>
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
-<p>泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。</p>
-</blockquote>
-<p>定义泛型的规则：</p>
-<ul>
-<li>只能是类类型，不能是简单数据类型</li>
-<li>泛型参数可以有多个</li>
-<li>可以用使用 extends 语句或者 super 语句 如<code>&lt;T extends superClass&gt;</code>表示类型的上界，T 只能是 superClass 或其子类， <code>&lt;K super childClass&gt;</code>表示类型的下界，K 只能是 childClass 或其父类。</li>
-<li>可以是通配符类型，比如常见的 <code>Class&lt;?&gt;</code></li>
-</ul>
-<a id="more"></a>
-<h2 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。</span></span><br><span class="line"><span class="comment">    注意，父类定义的类型参数不能被子类继承。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//getter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//setter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义泛型类 Test 的一个Integer版本</span></span><br><span class="line">        Test&lt;Integer&gt; intOb = <span class="keyword">new</span> Test&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">        intOb.showType();</span><br><span class="line">        <span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">        System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line">        <span class="comment">// 定义泛型类Test的一个String版本</span></span><br><span class="line">        Test&lt;String&gt; strOb = <span class="keyword">new</span> Test&lt;String&gt;(<span class="string">"String!"</span>);</span><br><span class="line">        strOb.showType();</span><br><span class="line">        String s = strOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像<code>ArrayList</code>。</p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器私有前缀</title>
-    <url>/2020/04/29/%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80/</url>
-    <content><![CDATA[<p>为兼容老版本浏览器。</p>
-<ul>
-<li><code>-moz-</code>Firefox</li>
-<li><code>-ms-</code>ie</li>
-<li><code>-webkit</code>Chrome, Safari</li>
-<li><code>-o-</code>Opera</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title>移动web</title>
     <url>/2020/04/29/%E7%A7%BB%E5%8A%A8web/</url>
     <content><![CDATA[<ol>
-<li>meta视口标签</li>
+<li><p>meta视口标签</p>
+<a id="more"></a>
+</li>
 </ol>
 <ul>
 <li><code>&lt;meta name=&quot;viewpoint&quot; content=&quot;width=device-width, user-scale=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0&quot;&gt;</code></li>
@@ -1761,50 +1795,43 @@
       </categories>
   </entry>
   <entry>
-    <title>流式布局</title>
-    <url>/2020/04/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%A1%88%E4%BE%8B/</url>
-    <content><![CDATA[<p>流式布局效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gec59r4jrzj30t217ykjl.jpg" alt="image-20200430220623551" style="zoom: 25%;"></p>
-<p>重点：</p>
+    <title>泛型</title>
+    <url>/2019/07/05/%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
+<p><strong>以下资料出自于实验楼</strong></p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
+<p>泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。</p>
+</blockquote>
+<p>定义泛型的规则：</p>
 <ul>
-<li><p>使用百分比。</p>
-</li>
-<li><p>盒子使用<code>box-sizing: border-box;</code></p>
-</li>
-<li>固定（fixed）盒子要宽度。</li>
+<li>只能是类类型，不能是简单数据类型</li>
+<li>泛型参数可以有多个</li>
+<li>可以用使用 extends 语句或者 super 语句 如<code>&lt;T extends superClass&gt;</code>表示类型的上界，T 只能是 superClass 或其子类， <code>&lt;K super childClass&gt;</code>表示类型的下界，K 只能是 childClass 或其父类。</li>
+<li>可以是通配符类型，比如常见的 <code>Class&lt;?&gt;</code></li>
 </ul>
-<p>Flex布局效果：</p>
-<p>没啥重点，就是好写，flex的数字可以是百分比。</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geefu6860gj30u01qcqv5.jpg" alt="image-20200502214301096" style="zoom:33%;"></p>
+<a id="more"></a>
+<h2 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。</span></span><br><span class="line"><span class="comment">    注意，父类定义的类型参数不能被子类继承。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//getter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//setter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义泛型类 Test 的一个Integer版本</span></span><br><span class="line">        Test&lt;Integer&gt; intOb = <span class="keyword">new</span> Test&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">        intOb.showType();</span><br><span class="line">        <span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">        System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line">        <span class="comment">// 定义泛型类Test的一个String版本</span></span><br><span class="line">        Test&lt;String&gt; strOb = <span class="keyword">new</span> Test&lt;String&gt;(<span class="string">"String!"</span>);</span><br><span class="line">        strOb.showType();</span><br><span class="line">        String s = strOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像<code>ArrayList</code>。</p>
 ]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
       <tags>
-        <tag>布局</tag>
-        <tag>流式布局</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
-    <title>返回顶部案例</title>
-    <url>/2020/05/23/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%A1%88%E4%BE%8B/</url>
-    <content><![CDATA[<p>效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1genbs99m4jg304s05cn1z.gif" alt="未命名"></p>
-<p>重点：</p>
-<ol>
-<li>返回顶部按钮最开始隐藏</li>
-<li>滑动滚轮的时候判断滚动的距离</li>
-<li>到达指定的距离按钮出现</li>
-</ol>
-<p>代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 指定的出现位置</span></span><br><span class="line">    <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 返回顶部按钮</span></span><br><span class="line">    $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">            scrollTop: <span class="number">0</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    <title>浏览器私有前缀</title>
+    <url>/2020/04/29/%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80/</url>
+    <content><![CDATA[<p>为兼容老版本浏览器。</p>
+<a id="more"></a>
+<ul>
+<li><code>-moz-</code>Firefox</li>
+<li><code>-ms-</code>ie</li>
+<li><code>-webkit</code>Chrome, Safari</li>
+<li><code>-o-</code>Opera</li>
+</ul>
 ]]></content>
       <categories>
         <category>前端</category>
       </categories>
-      <tags>
-        <tag>jQuery</tag>
-      </tags>
   </entry>
   <entry>
     <title>进程控制</title>
@@ -1829,6 +1856,32 @@
 ]]></content>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>流式布局</title>
+    <url>/2020/04/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p>流式布局效果：</p>
+<a id="more"></a>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gec59r4jrzj30t217ykjl.jpg" alt="image-20200430220623551" style="zoom: 25%;"></p>
+<p>重点：</p>
+<ul>
+<li><p>使用百分比。</p>
+</li>
+<li><p>盒子使用<code>box-sizing: border-box;</code></p>
+</li>
+<li>固定（fixed）盒子要宽度。</li>
+</ul>
+<p>Flex布局效果：</p>
+<p>没啥重点，就是好写，flex的数字可以是百分比。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geefu6860gj30u01qcqv5.jpg" alt="image-20200502214301096" style="zoom:33%;"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>布局</tag>
+        <tag>流式布局</tag>
       </tags>
   </entry>
   <entry>
@@ -1891,49 +1944,25 @@
       </tags>
   </entry>
   <entry>
-    <title>Bootstrap案例-响应式布局</title>
-    <url>/2020/05/23/Bootstrap%E6%A1%88%E4%BE%8B-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<p>响应式布局效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75gkkc7j31i20u01kx.jpg" alt="image-20200509144701655" style="zoom: 25%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75pddy9j30uk0u0b1b.jpg" alt="image-20200509144718462" style="zoom:25%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75zctn2j30ri14wtu0.jpg" alt="image-20200509144734728" style="zoom:25%;"></p>
+    <title>返回顶部案例</title>
+    <url>/2020/05/23/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p>效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1genbs99m4jg304s05cn1z.gif" alt="未命名"></p>
+<p>重点：</p>
+<ol>
+<li>返回顶部按钮最开始隐藏</li>
+<li>滑动滚轮的时候判断滚动的距离</li>
+<li>到达指定的距离按钮出现</li>
+</ol>
+<p>代码：</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 指定的出现位置</span></span><br><span class="line">    <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 返回顶部按钮</span></span><br><span class="line">    $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">            scrollTop: <span class="number">0</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Bootstrap</tag>
-        <tag>布局</tag>
-        <tag>响应式布局</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AOP</title>
-    <url>/2019/08/19/AOP/</url>
-    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
-<p>从某些角度来讲AOP是OOP的补充。</p>
-<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
-<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
-<a id="more"></a>
-<p>AOP的基本概念：</p>
-<ul>
-<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
-<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
-<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
-<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
-</ul>
-<p>Spring的AOP支持：</p>
-<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
-<ol>
-<li><code>aspctjweaver.jar</code></li>
-<li><code>aspectjrt.jar</code></li>
-<li><code>aopalliance.jar</code></li>
-</ol>
-<p>并在Spring配置文件中做出如下配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Java</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
