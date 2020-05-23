@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AOP</title>
+    <url>/2019/08/19/AOP/</url>
+    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
+<p>从某些角度来讲AOP是OOP的补充。</p>
+<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
+<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
+<a id="more"></a>
+<p>AOP的基本概念：</p>
+<ul>
+<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
+<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
+<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
+<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
+</ul>
+<p>Spring的AOP支持：</p>
+<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
+<ol>
+<li><code>aspctjweaver.jar</code></li>
+<li><code>aspectjrt.jar</code></li>
+<li><code>aopalliance.jar</code></li>
+</ol>
+<p>并在Spring配置文件中做出如下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ajax基础练习</title>
     <url>/2020/05/23/Ajax/</url>
     <content><![CDATA[<p>用户不需要刷新界面即可将数据发到服务器或从服务器取得数据。</p>
@@ -49,35 +78,6 @@
         <tag>Bootstrap</tag>
         <tag>布局</tag>
         <tag>响应式布局</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AOP</title>
-    <url>/2019/08/19/AOP/</url>
-    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
-<p>从某些角度来讲AOP是OOP的补充。</p>
-<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
-<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
-<a id="more"></a>
-<p>AOP的基本概念：</p>
-<ul>
-<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
-<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
-<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
-<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
-</ul>
-<p>Spring的AOP支持：</p>
-<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
-<ol>
-<li><code>aspctjweaver.jar</code></li>
-<li><code>aspectjrt.jar</code></li>
-<li><code>aopalliance.jar</code></li>
-</ol>
-<p>并在Spring配置文件中做出如下配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -201,6 +201,126 @@
       </tags>
   </entry>
   <entry>
+    <title>Django</title>
+    <url>/2018/06/09/Django/</url>
+    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
+<p>溜了溜了。</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django（疯狂踩雷</title>
+    <url>/2020/03/02/Django%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
+<p>python3.7+Django3+Bootstrap4</p>
+<p>行了，最不稳定的就是我了！</p>
+<p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
+<a id="more"></a>
+<p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
+<ol>
+<li>创建project</li>
+</ol>
+<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
+<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
+<p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
+<ol start="2">
+<li>创建app</li>
+</ol>
+<p>在项目里建app</p>
+<p><code>python3 manage.py startapp app_name</code></p>
+<p>在pycharm的命令行里运行👆就行。</p>
+<p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
+<p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
+<p>框里的是我的app</p>
+<ol start="3">
+<li>分离各个app的urls（方便管理</li>
+</ol>
+<p>project自带的urls.py⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
+<p>app的urls.py⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
+<ol start="4">
+<li>连接数据库（mysql）</li>
+</ol>
+<p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
+<p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
+<p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
+<p>在setting同级的<code>_init_.py</code>文件里写：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<p>……然后Django嫌弃我的mysql，行叭。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
+<p>认真的说，Django3是不是和我有仇。</p>
+<p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
+<p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
+<p>==如果用的是<strong>Django2.0+</strong>，就不用在init那个文件写东西了，直接安装mysqlclient就行。==</p>
+<ol start="5">
+<li>使用数据库（？</li>
+</ol>
+<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
+<p>对于Django来说，</p>
+<p>Views.py-&gt;MVC中的Control</p>
+<p>Models.py-&gt;MVC中的Model</p>
+<p>各种html-&gt;MVC中的View</p>
+<p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
+<p>view里面的代码⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
+<ol start="6">
+<li>提交表单（POST</li>
+</ol>
+<p>遇到问题</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
+<p>也给出了解答</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
+<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
+<ol start="7">
+<li>在html里面显示数据</li>
+</ol>
+<p>要具备以下条件：</p>
+<ul>
+<li>models里面有数据库表的类</li>
+<li>views里有models里面类的对象（见5⃣️</li>
+<li>将对象通过字典返回到html里</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"your_html"</span>, &#123;<span class="string">"html里变量的名字"</span>: 对象&#125;)  <span class="comment"># 这个字典里可以放多个变量，甚至是你要传递给前台的信息提示</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>前台使用Django的……我也不知道叫什么</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
+<ul>
+<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
+</ul>
+<p>例子：</p>
+<p>我的models：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
+<p>我的views：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
+<p>我的html：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
+<ol start="8">
+<li>在a标签的链接里带参数</li>
+</ol>
+<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
+<ol start="9">
+<li>Django使用session</li>
+</ol>
+<p>在Django里使用session一定要执行下面的命令……我会说我因为不知道差点重装了mysql和python吗😭</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Bootstrap</tag>
+        <tag>python</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git操作</title>
     <url>/2019/08/16/Git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Git-安装配置"><a href="#Git-安装配置" class="headerlink" title="Git 安装配置"></a>Git 安装配置</h2><h3 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h3><p>配置个人信息</p>
@@ -274,8 +394,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -467,8 +587,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -509,50 +629,6 @@
         <tag>Node.js</tag>
         <tag>MongoDB</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Less</title>
-    <url>/2020/05/03/Less/</url>
-    <content><![CDATA[<ol>
-<li><p>格式：<code>@color: pink;</code></p>
-<a id="more"></a>
-</li>
-<li><p>嵌套：子元素的样式直接写到父元素里。</p>
-<ol>
-<li><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: pink;</span><br><span class="line">	<span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>使用<code>&amp;</code>表示是伪类/伪元素/交集选择器。</p>
-<ol>
-<li><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	<span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#2eaae0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>注释用<code>//</code>。</p>
-</li>
-<li><p>可以使用加减乘除。</p>
-<ol>
-<li><strong>运算符左右用空格隔开</strong>。</li>
-<li>如果只有一个数有单位，就以这个单位为结果。</li>
-<li>两个的单位不一致，以第一个单位为准。</li>
-</ol>
-</li>
-<li><p>适配方案：媒体查询。</p>
-<ol>
-<li>less+媒体查询+rem<ol>
-<li>动态设置html标签的font-size。</li>
-<li>元素大小取值方法：元素rem=（设计稿中）页面元素值px/（屏幕宽度/划分的份数）</li>
-</ol>
-</li>
-<li><strong>flexible.js+rem</strong></li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
   </entry>
   <entry>
     <title>MongoDB练手项目</title>
@@ -668,6 +744,31 @@
       </tags>
   </entry>
   <entry>
+    <title>SQLite3在python3中的基础用法</title>
+    <url>/2018/06/17/SQLite3%E5%9C%A8python3%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="创建-连接数据库"><a href="#创建-连接数据库" class="headerlink" title="创建/连接数据库"></a>创建/连接数据库</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line">conn = sqlite3.connect(<span class="string">'example.db'</span>)  </span><br><span class="line">cursor = conn.cursor()</span><br></pre></td></tr></table></figure>
+<h2 id="建立一张叫user的表"><a href="#建立一张叫user的表" class="headerlink" title="建立一张叫user的表"></a>建立一张叫user的表</h2><a id="more"></a>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'create table user(id varchar(20) primary key, name verchar(20), password verchar(20), rights int)'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="插入行"><a href="#插入行" class="headerlink" title="插入行"></a>插入行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00001', 'Adam', 'A00001', 0)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00002', 'Bart', 'A00002', 2)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00003', 'Lisa', 'A00003', 1)"</span>)</span><br><span class="line">mess = [a, b, c, d]</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values (?, ?, ?, ?)"</span>, mess)</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t = cursor.execute(<span class="string">'select * from user where user.name!="Lisa"'</span>)  </span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> t:</span><br><span class="line">    print(row)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># ('A00001', 'Adam', 'A00001', 0)</span></span><br><span class="line"><span class="comment"># ('A00002', 'Bart', 'A00002', 2)</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改了表之后要commit"><a href="#修改了表之后要commit" class="headerlink" title="修改了表之后要commit"></a>修改了表之后要commit</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
+<h2 id="做完了你要做的要close"><a href="#做完了你要做的要close" class="headerlink" title="做完了你要做的要close"></a>做完了你要做的要close</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"update user set name=? where id=?"</span>, (<span class="string">'Maya'</span>, id))</span><br></pre></td></tr></table></figure>
+<h2 id="删除一行"><a href="#删除一行" class="headerlink" title="删除一行"></a>删除一行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'delete from user where id=?'</span>, (id, ))</span><br></pre></td></tr></table></figure>
+<h2 id="更新表"><a href="#更新表" class="headerlink" title="更新表"></a>更新表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"alter table table_name add clum type"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明:ALTER TABLE和SQLite  SQLite对使用ALTER TABLE执行的操作有所限制。最重要的一个限制是，它不支持使用ALTER TABLE定义主键和外键，这些必须在最初创建表 时指定。 </p>
+</blockquote>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>最常使用的通配符是百分号(%)。在搜索串中，%表示任何字符出现任意次数。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"select * from user where name like 'H%'"</span>)</span><br><span class="line">cursor.execute(<span class="string">"select * from doc where name like ? and new=1"</span>, (name, ))</span><br></pre></td></tr></table></figure>
+<p>我用pycharm建的数据库不知道为什么是只读的，用sqlitestudio建的就没什么问题。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>SQLite</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS权重</title>
     <url>/2020/04/28/css%E6%9D%83%E9%87%8D/</url>
     <content><![CDATA[<p>总结：</p>
@@ -702,29 +803,48 @@
       </tags>
   </entry>
   <entry>
-    <title>SQLite3在python3中的基础用法</title>
-    <url>/2018/06/17/SQLite3%E5%9C%A8python3%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="创建-连接数据库"><a href="#创建-连接数据库" class="headerlink" title="创建/连接数据库"></a>创建/连接数据库</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line">conn = sqlite3.connect(<span class="string">'example.db'</span>)  </span><br><span class="line">cursor = conn.cursor()</span><br></pre></td></tr></table></figure>
-<h2 id="建立一张叫user的表"><a href="#建立一张叫user的表" class="headerlink" title="建立一张叫user的表"></a>建立一张叫user的表</h2><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'create table user(id varchar(20) primary key, name verchar(20), password verchar(20), rights int)'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="插入行"><a href="#插入行" class="headerlink" title="插入行"></a>插入行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00001', 'Adam', 'A00001', 0)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00002', 'Bart', 'A00002', 2)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00003', 'Lisa', 'A00003', 1)"</span>)</span><br><span class="line">mess = [a, b, c, d]</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values (?, ?, ?, ?)"</span>, mess)</span><br></pre></td></tr></table></figure>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t = cursor.execute(<span class="string">'select * from user where user.name!="Lisa"'</span>)  </span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> t:</span><br><span class="line">    print(row)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># ('A00001', 'Adam', 'A00001', 0)</span></span><br><span class="line"><span class="comment"># ('A00002', 'Bart', 'A00002', 2)</span></span><br></pre></td></tr></table></figure>
-<h2 id="修改了表之后要commit"><a href="#修改了表之后要commit" class="headerlink" title="修改了表之后要commit"></a>修改了表之后要commit</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
-<h2 id="做完了你要做的要close"><a href="#做完了你要做的要close" class="headerlink" title="做完了你要做的要close"></a>做完了你要做的要close</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"update user set name=? where id=?"</span>, (<span class="string">'Maya'</span>, id))</span><br></pre></td></tr></table></figure>
-<h2 id="删除一行"><a href="#删除一行" class="headerlink" title="删除一行"></a>删除一行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'delete from user where id=?'</span>, (id, ))</span><br></pre></td></tr></table></figure>
-<h2 id="更新表"><a href="#更新表" class="headerlink" title="更新表"></a>更新表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"alter table table_name add clum type"</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>说明:ALTER TABLE和SQLite  SQLite对使用ALTER TABLE执行的操作有所限制。最重要的一个限制是，它不支持使用ALTER TABLE定义主键和外键，这些必须在最初创建表 时指定。 </p>
-</blockquote>
-<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>最常使用的通配符是百分号(%)。在搜索串中，%表示任何字符出现任意次数。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"select * from user where name like 'H%'"</span>)</span><br><span class="line">cursor.execute(<span class="string">"select * from doc where name like ? and new=1"</span>, (name, ))</span><br></pre></td></tr></table></figure>
-<p>我用pycharm建的数据库不知道为什么是只读的，用sqlitestudio建的就没什么问题。</p>
+    <title>Less</title>
+    <url>/2020/05/03/Less/</url>
+    <content><![CDATA[<ol>
+<li><p>格式：<code>@color: pink;</code></p>
+<a id="more"></a>
+</li>
+<li><p>嵌套：子元素的样式直接写到父元素里。</p>
+<ol>
+<li><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: pink;</span><br><span class="line">	<span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>使用<code>&amp;</code>表示是伪类/伪元素/交集选择器。</p>
+<ol>
+<li><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	<span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#2eaae0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>注释用<code>//</code>。</p>
+</li>
+<li><p>可以使用加减乘除。</p>
+<ol>
+<li><strong>运算符左右用空格隔开</strong>。</li>
+<li>如果只有一个数有单位，就以这个单位为结果。</li>
+<li>两个的单位不一致，以第一个单位为准。</li>
+</ol>
+</li>
+<li><p>适配方案：媒体查询。</p>
+<ol>
+<li>less+媒体查询+rem<ol>
+<li>动态设置html标签的font-size。</li>
+<li>元素大小取值方法：元素rem=（设计稿中）页面元素值px/（屏幕宽度/划分的份数）</li>
+</ol>
+</li>
+<li><strong>flexible.js+rem</strong></li>
+</ol>
+</li>
+</ol>
 ]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>SQLite</tag>
-      </tags>
+      <categories>
+        <category>前端</category>
+      </categories>
   </entry>
   <entry>
     <title>CSS案例 热点图 打字机</title>
@@ -1492,8 +1612,8 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>数值分析</tag>
         <tag>python</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1740,126 +1860,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Django</title>
-    <url>/2018/06/09/Django/</url>
-    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
-<p>溜了溜了。</p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django（疯狂踩雷</title>
-    <url>/2020/03/02/Django%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
-<p>python3.7+Django3+Bootstrap4</p>
-<p>行了，最不稳定的就是我了！</p>
-<p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
-<a id="more"></a>
-<p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
-<ol>
-<li>创建project</li>
-</ol>
-<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
-<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
-<p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
-<ol start="2">
-<li>创建app</li>
-</ol>
-<p>在项目里建app</p>
-<p><code>python3 manage.py startapp app_name</code></p>
-<p>在pycharm的命令行里运行👆就行。</p>
-<p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
-<p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
-<p>框里的是我的app</p>
-<ol start="3">
-<li>分离各个app的urls（方便管理</li>
-</ol>
-<p>project自带的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
-<p>app的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
-<ol start="4">
-<li>连接数据库（mysql）</li>
-</ol>
-<p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
-<p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
-<p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
-<p>在setting同级的<code>_init_.py</code>文件里写：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
-<p>……然后Django嫌弃我的mysql，行叭。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
-<p>认真的说，Django3是不是和我有仇。</p>
-<p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
-<p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
-<p>==如果用的是<strong>Django2.0+</strong>，就不用在init那个文件写东西了，直接安装mysqlclient就行。==</p>
-<ol start="5">
-<li>使用数据库（？</li>
-</ol>
-<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
-<p>对于Django来说，</p>
-<p>Views.py-&gt;MVC中的Control</p>
-<p>Models.py-&gt;MVC中的Model</p>
-<p>各种html-&gt;MVC中的View</p>
-<p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
-<p>view里面的代码⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
-<ol start="6">
-<li>提交表单（POST</li>
-</ol>
-<p>遇到问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
-<p>也给出了解答</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
-<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
-<ol start="7">
-<li>在html里面显示数据</li>
-</ol>
-<p>要具备以下条件：</p>
-<ul>
-<li>models里面有数据库表的类</li>
-<li>views里有models里面类的对象（见5⃣️</li>
-<li>将对象通过字典返回到html里</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"your_html"</span>, &#123;<span class="string">"html里变量的名字"</span>: 对象&#125;)  <span class="comment"># 这个字典里可以放多个变量，甚至是你要传递给前台的信息提示</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>前台使用Django的……我也不知道叫什么</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
-<ul>
-<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
-</ul>
-<p>例子：</p>
-<p>我的models：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
-<p>我的views：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
-<p>我的html：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
-<ol start="8">
-<li>在a标签的链接里带参数</li>
-</ol>
-<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
-<ol start="9">
-<li>Django使用session</li>
-</ol>
-<p>在Django里使用session一定要执行下面的命令……我会说我因为不知道差点重装了mysql和python吗😭</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Bootstrap</tag>
-        <tag>python</tag>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>返回顶部案例</title>
     <url>/2020/05/08/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%A1%88%E4%BE%8B/</url>
     <content><![CDATA[<p>效果：</p>
@@ -1882,15 +1882,6 @@
       </tags>
   </entry>
   <entry>
-    <title>连接池</title>
-    <url>/2019/08/20/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h2 id="C3P0连接池的基础使用"><a href="#C3P0连接池的基础使用" class="headerlink" title="C3P0连接池的基础使用"></a>C3P0连接池的基础使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ComboPooledDataSource cpds = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">cpds.setDriverClass( <span class="string">"org.postgresql.Driver"</span> ); <span class="comment">//loads the jdbc driver            </span></span><br><span class="line">cpds.setJdbcUrl( <span class="string">"jdbc:postgresql://localhost/testdb"</span> );</span><br><span class="line">cpds.setUser(<span class="string">"dbuser"</span>);                                  </span><br><span class="line">cpds.setPassword(<span class="string">"dbpassword"</span>); </span><br><span class="line"></span><br><span class="line">cpds.setMaxStatements( <span class="number">180</span> ); <span class="comment">// 可选</span></span><br><span class="line">cpds.close();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>进程控制</title>
     <url>/2018/04/27/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。</p>
@@ -1904,6 +1895,15 @@
       <tags>
         <tag>python</tag>
         <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>连接池</title>
+    <url>/2019/08/20/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h2 id="C3P0连接池的基础使用"><a href="#C3P0连接池的基础使用" class="headerlink" title="C3P0连接池的基础使用"></a>C3P0连接池的基础使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ComboPooledDataSource cpds = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">cpds.setDriverClass( <span class="string">"org.postgresql.Driver"</span> ); <span class="comment">//loads the jdbc driver            </span></span><br><span class="line">cpds.setJdbcUrl( <span class="string">"jdbc:postgresql://localhost/testdb"</span> );</span><br><span class="line">cpds.setUser(<span class="string">"dbuser"</span>);                                  </span><br><span class="line">cpds.setPassword(<span class="string">"dbpassword"</span>); </span><br><span class="line"></span><br><span class="line">cpds.setMaxStatements( <span class="number">180</span> ); <span class="comment">// 可选</span></span><br><span class="line">cpds.close();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
