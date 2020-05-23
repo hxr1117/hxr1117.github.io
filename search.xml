@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AOP</title>
-    <url>/2019/08/19/AOP/</url>
-    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
-<p>从某些角度来讲AOP是OOP的补充。</p>
-<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
-<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
-<a id="more"></a>
-<p>AOP的基本概念：</p>
-<ul>
-<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
-<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
-<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
-<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
-</ul>
-<p>Spring的AOP支持：</p>
-<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
-<ol>
-<li><code>aspctjweaver.jar</code></li>
-<li><code>aspectjrt.jar</code></li>
-<li><code>aopalliance.jar</code></li>
-</ol>
-<p>并在Spring配置文件中做出如下配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bootstrap案例-响应式布局</title>
-    <url>/2020/05/23/Bootstrap%E6%A1%88%E4%BE%8B-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<p>响应式布局效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75gkkc7j31i20u01kx.jpg" alt="image-20200509144701655" style="zoom: 25%;"></p>
-<a id="more"></a>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75pddy9j30uk0u0b1b.jpg" alt="image-20200509144718462" style="zoom:25%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75zctn2j30ri14wtu0.jpg" alt="image-20200509144734728" style="zoom:25%;"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Bootstrap</tag>
-        <tag>布局</tag>
-        <tag>响应式布局</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ajax基础练习</title>
     <url>/2020/05/23/Ajax/</url>
     <content><![CDATA[<p>用户不需要刷新界面即可将数据发到服务器或从服务器取得数据。</p>
@@ -78,6 +31,53 @@
       </categories>
       <tags>
         <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap案例-响应式布局</title>
+    <url>/2020/05/10/Bootstrap%E6%A1%88%E4%BE%8B-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<p>响应式布局效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75gkkc7j31i20u01kx.jpg" alt="image-20200509144701655" style="zoom: 25%;"></p>
+<a id="more"></a>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75pddy9j30uk0u0b1b.jpg" alt="image-20200509144718462" style="zoom:25%;"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem75zctn2j30ri14wtu0.jpg" alt="image-20200509144734728" style="zoom:25%;"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+        <tag>布局</tag>
+        <tag>响应式布局</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AOP</title>
+    <url>/2019/08/19/AOP/</url>
+    <content><![CDATA[<p>AOP(面向切面编程)和OOP一样，是一种编程规范。</p>
+<p>从某些角度来讲AOP是OOP的补充。</p>
+<p>比如类A/B/C的某些位置都需要运行Z这段代码，但是因为OOP的原则无法再新建一个包含Z代码的方法的类D，让类A/B/C调用类D，因为这样会让类A/B/C有耦合。</p>
+<p>而AOP可以解决这个问题，<strong>在运行时，动态地将代码切入到类的指定方法、指定位置上。</strong>除此之外，还可以把和主业务无关的挪到AOP里，比如权限相关的代码。</p>
+<a id="more"></a>
+<p>AOP的基本概念：</p>
+<ul>
+<li>增强处理(Advice) AOP框架在特定的切入点执行增强处理。处理有”around”、”before”和”after”等类型。</li>
+<li>切面(Aspect) 用于组织多个Advice，Advice放在切面中定义。</li>
+<li>连接点(Joinpoint) 程序执行过程中明确的点，比如方法的调用或者异常的抛出。</li>
+<li>切入点(Pointcut) 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</li>
+</ul>
+<p>Spring的AOP支持：</p>
+<p>为在应用中使用<code>@AspectJ</code>支持，Spring需要添加上个库：</p>
+<ol>
+<li><code>aspctjweaver.jar</code></li>
+<li><code>aspectjrt.jar</code></li>
+<li><code>aopalliance.jar</code></li>
+</ol>
+<p>并在Spring配置文件中做出如下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--启动@AspectJ支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.shu.sprint.service"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.aspectj.lang.annotation.Aspect"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -201,115 +201,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Django（疯狂踩雷</title>
-    <url>/2020/03/02/Django%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
-<p>python3.7+Django3+Bootstrap4</p>
-<p>行了，最不稳定的就是我了！</p>
-<p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
-<a id="more"></a>
-<p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
-<ol>
-<li>创建project</li>
-</ol>
-<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
-<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
-<p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
-<ol start="2">
-<li>创建app</li>
-</ol>
-<p>在项目里建app</p>
-<p><code>python3 manage.py startapp app_name</code></p>
-<p>在pycharm的命令行里运行👆就行。</p>
-<p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
-<p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
-<p>框里的是我的app</p>
-<ol start="3">
-<li>分离各个app的urls（方便管理</li>
-</ol>
-<p>project自带的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
-<p>app的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
-<ol start="4">
-<li>连接数据库（mysql）</li>
-</ol>
-<p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
-<p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
-<p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
-<p>在setting同级的<code>_init_.py</code>文件里写：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
-<p>……然后Django嫌弃我的mysql，行叭。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
-<p>认真的说，Django3是不是和我有仇。</p>
-<p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
-<p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
-<p>==如果用的是<strong>Django2.0+</strong>，就不用在init那个文件写东西了，直接安装mysqlclient就行。==</p>
-<ol start="5">
-<li>使用数据库（？</li>
-</ol>
-<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
-<p>对于Django来说，</p>
-<p>Views.py-&gt;MVC中的Control</p>
-<p>Models.py-&gt;MVC中的Model</p>
-<p>各种html-&gt;MVC中的View</p>
-<p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
-<p>view里面的代码⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
-<ol start="6">
-<li>提交表单（POST</li>
-</ol>
-<p>遇到问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
-<p>也给出了解答</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
-<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
-<ol start="7">
-<li>在html里面显示数据</li>
-</ol>
-<p>要具备以下条件：</p>
-<ul>
-<li>models里面有数据库表的类</li>
-<li>views里有models里面类的对象（见5⃣️</li>
-<li>将对象通过字典返回到html里</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"your_html"</span>, &#123;<span class="string">"html里变量的名字"</span>: 对象&#125;)  <span class="comment"># 这个字典里可以放多个变量，甚至是你要传递给前台的信息提示</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>前台使用Django的……我也不知道叫什么</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
-<ul>
-<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
-</ul>
-<p>例子：</p>
-<p>我的models：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
-<p>我的views：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
-<p>我的html：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
-<ol start="8">
-<li>在a标签的链接里带参数</li>
-</ol>
-<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
-<ol start="9">
-<li>Django使用session</li>
-</ol>
-<p>在Django里使用session一定要执行下面的命令……我会说我因为不知道差点重装了mysql和python吗😭</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Bootstrap</tag>
-        <tag>python</tag>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git操作</title>
     <url>/2019/08/16/Git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Git-安装配置"><a href="#Git-安装配置" class="headerlink" title="Git 安装配置"></a>Git 安装配置</h2><h3 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h3><p>配置个人信息</p>
@@ -373,6 +264,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Hermite</title>
+    <url>/2018/04/27/Hermite/</url>
+    <content><![CDATA[<p><strong>Hermite插值多项式</strong></p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l</span><span class="params">(x, x1, k)</span>:</span></span><br><span class="line">    n = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> j != k:</span><br><span class="line">            n *= (x1 - x[j])/(x[k] - x[j])</span><br><span class="line">    <span class="keyword">return</span> n*n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l1</span><span class="params">(x, j)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> k != j:</span><br><span class="line">            n += <span class="number">1.0</span>/(x[j] - x[k])</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hermite</span><span class="params">(x, y, m, x1)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        a = (<span class="number">1</span> - <span class="number">2</span> * (x1 - x[j]) * l1(x, j)) * l(x, x1, j)</span><br><span class="line">        b = (x1 - x[j])*l(x, x1, j)</span><br><span class="line">        n += y[j] * a + m[j] * b</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">1.0</span>], np.float32)</span><br><span class="line">    y = np.array([<span class="number">0.904837</span>, <span class="number">0.818731</span>, <span class="number">0.740818</span>, <span class="number">0.670320</span>, <span class="number">0.606531</span>, <span class="number">0.548812</span>, <span class="number">0.496585</span>,</span><br><span class="line">                  <span class="number">0.449329</span>, <span class="number">0.406570</span>, <span class="number">0.367879</span>], np.float32)</span><br><span class="line">    m = np.array([<span class="number">-0.904837</span>, <span class="number">-0.818731</span>, <span class="number">-0.740818</span>, <span class="number">-0.670320</span>, <span class="number">-0.606531</span>, <span class="number">-0.548812</span>, <span class="number">-0.496585</span>,</span><br><span class="line">                  <span class="number">-0.449329</span>, <span class="number">-0.406570</span>, <span class="number">-0.367879</span>], np.float32)</span><br><span class="line">    print(hermite(x, y, m, <span class="number">0.55</span>))</span><br><span class="line">    a = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        a.append(i*<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    b = [hermite(x, y, m, i) <span class="keyword">for</span> i <span class="keyword">in</span> a]</span><br><span class="line">    <span class="comment"># print(hermite(x, y, m, 3))</span></span><br><span class="line">    plt.figure(<span class="string">"play"</span>)</span><br><span class="line">    ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">    plt.sca(ax1)</span><br><span class="line">    <span class="comment"># plt.plot(x, y, linestyle=' ', marker='o', color='b')</span></span><br><span class="line">    plt.plot(a, b, linestyle=<span class="string">'--'</span>, color=<span class="string">'r'</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数值分析</category>
+      </categories>
+      <tags>
+        <tag>数值分析</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript坑</title>
     <url>/2020/05/03/JavaScript%E5%9D%91/</url>
     <content><![CDATA[<ol>
@@ -387,21 +293,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hermite</title>
-    <url>/2018/04/27/Hermite/</url>
-    <content><![CDATA[<p><strong>Hermite插值多项式</strong></p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l</span><span class="params">(x, x1, k)</span>:</span></span><br><span class="line">    n = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> j != k:</span><br><span class="line">            n *= (x1 - x[j])/(x[k] - x[j])</span><br><span class="line">    <span class="keyword">return</span> n*n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l1</span><span class="params">(x, j)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> k != j:</span><br><span class="line">            n += <span class="number">1.0</span>/(x[j] - x[k])</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hermite</span><span class="params">(x, y, m, x1)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        a = (<span class="number">1</span> - <span class="number">2</span> * (x1 - x[j]) * l1(x, j)) * l(x, x1, j)</span><br><span class="line">        b = (x1 - x[j])*l(x, x1, j)</span><br><span class="line">        n += y[j] * a + m[j] * b</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">1.0</span>], np.float32)</span><br><span class="line">    y = np.array([<span class="number">0.904837</span>, <span class="number">0.818731</span>, <span class="number">0.740818</span>, <span class="number">0.670320</span>, <span class="number">0.606531</span>, <span class="number">0.548812</span>, <span class="number">0.496585</span>,</span><br><span class="line">                  <span class="number">0.449329</span>, <span class="number">0.406570</span>, <span class="number">0.367879</span>], np.float32)</span><br><span class="line">    m = np.array([<span class="number">-0.904837</span>, <span class="number">-0.818731</span>, <span class="number">-0.740818</span>, <span class="number">-0.670320</span>, <span class="number">-0.606531</span>, <span class="number">-0.548812</span>, <span class="number">-0.496585</span>,</span><br><span class="line">                  <span class="number">-0.449329</span>, <span class="number">-0.406570</span>, <span class="number">-0.367879</span>], np.float32)</span><br><span class="line">    print(hermite(x, y, m, <span class="number">0.55</span>))</span><br><span class="line">    a = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        a.append(i*<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    b = [hermite(x, y, m, i) <span class="keyword">for</span> i <span class="keyword">in</span> a]</span><br><span class="line">    <span class="comment"># print(hermite(x, y, m, 3))</span></span><br><span class="line">    plt.figure(<span class="string">"play"</span>)</span><br><span class="line">    ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">    plt.sca(ax1)</span><br><span class="line">    <span class="comment"># plt.plot(x, y, linestyle=' ', marker='o', color='b')</span></span><br><span class="line">    plt.plot(a, b, linestyle=<span class="string">'--'</span>, color=<span class="string">'r'</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数值分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -576,8 +467,47 @@
         <category>数值分析</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>数值分析</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB基础</title>
+    <url>/2020/05/16/MongoDB-1/</url>
+    <content><![CDATA[<ol>
+<li>安装。</li>
+</ol>
+<p>Mac上安装这个简直了……我用brew死活装不上，只好下源码，然后把mongodb的bin目录加到环境变量里才行。</p>
+<a id="more"></a>
+<ol start="2">
+<li>连接</li>
+</ol>
+<p>MongoDB的叫法好奇怪😂</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 和数据库相关的操作都是异步操作</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://localhost/playground"</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected sucess"</span>))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected fail"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合规则。这不就是设定字段的类型吗……</span></span><br><span class="line"><span class="keyword">const</span> courseSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    name: <span class="built_in">String</span>,</span><br><span class="line">    author: <span class="built_in">String</span>,</span><br><span class="line">    isPublished: <span class="built_in">Boolean</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 创建集合。讲真，这不就是连表吗……</span></span><br><span class="line"><span class="comment">// 在库里面这张表实际上叫courses</span></span><br><span class="line"><span class="comment">// 返回Course构造函数，可以通过这个构造函数进行增删改查</span></span><br><span class="line"><span class="keyword">const</span> Course = mongoose.model(<span class="string">"Course"</span>, courseSchema);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>倒入json数据文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$mongoimport -d playground -c users --file ./user.json</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>增加字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Course.create(&#123;</span><br><span class="line">        name: <span class="string">"Math"</span>,</span><br><span class="line">        author: <span class="string">"Mr.He"</span>,</span><br><span class="line">        isPublished: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">course.save()</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>删除字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 删除一条字段</span></span><br><span class="line">User.findOneAndDelete(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line">User.remove(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>修改字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">User.update(&#123;<span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">15</span>&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>查找字段</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// select * from user;</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line"><span class="comment">// select * from user where age&gt;20 and age &lt; 40;</span></span><br><span class="line">User.find(&#123;</span><br><span class="line">    age: &#123;</span><br><span class="line">        $gt: <span class="number">20</span>, <span class="comment">// 大于</span></span><br><span class="line">        $lt: <span class="number">40</span> <span class="comment">// 小于</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result))</span><br><span class="line"><span class="comment">// 大于：$gt</span></span><br><span class="line"><span class="comment">// 小于：$lt</span></span><br><span class="line"><span class="comment">// 大于等于：$gte</span></span><br><span class="line"><span class="comment">// 小于等于：$lte</span></span><br><span class="line"><span class="comment">// 非等于：$ne</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>
@@ -623,17 +553,6 @@
       <categories>
         <category>前端</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Django</title>
-    <url>/2018/06/09/Django/</url>
-    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
-<p>溜了溜了。</p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>生活</tag>
-      </tags>
   </entry>
   <entry>
     <title>MongoDB练手项目</title>
@@ -734,45 +653,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB基础</title>
-    <url>/2020/05/16/MongoDB-1/</url>
-    <content><![CDATA[<ol>
-<li>安装。</li>
-</ol>
-<p>Mac上安装这个简直了……我用brew死活装不上，只好下源码，然后把mongodb的bin目录加到环境变量里才行。</p>
-<a id="more"></a>
-<ol start="2">
-<li>连接</li>
-</ol>
-<p>MongoDB的叫法好奇怪😂</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 和数据库相关的操作都是异步操作</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://localhost/playground"</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected sucess"</span>))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"connected fail"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建集合规则。这不就是设定字段的类型吗……</span></span><br><span class="line"><span class="keyword">const</span> courseSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">    name: <span class="built_in">String</span>,</span><br><span class="line">    author: <span class="built_in">String</span>,</span><br><span class="line">    isPublished: <span class="built_in">Boolean</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 创建集合。讲真，这不就是连表吗……</span></span><br><span class="line"><span class="comment">// 在库里面这张表实际上叫courses</span></span><br><span class="line"><span class="comment">// 返回Course构造函数，可以通过这个构造函数进行增删改查</span></span><br><span class="line"><span class="keyword">const</span> Course = mongoose.model(<span class="string">"Course"</span>, courseSchema);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>倒入json数据文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$mongoimport -d playground -c users --file ./user.json</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>增加字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Course.create(&#123;</span><br><span class="line">        name: <span class="string">"Math"</span>,</span><br><span class="line">        author: <span class="string">"Mr.He"</span>,</span><br><span class="line">        isPublished: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">course.save()</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>删除字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 删除一条字段</span></span><br><span class="line">User.findOneAndDelete(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line">User.remove(&#123;</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>修改字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">User.update(&#123;<span class="attr">age</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">15</span>&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>查找字段</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// select * from user;</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result));</span><br><span class="line"><span class="comment">// select * from user where age&gt;20 and age &lt; 40;</span></span><br><span class="line">User.find(&#123;</span><br><span class="line">    age: &#123;</span><br><span class="line">        $gt: <span class="number">20</span>, <span class="comment">// 大于</span></span><br><span class="line">        $lt: <span class="number">40</span> <span class="comment">// 小于</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> <span class="built_in">console</span>.log(result))</span><br><span class="line"><span class="comment">// 大于：$gt</span></span><br><span class="line"><span class="comment">// 小于：$lt</span></span><br><span class="line"><span class="comment">// 大于等于：$gte</span></span><br><span class="line"><span class="comment">// 小于等于：$lte</span></span><br><span class="line"><span class="comment">// 非等于：$ne</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Node.js</tag>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pycharm可以运行但无法debug</title>
     <url>/2018/11/29/Pycharm%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E4%BD%86%E6%97%A0%E6%B3%95debug/</url>
     <content><![CDATA[<ol>
@@ -785,31 +665,6 @@
 ]]></content>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQLite3在python3中的基础用法</title>
-    <url>/2018/06/17/SQLite3%E5%9C%A8python3%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="创建-连接数据库"><a href="#创建-连接数据库" class="headerlink" title="创建/连接数据库"></a>创建/连接数据库</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line">conn = sqlite3.connect(<span class="string">'example.db'</span>)  </span><br><span class="line">cursor = conn.cursor()</span><br></pre></td></tr></table></figure>
-<h2 id="建立一张叫user的表"><a href="#建立一张叫user的表" class="headerlink" title="建立一张叫user的表"></a>建立一张叫user的表</h2><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'create table user(id varchar(20) primary key, name verchar(20), password verchar(20), rights int)'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="插入行"><a href="#插入行" class="headerlink" title="插入行"></a>插入行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00001', 'Adam', 'A00001', 0)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00002', 'Bart', 'A00002', 2)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00003', 'Lisa', 'A00003', 1)"</span>)</span><br><span class="line">mess = [a, b, c, d]</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values (?, ?, ?, ?)"</span>, mess)</span><br></pre></td></tr></table></figure>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t = cursor.execute(<span class="string">'select * from user where user.name!="Lisa"'</span>)  </span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> t:</span><br><span class="line">    print(row)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># ('A00001', 'Adam', 'A00001', 0)</span></span><br><span class="line"><span class="comment"># ('A00002', 'Bart', 'A00002', 2)</span></span><br></pre></td></tr></table></figure>
-<h2 id="修改了表之后要commit"><a href="#修改了表之后要commit" class="headerlink" title="修改了表之后要commit"></a>修改了表之后要commit</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
-<h2 id="做完了你要做的要close"><a href="#做完了你要做的要close" class="headerlink" title="做完了你要做的要close"></a>做完了你要做的要close</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"update user set name=? where id=?"</span>, (<span class="string">'Maya'</span>, id))</span><br></pre></td></tr></table></figure>
-<h2 id="删除一行"><a href="#删除一行" class="headerlink" title="删除一行"></a>删除一行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'delete from user where id=?'</span>, (id, ))</span><br></pre></td></tr></table></figure>
-<h2 id="更新表"><a href="#更新表" class="headerlink" title="更新表"></a>更新表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"alter table table_name add clum type"</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>说明:ALTER TABLE和SQLite  SQLite对使用ALTER TABLE执行的操作有所限制。最重要的一个限制是，它不支持使用ALTER TABLE定义主键和外键，这些必须在最初创建表 时指定。 </p>
-</blockquote>
-<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>最常使用的通配符是百分号(%)。在搜索串中，%表示任何字符出现任意次数。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"select * from user where name like 'H%'"</span>)</span><br><span class="line">cursor.execute(<span class="string">"select * from doc where name like ? and new=1"</span>, (name, ))</span><br></pre></td></tr></table></figure>
-<p>我用pycharm建的数据库不知道为什么是只读的，用sqlitestudio建的就没什么问题。</p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>SQLite</tag>
       </tags>
   </entry>
   <entry>
@@ -847,20 +702,28 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS案例2 循环滚动</title>
-    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B2/</url>
-    <content><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9gn5oox5g30j40as4ha.gif" alt="Apr-28-2020 14-22-42"></p>
-<p>问题：</p>
-<a id="more"></a>
-<p>未实现背景无缝滚动。</p>
-<p>代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bear</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 270px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bear.png") no-repeat;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">bear</span> 0<span class="selector-class">.8s</span> <span class="selector-tag">steps</span>(8) <span class="selector-tag">infinite</span>, <span class="selector-tag">bear_move</span> 5<span class="selector-tag">s</span> <span class="selector-tag">forwards</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-attr">[class^="bg"]</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            animation: bg 10s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="comment">/*-webkit-animation: bg 10s linear infinite;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg1</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg1.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg2</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg2.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: -1600px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear_move &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(0, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(500px, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bg &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(0, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(-3840px, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: -3800px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>SQLite3在python3中的基础用法</title>
+    <url>/2018/06/17/SQLite3%E5%9C%A8python3%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="创建-连接数据库"><a href="#创建-连接数据库" class="headerlink" title="创建/连接数据库"></a>创建/连接数据库</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line">conn = sqlite3.connect(<span class="string">'example.db'</span>)  </span><br><span class="line">cursor = conn.cursor()</span><br></pre></td></tr></table></figure>
+<h2 id="建立一张叫user的表"><a href="#建立一张叫user的表" class="headerlink" title="建立一张叫user的表"></a>建立一张叫user的表</h2><a id="more"></a>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'create table user(id varchar(20) primary key, name verchar(20), password verchar(20), rights int)'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="插入行"><a href="#插入行" class="headerlink" title="插入行"></a>插入行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00001', 'Adam', 'A00001', 0)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00002', 'Bart', 'A00002', 2)"</span>)</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values ('A00003', 'Lisa', 'A00003', 1)"</span>)</span><br><span class="line">mess = [a, b, c, d]</span><br><span class="line">cursor.execute(<span class="string">r"insert into user values (?, ?, ?, ?)"</span>, mess)</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">t = cursor.execute(<span class="string">'select * from user where user.name!="Lisa"'</span>)  </span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> t:</span><br><span class="line">    print(row)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># ('A00001', 'Adam', 'A00001', 0)</span></span><br><span class="line"><span class="comment"># ('A00002', 'Bart', 'A00002', 2)</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改了表之后要commit"><a href="#修改了表之后要commit" class="headerlink" title="修改了表之后要commit"></a>修改了表之后要commit</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
+<h2 id="做完了你要做的要close"><a href="#做完了你要做的要close" class="headerlink" title="做完了你要做的要close"></a>做完了你要做的要close</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"update user set name=? where id=?"</span>, (<span class="string">'Maya'</span>, id))</span><br></pre></td></tr></table></figure>
+<h2 id="删除一行"><a href="#删除一行" class="headerlink" title="删除一行"></a>删除一行</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">'delete from user where id=?'</span>, (id, ))</span><br></pre></td></tr></table></figure>
+<h2 id="更新表"><a href="#更新表" class="headerlink" title="更新表"></a>更新表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"alter table table_name add clum type"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明:ALTER TABLE和SQLite  SQLite对使用ALTER TABLE执行的操作有所限制。最重要的一个限制是，它不支持使用ALTER TABLE定义主键和外键，这些必须在最初创建表 时指定。 </p>
+</blockquote>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>最常使用的通配符是百分号(%)。在搜索串中，%表示任何字符出现任意次数。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cursor.execute(<span class="string">"select * from user where name like 'H%'"</span>)</span><br><span class="line">cursor.execute(<span class="string">"select * from doc where name like ? and new=1"</span>, (name, ))</span><br></pre></td></tr></table></figure>
+<p>我用pycharm建的数据库不知道为什么是只读的，用sqlitestudio建的就没什么问题。</p>
 ]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
       <tags>
-        <tag>css</tag>
+        <tag>python</tag>
+        <tag>SQLite</tag>
       </tags>
   </entry>
   <entry>
@@ -884,14 +747,14 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS案例2 上升</title>
-    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B3/</url>
-    <content><![CDATA[<p>效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9taolf6mg309m0ae4eu.gif" alt="Apr-28-2020 21-39-00" style="zoom:50%;"></p>
-<p>不知道为什么用div标签橙色就可以很好，用p标签的时候就emmmm</p>
-<p>代码：</p>
+    <title>CSS案例2 循环滚动</title>
+    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B2/</url>
+    <content><![CDATA[<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9gn5oox5g30j40as4ha.gif" alt="Apr-28-2020 14-22-42"></p>
+<p>问题：</p>
 <a id="more"></a>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #f5f5f5;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        img &#123;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            width: 70%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        a &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            margin: 50px;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">            text-decoration: none;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.5s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="css">            <span class="comment">/*transform: translateY(-10px);*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="undefined">            -webkit-transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">            transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        p &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 14px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#333333</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span>&#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            bottom: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fe701d</span>;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">            height:  30px;</span></span><br><span class="line"><span class="undefined">            opacity: 0;</span></span><br><span class="line"><span class="undefined">            text-align: left;</span></span><br><span class="line"><span class="undefined">            padding: 10px 30px 20px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            opacity: 1;</span></span><br><span class="line"><span class="undefined">            height: 55px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#d00a0a</span>;</span></span><br><span class="line"><span class="undefined">            font-size: 16px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">del</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        em &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">            font-style: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"product"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pms_1524883847.49276938!220x220.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    小米电视4A 43英寸青春版<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">em</span>&gt;</span>全高清屏 / 人工智能语音<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"price"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>1499<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">del</span>&gt;</span>1699<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span></span><br><span class="line">                一如既往的好，小米情怀<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                来自 惊喜 的评价</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>未实现背景无缝滚动。</p>
+<p>代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bear</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 270px;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bear.png") no-repeat;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">animation</span>: <span class="selector-tag">bear</span> 0<span class="selector-class">.8s</span> <span class="selector-tag">steps</span>(8) <span class="selector-tag">infinite</span>, <span class="selector-tag">bear_move</span> 5<span class="selector-tag">s</span> <span class="selector-tag">forwards</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-attr">[class^="bg"]</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            animation: bg 10s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="comment">/*-webkit-animation: bg 10s linear infinite;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg1</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 100px;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg1.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.bg2</span> &#123;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            background: url("media/bg2.png") no-repeat;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                background-position: -1600px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bear_move &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(0, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="undefined">                transform: translate(500px, 0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> bg &#123;</span></span><br><span class="line"><span class="undefined">            0% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(0, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: 0 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            100% &#123;</span></span><br><span class="line"><span class="css">                <span class="comment">/*transform: translate(-3840px, 0);*/</span></span></span><br><span class="line"><span class="undefined">                background-position: -3800px 0;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -901,17 +764,14 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS案例2 新闻横向轮播</title>
-    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B5/</url>
+    <title>CSS案例2 上升</title>
+    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B3/</url>
     <content><![CDATA[<p>效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geayp11dkfg30d205u7dq.gif" alt="Apr-29-2020 21-32-41" style="zoom:50%;"></p>
-<p>重点：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9taolf6mg309m0ae4eu.gif" alt="Apr-28-2020 21-39-00" style="zoom:50%;"></p>
+<p>不知道为什么用div标签橙色就可以很好，用p标签的时候就emmmm</p>
+<p>代码：</p>
 <a id="more"></a>
-<ul>
-<li><strong>要有两段重复的文字</strong>（所以位置要是absolute，父元素relative）</li>
-<li>注意循环元素的长度</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 1000px;</span></span><br><span class="line"><span class="undefined">            margin: 20px auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="css">            <span class="comment">/*width: 200%;*/</span></span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">            white-space: nowrap;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            animation: move 15s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 1900<span class="selector-tag">px</span>;  <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#333333</span>;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: papayawhip;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: peachpuff;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span>: 1900<span class="selector-tag">px</span>;  <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> move &#123;</span></span><br><span class="line"><span class="undefined">            from &#123;</span></span><br><span class="line"><span class="undefined">                transform: translateX(0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            to &#123;</span></span><br><span class="line"><span class="undefined">                transform: translateX(-1900px);  </span></span><br><span class="line"><span class="css">                <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>Most of the classic interview questions have multiple solution approaches. For the best practice result, we strongly advise you to go through this list at least a second time, or even better - a third time.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>Most of the classic interview questions have multiple solution approaches. For the best practice result, we strongly advise you to go through this list at least a second time, or even better - a third time.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #f5f5f5;*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        img &#123;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            width: 70%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        a &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            margin: 50px;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">            text-decoration: none;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.5s</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="css">            <span class="comment">/*transform: translateY(-10px);*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 0 15<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.1</span>);</span></span><br><span class="line"><span class="undefined">            -webkit-transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">            transform: translate3d(0, -2px, 0);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        p &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 14px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#333333</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span>&#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            bottom: 0;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">            width: 220px;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fe701d</span>;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">            height:  30px;</span></span><br><span class="line"><span class="undefined">            opacity: 0;</span></span><br><span class="line"><span class="undefined">            text-align: left;</span></span><br><span class="line"><span class="undefined">            padding: 10px 30px 20px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> <span class="selector-class">.2s</span> <span class="selector-tag">linear</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.up</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">            opacity: 1;</span></span><br><span class="line"><span class="undefined">            height: 55px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#d00a0a</span>;</span></span><br><span class="line"><span class="undefined">            font-size: 16px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.price</span> <span class="selector-tag">del</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        em &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 12px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#cccccc</span>;</span></span><br><span class="line"><span class="undefined">            font-weight: normal;</span></span><br><span class="line"><span class="undefined">            font-style: normal;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"product"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pms_1524883847.49276938!220x220.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    小米电视4A 43英寸青春版<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">em</span>&gt;</span>全高清屏 / 人工智能语音<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"price"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>1499<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">del</span>&gt;</span>1699<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up"</span>&gt;</span></span><br><span class="line">                一如既往的好，小米情怀<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                来自 惊喜 的评价</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -940,29 +800,23 @@
       </tags>
   </entry>
   <entry>
-    <title>git@github.com: Permission denied (publickey)</title>
-    <url>/2018/05/27/git%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>遇到<code>Error: git@github.com: Permission denied (publickey).</code>如何解决：</p>
-<ol>
-<li><code>ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot;</code> 生成新的密匙</li>
-<li><code>eval &quot;$(ssh-agent -s)&quot;</code> 添加密匙到ssh-agent</li>
-<li><code>ssh-add -K ~/.ssh/id_rsa</code>  添加生成的SSH key到ssh-agent</li>
-<li>把id_rsa.pub里的复制上git的ssh的key里就好了。<ol>
-<li>Windows下可以用<code>xclip -sel c ~/.ssh/id_rsa.pub</code>复制到剪贴板。</li>
-</ol>
-</li>
-<li>运行完以上命令，<strong>重启终端！！！</strong></li>
-</ol>
-<hr>
-<p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
-<p>2019.7.5：</p>
-<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
-<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
-<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
-<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
+    <title>CSS案例2 新闻横向轮播</title>
+    <url>/2020/04/28/css%E6%A1%88%E4%BE%8B5/</url>
+    <content><![CDATA[<p>效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geayp11dkfg30d205u7dq.gif" alt="Apr-29-2020 21-32-41" style="zoom:50%;"></p>
+<p>重点：</p>
+<a id="more"></a>
+<ul>
+<li><strong>要有两段重复的文字</strong>（所以位置要是absolute，父元素relative）</li>
+<li>注意循环元素的长度</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 1000px;</span></span><br><span class="line"><span class="undefined">            margin: 20px auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> &#123;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="css">            <span class="comment">/*width: 200%;*/</span></span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            list-style: none;</span></span><br><span class="line"><span class="undefined">            white-space: nowrap;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            animation: move 15s linear infinite;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 1900<span class="selector-tag">px</span>;  <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#333333</span>;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: papayawhip;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.info</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-color: peachpuff;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span>: 1900<span class="selector-tag">px</span>;  <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> move &#123;</span></span><br><span class="line"><span class="undefined">            from &#123;</span></span><br><span class="line"><span class="undefined">                transform: translateX(0);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            to &#123;</span></span><br><span class="line"><span class="undefined">                transform: translateX(-1900px);  </span></span><br><span class="line"><span class="css">                <span class="comment">/*文字的长度*/</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>Most of the classic interview questions have multiple solution approaches. For the best practice result, we strongly advise you to go through this list at least a second time, or even better - a third time.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>Most of the classic interview questions have multiple solution approaches. For the best practice result, we strongly advise you to go through this list at least a second time, or even better - a third time.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
-        <tag>git</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -1028,38 +882,29 @@
       </tags>
   </entry>
   <entry>
-    <title>python3 将带界面的py打包成Mac能用的app</title>
-    <url>/2018/12/30/python3-%E6%89%93%E5%8C%85%E6%88%90Mac%E8%83%BD%E7%94%A8%E7%9A%84app/</url>
-    <content><![CDATA[<h1 id="使用修改过的py2app打包"><a href="#使用修改过的py2app打包" class="headerlink" title="使用修改过的py2app打包"></a>使用修改过的<strong>py2app</strong>打包</h1><p>步骤：</p>
+    <title>git@github.com: Permission denied (publickey)</title>
+    <url>/2018/05/27/git%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>遇到<code>Error: git@github.com: Permission denied (publickey).</code>如何解决：</p>
 <ol>
-<li><p>创建一个文件夹</p>
-<p><code>$mkdir FileName</code></p>
-</li>
-<li><p>创建一个<code>virtualenv</code>环境</p>
-<p><code>$virtualenv venv</code></p>
-<p><code>$. venv/bin/activate</code></p>
-</li>
-<li><p>将要打包的py放到上面建的文件夹中（我没试过打包多个py文件，因为我就写了个小的试试手）</p>
-<a id="more"></a>
-</li>
-<li><p>安装修改过的<code>py2app</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pip install -U git+https://github.com/metachris/py2app.git@master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建<code>setup.py</code>文件</p>
-<p><code>$py2app --make-setup filename.py</code></p>
-</li>
-<li><p>创建应用</p>
-<p><code>$python3 setup.py py2app -A</code></p>
-</li>
-<li><p>完成！app在dist子文件夹中</p>
-</li>
+<li><code>ssh-keygen -t rsa -b 4096 -C &quot;yourcount@example.com&quot;</code> 生成新的密匙</li>
+<li><code>eval &quot;$(ssh-agent -s)&quot;</code> 添加密匙到ssh-agent</li>
+<li><code>ssh-add -K ~/.ssh/id_rsa</code>  添加生成的SSH key到ssh-agent</li>
+<li>把id_rsa.pub里的复制上git的ssh的key里就好了。<ol>
+<li>Windows下可以用<code>xclip -sel c ~/.ssh/id_rsa.pub</code>复制到剪贴板。</li>
 </ol>
-<blockquote>
-<p>参考：<a href="https://www.jianshu.com/p/afb6b2b97ce9" target="_blank" rel="noopener">https://www.jianshu.com/p/afb6b2b97ce9</a></p>
-</blockquote>
+</li>
+<li>运行完以上命令，<strong>重启终端！！！</strong></li>
+</ol>
+<hr>
+<p>越来越感觉能否解决这个问题要靠玄学……而且完全不明白为什么隔几天就会出现，崩溃。</p>
+<p>2019.7.5：</p>
+<p>以上方法无法解决该问题时，可以尝试改<code>_config.yml</code>文件里的<code>deploy</code>。</p>
+<p>把<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:yourname/yourname.github.io.git`改成</p>
+<p><code>https://yourname:yourpassword@github.com/yourname/yourname.github.io.git</code></p>
+<p>也不一定保证成功¯_(ツ)_/¯真的很玄学了，也不知道这次能撑多久。</p>
 ]]></content>
       <tags>
-        <tag>python</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1329,6 +1174,41 @@
       </tags>
   </entry>
   <entry>
+    <title>python3 将带界面的py打包成Mac能用的app</title>
+    <url>/2018/12/30/python3-%E6%89%93%E5%8C%85%E6%88%90Mac%E8%83%BD%E7%94%A8%E7%9A%84app/</url>
+    <content><![CDATA[<h1 id="使用修改过的py2app打包"><a href="#使用修改过的py2app打包" class="headerlink" title="使用修改过的py2app打包"></a>使用修改过的<strong>py2app</strong>打包</h1><p>步骤：</p>
+<ol>
+<li><p>创建一个文件夹</p>
+<p><code>$mkdir FileName</code></p>
+</li>
+<li><p>创建一个<code>virtualenv</code>环境</p>
+<p><code>$virtualenv venv</code></p>
+<p><code>$. venv/bin/activate</code></p>
+</li>
+<li><p>将要打包的py放到上面建的文件夹中（我没试过打包多个py文件，因为我就写了个小的试试手）</p>
+<a id="more"></a>
+</li>
+<li><p>安装修改过的<code>py2app</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pip install -U git+https://github.com/metachris/py2app.git@master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建<code>setup.py</code>文件</p>
+<p><code>$py2app --make-setup filename.py</code></p>
+</li>
+<li><p>创建应用</p>
+<p><code>$python3 setup.py py2app -A</code></p>
+</li>
+<li><p>完成！app在dist子文件夹中</p>
+</li>
+</ol>
+<blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/afb6b2b97ce9" target="_blank" rel="noopener">https://www.jianshu.com/p/afb6b2b97ce9</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>rem布局</title>
     <url>/2020/05/02/rem%E5%B8%83%E5%B1%80/</url>
     <content><![CDATA[<ol>
@@ -1370,6 +1250,28 @@
       <tags>
         <tag>布局</tag>
         <tag>rem布局</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>var/let/const</title>
+    <url>/2020/05/08/var-let-const/</url>
+    <content><![CDATA[<p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
+<ol>
+<li><p>Var定义全局变量</p>
+<a id="more"></a>
+</li>
+<li><p>let定义局部变量，只在</p>
+</li>
+<li><p>const常量，相当于一个指针，指向的内存的内容不可以变，对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。如果不想改变const指向的<strong>对象</strong>改变，使用<code>Object.freeze</code>方法。</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekwbvmjt7j30re0uitdj.jpg" alt="IMG_095BE9D6B689-1" style="zoom: 25%;"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1546,28 +1448,6 @@
       </tags>
   </entry>
   <entry>
-    <title>var/let/const</title>
-    <url>/2020/05/08/var-let-const/</url>
-    <content><![CDATA[<p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">https://es6.ruanyifeng.com/</a> 👈真的很棒了</p>
-<ol>
-<li><p>Var定义全局变量</p>
-<a id="more"></a>
-</li>
-<li><p>let定义局部变量，只在</p>
-</li>
-<li><p>const常量，相当于一个指针，指向的内存的内容不可以变，对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。如果不想改变const指向的<strong>对象</strong>改变，使用<code>Object.freeze</code>方法。</p>
-</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekwbvmjt7j30re0uitdj.jpg" alt="IMG_095BE9D6B689-1" style="zoom: 25%;"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>分页式存储管理</title>
     <url>/2018/04/27/%E5%88%86%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>在第1部分实验基础上实现进程的分页式内存分配和地址转换过程，并进一步实现请求分页式存储分配和地址转换过程。页面置换算法至少应实现先进先出（FIFO）、最近最久未使用（LRU）等算法。</p>
@@ -1602,6 +1482,30 @@
         <tag>python</tag>
         <tag>OS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>复化求积公式</title>
+    <url>/2018/04/27/%E5%A4%8D%E5%8C%96%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)  <span class="comment"># Mac上这样才能用matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (math.e ** x) * math.cos(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">composite_integration_rule</span><span class="params">(a, b, e)</span>:</span></span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    h = b - a</span><br><span class="line">    Tn = (h / <span class="number">2</span>) * (func(a) + func(b))</span><br><span class="line">    Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">    T_2 = <span class="number">2</span> * Tn - Hn</span><br><span class="line">    T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> abs(T2n - Tn) &gt;= e:</span><br><span class="line">        Tn = T2n</span><br><span class="line">        n = <span class="number">2</span> * n</span><br><span class="line">        h = h / <span class="number">2</span></span><br><span class="line">        Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">        T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> n, h, T2n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    n, h, T2n = composite_integration_rule(<span class="number">0</span>, math.pi, <span class="number">10</span> ** (<span class="number">-6</span>))</span><br><span class="line">    print(T2n)</span><br><span class="line">    tmpx = np.arange(<span class="number">0</span>, np.pi, h)</span><br><span class="line">    plt.plot(tmpx, [func(each) <span class="keyword">for</span> each <span class="keyword">in</span> tmpx], linestyle=<span class="string">'-'</span>, color=<span class="string">'black'</span>)</span><br><span class="line">    <span class="keyword">for</span> rang <span class="keyword">in</span> range(n):</span><br><span class="line">        tmpx = [a + h * rang, a + h * rang, a + h * (rang + <span class="number">1</span>), a + h * (rang + <span class="number">1</span>)]</span><br><span class="line">        tmpy = [<span class="number">0</span>, func(tmpx[<span class="number">1</span>]), func(tmpx[<span class="number">2</span>]), <span class="number">0</span>]</span><br><span class="line">        c = [<span class="string">'r'</span>, <span class="string">'y'</span>, <span class="string">'b'</span>, <span class="string">'g'</span>]</span><br><span class="line">        plt.fill(tmpx, tmpy, color=c[rang % <span class="number">4</span>])</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数值分析</category>
+      </categories>
+      <tags>
+        <tag>数值分析</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安利一个Mac的翻墙app</title>
+    <url>/2018/08/27/%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAMac%E7%9A%84%E7%BF%BB%E5%A2%99app/</url>
+    <content><![CDATA[<p>强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。</p>
+<p>“Wise VPN”</p>
+<p>不是很贵，一季35RMB而已。</p>
+<p>Wise涨价了👋</p>
+<p>……最后还是用了小飞机……</p>
+<p>………………最后的最后，我投靠了坚果的怀抱</p>
+]]></content>
   </entry>
   <entry>
     <title>文件管理</title>
@@ -1642,30 +1546,6 @@
       </tags>
   </entry>
   <entry>
-    <title>安利一个Mac的翻墙app</title>
-    <url>/2018/08/27/%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AAMac%E7%9A%84%E7%BF%BB%E5%A2%99app/</url>
-    <content><![CDATA[<p>强行安利一个付费翻墙的app啊！只要你的网好，就超好用的。</p>
-<p>“Wise VPN”</p>
-<p>不是很贵，一季35RMB而已。</p>
-<p>Wise涨价了👋</p>
-<p>……最后还是用了小飞机……</p>
-<p>………………最后的最后，我投靠了坚果的怀抱</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>复化求积公式</title>
-    <url>/2018/04/27/%E5%A4%8D%E5%8C%96%E6%B1%82%E7%A7%AF%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)  <span class="comment"># Mac上这样才能用matplotlib</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (math.e ** x) * math.cos(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">composite_integration_rule</span><span class="params">(a, b, e)</span>:</span></span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    h = b - a</span><br><span class="line">    Tn = (h / <span class="number">2</span>) * (func(a) + func(b))</span><br><span class="line">    Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">    T_2 = <span class="number">2</span> * Tn - Hn</span><br><span class="line">    T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> abs(T2n - Tn) &gt;= e:</span><br><span class="line">        Tn = T2n</span><br><span class="line">        n = <span class="number">2</span> * n</span><br><span class="line">        h = h / <span class="number">2</span></span><br><span class="line">        Hn = sum([func(a + ((<span class="number">2</span> * i - <span class="number">1</span>) * h) / <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)]) * h</span><br><span class="line">        T2n = (Tn + Hn) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> n, h, T2n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    n, h, T2n = composite_integration_rule(<span class="number">0</span>, math.pi, <span class="number">10</span> ** (<span class="number">-6</span>))</span><br><span class="line">    print(T2n)</span><br><span class="line">    tmpx = np.arange(<span class="number">0</span>, np.pi, h)</span><br><span class="line">    plt.plot(tmpx, [func(each) <span class="keyword">for</span> each <span class="keyword">in</span> tmpx], linestyle=<span class="string">'-'</span>, color=<span class="string">'black'</span>)</span><br><span class="line">    <span class="keyword">for</span> rang <span class="keyword">in</span> range(n):</span><br><span class="line">        tmpx = [a + h * rang, a + h * rang, a + h * (rang + <span class="number">1</span>), a + h * (rang + <span class="number">1</span>)]</span><br><span class="line">        tmpy = [<span class="number">0</span>, func(tmpx[<span class="number">1</span>]), func(tmpx[<span class="number">2</span>]), <span class="number">0</span>]</span><br><span class="line">        c = [<span class="string">'r'</span>, <span class="string">'y'</span>, <span class="string">'b'</span>, <span class="string">'g'</span>]</span><br><span class="line">        plt.fill(tmpx, tmpy, color=c[rang % <span class="number">4</span>])</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数值分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数值分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新建Java Web项目的小小小问题</title>
     <url>/2019/08/22/%E6%96%B0%E5%BB%BAJava-Web%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>这个问题真的是一言难尽</p>
@@ -1675,17 +1555,6 @@
       <tags>
         <tag>Java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>沉迷游戏</title>
-    <url>/2018/05/31/%E6%B2%89%E8%BF%B7%E6%B8%B8%E6%88%8F/</url>
-    <content><![CDATA[<p>最近沉迷模拟人生……过两天还有操作系统要考，怕不是凉了呀。</p>
-<p>不过捏脸是真的很好玩……</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fruvy17jsaj30ac0budip.jpg" alt="&#39;充满活力！&#39;"></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
   </entry>
   <entry>
     <title>最大子段和</title>
@@ -1725,6 +1594,56 @@
       <tags>
         <tag>jQuery</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>沉迷游戏</title>
+    <url>/2018/05/31/%E6%B2%89%E8%BF%B7%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<p>最近沉迷模拟人生……过两天还有操作系统要考，怕不是凉了呀。</p>
+<p>不过捏脸是真的很好玩……</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fruvy17jsaj30ac0budip.jpg" alt="&#39;充满活力！&#39;"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泛型</title>
+    <url>/2019/07/05/%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
+<p><strong>以下资料出自于实验楼</strong></p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
+<p>泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。</p>
+</blockquote>
+<p>定义泛型的规则：</p>
+<ul>
+<li>只能是类类型，不能是简单数据类型</li>
+<li>泛型参数可以有多个</li>
+<li>可以用使用 extends 语句或者 super 语句 如<code>&lt;T extends superClass&gt;</code>表示类型的上界，T 只能是 superClass 或其子类， <code>&lt;K super childClass&gt;</code>表示类型的下界，K 只能是 childClass 或其父类。</li>
+<li>可以是通配符类型，比如常见的 <code>Class&lt;?&gt;</code></li>
+</ul>
+<a id="more"></a>
+<h2 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。</span></span><br><span class="line"><span class="comment">    注意，父类定义的类型参数不能被子类继承。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//getter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//setter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义泛型类 Test 的一个Integer版本</span></span><br><span class="line">        Test&lt;Integer&gt; intOb = <span class="keyword">new</span> Test&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">        intOb.showType();</span><br><span class="line">        <span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">        System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line">        <span class="comment">// 定义泛型类Test的一个String版本</span></span><br><span class="line">        Test&lt;String&gt; strOb = <span class="keyword">new</span> Test&lt;String&gt;(<span class="string">"String!"</span>);</span><br><span class="line">        strOb.showType();</span><br><span class="line">        String s = strOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像<code>ArrayList</code>。</p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器私有前缀</title>
+    <url>/2020/04/29/%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80/</url>
+    <content><![CDATA[<p>为兼容老版本浏览器。</p>
+<a id="more"></a>
+<ul>
+<li><code>-moz-</code>Firefox</li>
+<li><code>-ms-</code>ie</li>
+<li><code>-webkit</code>Chrome, Safari</li>
+<li><code>-o-</code>Opera</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
   </entry>
   <entry>
     <title>移动web</title>
@@ -1795,70 +1714,6 @@
       </categories>
   </entry>
   <entry>
-    <title>泛型</title>
-    <url>/2019/07/05/%E6%B3%9B%E5%9E%8B/</url>
-    <content><![CDATA[<p>总要学点新东西嘛，所以从头开始捡Java…QwQ</p>
-<p><strong>以下资料出自于实验楼</strong></p>
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
-<p>泛型即参数化类型，也就是说数据类型变成了一个可变的参数，在不使用泛型的情况下，参数的数据类型都是写死了的，使用泛型之后，可以根据程序的需要进行改变。</p>
-</blockquote>
-<p>定义泛型的规则：</p>
-<ul>
-<li>只能是类类型，不能是简单数据类型</li>
-<li>泛型参数可以有多个</li>
-<li>可以用使用 extends 语句或者 super 语句 如<code>&lt;T extends superClass&gt;</code>表示类型的上界，T 只能是 superClass 或其子类， <code>&lt;K super childClass&gt;</code>表示类型的下界，K 只能是 childClass 或其父类。</li>
-<li>可以是通配符类型，比如常见的 <code>Class&lt;?&gt;</code></li>
-</ul>
-<a id="more"></a>
-<h2 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用T代表类型，无论何时都没有比这更具体的类型来区分它。如果有多个类型参数，我们可能使用字母表中T的临近的字母，比如S。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义泛型成员变量，定义完类型参数后，可以在定义位置之后的方法的任意地方使用类型参数，就像使用普通的类型一样。</span></span><br><span class="line"><span class="comment">    注意，父类定义的类型参数不能被子类继承。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//getter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//setter 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义泛型类 Test 的一个Integer版本</span></span><br><span class="line">        Test&lt;Integer&gt; intOb = <span class="keyword">new</span> Test&lt;Integer&gt;(<span class="number">88</span>);</span><br><span class="line">        intOb.showType();</span><br><span class="line">        <span class="keyword">int</span> i = intOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + i);</span><br><span class="line">        System.out.println(<span class="string">"----------------------------------"</span>);</span><br><span class="line">        <span class="comment">// 定义泛型类Test的一个String版本</span></span><br><span class="line">        Test&lt;String&gt; strOb = <span class="keyword">new</span> Test&lt;String&gt;(<span class="string">"String!"</span>);</span><br><span class="line">        strOb.showType();</span><br><span class="line">        String s = strOb.getOb();</span><br><span class="line">        System.out.println(<span class="string">"value= "</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>emmm感觉泛型就是一个不用考虑属性类型的一种东西？比如写个比较大小的函数就可以不用考虑变量是什么属性了，像<code>ArrayList</code>。</p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器私有前缀</title>
-    <url>/2020/04/29/%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80/</url>
-    <content><![CDATA[<p>为兼容老版本浏览器。</p>
-<a id="more"></a>
-<ul>
-<li><code>-moz-</code>Firefox</li>
-<li><code>-ms-</code>ie</li>
-<li><code>-webkit</code>Chrome, Safari</li>
-<li><code>-o-</code>Opera</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>进程控制</title>
-    <url>/2018/04/27/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
-    <content><![CDATA[<h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。</p>
-<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。</p>
-<a id="more"></a>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAX = <span class="number">0</span></span><br><span class="line">ram_list = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PCB</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, length)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.length = length</span><br><span class="line">        self.start = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">distribution</span><span class="params">(p)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])</span><br><span class="line">    <span class="comment"># site = 0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 找到第一个空闲比他大的位置</span></span><br><span class="line">        <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &gt;= p.length:</span><br><span class="line">            p.start = ram_list[i][<span class="number">0</span>]</span><br><span class="line">            ram_list[i][<span class="number">0</span>] += p.length  <span class="comment"># 空闲的起始忘后挪</span></span><br><span class="line">            ram_list[i][<span class="number">1</span>] -= p.length</span><br><span class="line">            <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &lt;= <span class="number">2</span>:</span><br><span class="line">                p.length += ram_list[i][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(i)</span><br><span class="line">            <span class="keyword">global</span> MAX</span><br><span class="line">            <span class="keyword">if</span> ram_list:</span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                MAX = <span class="number">0</span></span><br><span class="line">            <span class="comment"># print(MAX)</span></span><br><span class="line">            <span class="comment"># print(ram_list)</span></span><br><span class="line">            <span class="comment"># site = i</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(ready, run, p)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> name_list</span><br><span class="line">    l = len(name_list)</span><br><span class="line">    name_list[p.name] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> l == len(name_list):</span><br><span class="line">        print(<span class="string">'不能创建同名进程！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> p.length &gt; max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]:</span><br><span class="line">        print(<span class="string">'内存不足！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    ready.append(p)</span><br><span class="line">    ready_to_run(ready, run)</span><br><span class="line">    distribution(p)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ready_to_run</span><span class="params">(ready, run)</span>:</span></span><br><span class="line">    <span class="comment"># print(type(run))</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> run <span class="keyword">and</span> ready:</span><br><span class="line">        p = ready.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># print(type(p))</span></span><br><span class="line">        run.append(p)</span><br><span class="line">        <span class="comment"># print(ready, run)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">block</span><span class="params">(ready, blo, run)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        blo.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可以阻塞的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">times_over</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有正在运行的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wake_up</span><span class="params">(blo, ready, run)</span>:</span>  <span class="comment"># block[0]-&gt;ready</span></span><br><span class="line">    <span class="keyword">if</span> blo:</span><br><span class="line">        pro = blo.pop(<span class="number">0</span>)</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可唤醒的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exit</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        p = run.pop()</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">        <span class="keyword">del</span> name_list[p.name]</span><br><span class="line">        site = <span class="number">0</span></span><br><span class="line">        <span class="comment"># p = (p.start, p.length)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 检查前面</span></span><br><span class="line">            end = ram_list[i][<span class="number">0</span>] + ram_list[i][<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> end == p.start:</span><br><span class="line">                site = i + <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> end &gt; p.start:</span><br><span class="line">                site = i</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        ram_list.insert(site, [p.start, p.length])</span><br><span class="line">        <span class="comment"># print(site)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">global</span> MAX</span><br><span class="line">        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> site - <span class="number">1</span> &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == p.start:  <span class="comment"># 新加的空闲开始和上一个的结束相同</span></span><br><span class="line">                ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += p.length</span><br><span class="line">                ram_list.pop(site)  <span class="comment"># 合并</span></span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># print(site)</span></span><br><span class="line">                <span class="keyword">if</span> site &lt; len(ram_list):</span><br><span class="line">                    <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == ram_list[site][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                        ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += ram_list[site][<span class="number">1</span>]</span><br><span class="line">                        ram_list.pop(site)</span><br><span class="line">                        <span class="comment"># print(ram_list)</span></span><br><span class="line">                        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> site + <span class="number">1</span> &lt;= len(ram_list) - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site][<span class="number">0</span>] + ram_list[site][<span class="number">1</span>] == ram_list[site+<span class="number">1</span>][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                ram_list[site][<span class="number">1</span>] += ram_list[site+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(site+<span class="number">1</span>)</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># global MAX</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可退出的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(list)</span>:</span></span><br><span class="line">    s = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">        s += <span class="string">'('</span>+i.name+<span class="string">','</span>+str(i.start)+<span class="string">','</span>+str(i.length)+<span class="string">') '</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    ready = []</span><br><span class="line">    running = []</span><br><span class="line">    blocked = []</span><br><span class="line">    name_list = &#123;&#125;</span><br><span class="line">    strat, length = map(int, input(<span class="string">'输入开始的内存及长度:'</span>).strip().split())</span><br><span class="line">    MAX = length</span><br><span class="line">    ram_list = [[strat, length]]</span><br><span class="line">    print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">    print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">    print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">    print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">    print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">    print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">    print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">    print(<span class="string">"7.帮助"</span>)</span><br><span class="line">    print(<span class="string">"8.退出"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        a = int(input())</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"ready:"</span>, show(ready))</span><br><span class="line">            print(<span class="string">"running:"</span>, show(running))</span><br><span class="line">            print(<span class="string">'blocked:'</span>, show(blocked))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">            n, l = input(<span class="string">"输入进程的名字及内存:"</span>).strip().split()</span><br><span class="line">            l = int(l)</span><br><span class="line">            p = PCB(n, l)</span><br><span class="line">            create(ready, running, p)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">            block(ready, blocked, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">3</span>:</span><br><span class="line">            times_over(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">4</span>:</span><br><span class="line">            wake_up(blocked, ready, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">5</span>:</span><br><span class="line">            exit(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">6</span>:</span><br><span class="line">            print(sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">0</span>]))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">7</span>:</span><br><span class="line">            print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">            print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">            print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">            print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">            print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">            print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">            print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">            print(<span class="string">"7.帮助"</span>)</span><br><span class="line">            print(<span class="string">"8.退出"</span>)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>连接池</title>
-    <url>/2019/08/20/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h2 id="C3P0连接池的基础使用"><a href="#C3P0连接池的基础使用" class="headerlink" title="C3P0连接池的基础使用"></a>C3P0连接池的基础使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ComboPooledDataSource cpds = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">cpds.setDriverClass( <span class="string">"org.postgresql.Driver"</span> ); <span class="comment">//loads the jdbc driver            </span></span><br><span class="line">cpds.setJdbcUrl( <span class="string">"jdbc:postgresql://localhost/testdb"</span> );</span><br><span class="line">cpds.setUser(<span class="string">"dbuser"</span>);                                  </span><br><span class="line">cpds.setPassword(<span class="string">"dbpassword"</span>); </span><br><span class="line"></span><br><span class="line">cpds.setMaxStatements( <span class="number">180</span> ); <span class="comment">// 可选</span></span><br><span class="line">cpds.close();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>流式布局</title>
     <url>/2020/04/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%A1%88%E4%BE%8B/</url>
     <content><![CDATA[<p>流式布局效果：</p>
@@ -1882,6 +1737,173 @@
       <tags>
         <tag>布局</tag>
         <tag>流式布局</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django</title>
+    <url>/2018/06/09/Django/</url>
+    <content><![CDATA[<p>当初没有持之以恒的用Django搭博客的结果就是，换个时间学。</p>
+<p>溜了溜了。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django（疯狂踩雷</title>
+    <url>/2020/03/02/Django%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="Django（疯狂踩雷"><a href="#Django（疯狂踩雷" class="headerlink" title="Django（疯狂踩雷"></a>Django（疯狂踩雷</h1><p>为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！</p>
+<p>python3.7+Django3+Bootstrap4</p>
+<p>行了，最不稳定的就是我了！</p>
+<p>如果想Django+bootstrap，可以装<code>django-boostrap4</code>库。</p>
+<a id="more"></a>
+<p><strong>下面的基本都是我用到哪里写到哪里。</strong></p>
+<ol>
+<li>创建project</li>
+</ol>
+<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
+<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
+<p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
+<ol start="2">
+<li>创建app</li>
+</ol>
+<p>在项目里建app</p>
+<p><code>python3 manage.py startapp app_name</code></p>
+<p>在pycharm的命令行里运行👆就行。</p>
+<p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
+<p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
+<p>框里的是我的app</p>
+<ol start="3">
+<li>分离各个app的urls（方便管理</li>
+</ol>
+<p>project自带的urls.py⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
+<p>app的urls.py⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
+<ol start="4">
+<li>连接数据库（mysql）</li>
+</ol>
+<p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
+<p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
+<p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
+<p>在setting同级的<code>_init_.py</code>文件里写：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<p>……然后Django嫌弃我的mysql，行叭。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
+<p>认真的说，Django3是不是和我有仇。</p>
+<p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
+<p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
+<p>==如果用的是<strong>Django2.0+</strong>，就不用在init那个文件写东西了，直接安装mysqlclient就行。==</p>
+<ol start="5">
+<li>使用数据库（？</li>
+</ol>
+<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
+<p>对于Django来说，</p>
+<p>Views.py-&gt;MVC中的Control</p>
+<p>Models.py-&gt;MVC中的Model</p>
+<p>各种html-&gt;MVC中的View</p>
+<p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
+<p>view里面的代码⬇️</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
+<ol start="6">
+<li>提交表单（POST</li>
+</ol>
+<p>遇到问题</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
+<p>也给出了解答</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
+<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
+<ol start="7">
+<li>在html里面显示数据</li>
+</ol>
+<p>要具备以下条件：</p>
+<ul>
+<li>models里面有数据库表的类</li>
+<li>views里有models里面类的对象（见5⃣️</li>
+<li>将对象通过字典返回到html里</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> render(request, <span class="string">"your_html"</span>, &#123;<span class="string">"html里变量的名字"</span>: 对象&#125;)  <span class="comment"># 这个字典里可以放多个变量，甚至是你要传递给前台的信息提示</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>前台使用Django的……我也不知道叫什么</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
+<ul>
+<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
+</ul>
+<p>例子：</p>
+<p>我的models：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
+<p>我的views：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
+<p>我的html：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
+<ol start="8">
+<li>在a标签的链接里带参数</li>
+</ol>
+<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
+<ol start="9">
+<li>Django使用session</li>
+</ol>
+<p>在Django里使用session一定要执行下面的命令……我会说我因为不知道差点重装了mysql和python吗😭</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ python manage.py makemigrations </span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Bootstrap</tag>
+        <tag>python</tag>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>返回顶部案例</title>
+    <url>/2020/05/08/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p>效果：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1genbs99m4jg304s05cn1z.gif" alt="未命名"></p>
+<p>重点：</p>
+<ol>
+<li>返回顶部按钮最开始隐藏</li>
+<li>滑动滚轮的时候判断滚动的距离</li>
+<li>到达指定的距离按钮出现</li>
+</ol>
+<p>代码：</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 指定的出现位置</span></span><br><span class="line">    <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 返回顶部按钮</span></span><br><span class="line">    $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">            scrollTop: <span class="number">0</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>连接池</title>
+    <url>/2019/08/20/%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h2 id="C3P0连接池的基础使用"><a href="#C3P0连接池的基础使用" class="headerlink" title="C3P0连接池的基础使用"></a>C3P0连接池的基础使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ComboPooledDataSource cpds = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">cpds.setDriverClass( <span class="string">"org.postgresql.Driver"</span> ); <span class="comment">//loads the jdbc driver            </span></span><br><span class="line">cpds.setJdbcUrl( <span class="string">"jdbc:postgresql://localhost/testdb"</span> );</span><br><span class="line">cpds.setUser(<span class="string">"dbuser"</span>);                                  </span><br><span class="line">cpds.setPassword(<span class="string">"dbpassword"</span>); </span><br><span class="line"></span><br><span class="line">cpds.setMaxStatements( <span class="number">180</span> ); <span class="comment">// 可选</span></span><br><span class="line">cpds.close();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进程控制</title>
+    <url>/2018/04/27/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>利用简单的结构和控制方法模拟进程结构、进程状态和进程控制。</p>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>用PCB表示整个进程实体，利用随机数方法或键盘控制方法模拟进程执行中产生的事件，或者利用基于图形界面的鼠标或者键盘操作控制进程管理内容。</p>
+<a id="more"></a>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAX = <span class="number">0</span></span><br><span class="line">ram_list = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PCB</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, length)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.length = length</span><br><span class="line">        self.start = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">distribution</span><span class="params">(p)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])</span><br><span class="line">    <span class="comment"># site = 0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 找到第一个空闲比他大的位置</span></span><br><span class="line">        <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &gt;= p.length:</span><br><span class="line">            p.start = ram_list[i][<span class="number">0</span>]</span><br><span class="line">            ram_list[i][<span class="number">0</span>] += p.length  <span class="comment"># 空闲的起始忘后挪</span></span><br><span class="line">            ram_list[i][<span class="number">1</span>] -= p.length</span><br><span class="line">            <span class="keyword">if</span> ram_list[i][<span class="number">1</span>] &lt;= <span class="number">2</span>:</span><br><span class="line">                p.length += ram_list[i][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(i)</span><br><span class="line">            <span class="keyword">global</span> MAX</span><br><span class="line">            <span class="keyword">if</span> ram_list:</span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                MAX = <span class="number">0</span></span><br><span class="line">            <span class="comment"># print(MAX)</span></span><br><span class="line">            <span class="comment"># print(ram_list)</span></span><br><span class="line">            <span class="comment"># site = i</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(ready, run, p)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> name_list</span><br><span class="line">    l = len(name_list)</span><br><span class="line">    name_list[p.name] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> l == len(name_list):</span><br><span class="line">        print(<span class="string">'不能创建同名进程！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> p.length &gt; max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]:</span><br><span class="line">        print(<span class="string">'内存不足！'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    ready.append(p)</span><br><span class="line">    ready_to_run(ready, run)</span><br><span class="line">    distribution(p)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ready_to_run</span><span class="params">(ready, run)</span>:</span></span><br><span class="line">    <span class="comment"># print(type(run))</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> run <span class="keyword">and</span> ready:</span><br><span class="line">        p = ready.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># print(type(p))</span></span><br><span class="line">        run.append(p)</span><br><span class="line">        <span class="comment"># print(ready, run)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">block</span><span class="params">(ready, blo, run)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        blo.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可以阻塞的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">times_over</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        pro = run.pop()</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有正在运行的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wake_up</span><span class="params">(blo, ready, run)</span>:</span>  <span class="comment"># block[0]-&gt;ready</span></span><br><span class="line">    <span class="keyword">if</span> blo:</span><br><span class="line">        pro = blo.pop(<span class="number">0</span>)</span><br><span class="line">        ready.append(pro)</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可唤醒的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exit</span><span class="params">(run, ready)</span>:</span></span><br><span class="line">    sorted(ram_list, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> run:</span><br><span class="line">        p = run.pop()</span><br><span class="line">        ready_to_run(ready, run)</span><br><span class="line">        <span class="keyword">del</span> name_list[p.name]</span><br><span class="line">        site = <span class="number">0</span></span><br><span class="line">        <span class="comment"># p = (p.start, p.length)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(ram_list)):  <span class="comment"># 检查前面</span></span><br><span class="line">            end = ram_list[i][<span class="number">0</span>] + ram_list[i][<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> end == p.start:</span><br><span class="line">                site = i + <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> end &gt; p.start:</span><br><span class="line">                site = i</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        ram_list.insert(site, [p.start, p.length])</span><br><span class="line">        <span class="comment"># print(site)</span></span><br><span class="line">        <span class="comment"># print(ram_list)</span></span><br><span class="line">        <span class="keyword">global</span> MAX</span><br><span class="line">        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> site - <span class="number">1</span> &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == p.start:  <span class="comment"># 新加的空闲开始和上一个的结束相同</span></span><br><span class="line">                ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += p.length</span><br><span class="line">                ram_list.pop(site)  <span class="comment"># 合并</span></span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># print(site)</span></span><br><span class="line">                <span class="keyword">if</span> site &lt; len(ram_list):</span><br><span class="line">                    <span class="keyword">if</span> ram_list[site<span class="number">-1</span>][<span class="number">0</span>] + ram_list[site<span class="number">-1</span>][<span class="number">1</span>] == ram_list[site][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                        ram_list[site<span class="number">-1</span>][<span class="number">1</span>] += ram_list[site][<span class="number">1</span>]</span><br><span class="line">                        ram_list.pop(site)</span><br><span class="line">                        <span class="comment"># print(ram_list)</span></span><br><span class="line">                        MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> site + <span class="number">1</span> &lt;= len(ram_list) - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> ram_list[site][<span class="number">0</span>] + ram_list[site][<span class="number">1</span>] == ram_list[site+<span class="number">1</span>][<span class="number">0</span>]:  <span class="comment"># 检查下一个</span></span><br><span class="line">                ram_list[site][<span class="number">1</span>] += ram_list[site+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">                ram_list.pop(site+<span class="number">1</span>)</span><br><span class="line">                <span class="comment"># print(ram_list)</span></span><br><span class="line">                <span class="comment"># global MAX</span></span><br><span class="line">                MAX = max(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">1</span>])[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'没有可退出的进程！'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">(list)</span>:</span></span><br><span class="line">    s = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">        s += <span class="string">'('</span>+i.name+<span class="string">','</span>+str(i.start)+<span class="string">','</span>+str(i.length)+<span class="string">') '</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    ready = []</span><br><span class="line">    running = []</span><br><span class="line">    blocked = []</span><br><span class="line">    name_list = &#123;&#125;</span><br><span class="line">    strat, length = map(int, input(<span class="string">'输入开始的内存及长度:'</span>).strip().split())</span><br><span class="line">    MAX = length</span><br><span class="line">    ram_list = [[strat, length]]</span><br><span class="line">    print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">    print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">    print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">    print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">    print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">    print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">    print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">    print(<span class="string">"7.帮助"</span>)</span><br><span class="line">    print(<span class="string">"8.退出"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        a = int(input())</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"ready:"</span>, show(ready))</span><br><span class="line">            print(<span class="string">"running:"</span>, show(running))</span><br><span class="line">            print(<span class="string">'blocked:'</span>, show(blocked))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">            n, l = input(<span class="string">"输入进程的名字及内存:"</span>).strip().split()</span><br><span class="line">            l = int(l)</span><br><span class="line">            p = PCB(n, l)</span><br><span class="line">            create(ready, running, p)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">            block(ready, blocked, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">3</span>:</span><br><span class="line">            times_over(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">4</span>:</span><br><span class="line">            wake_up(blocked, ready, running)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">5</span>:</span><br><span class="line">            exit(running, ready)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">6</span>:</span><br><span class="line">            print(sorted(ram_list, key=<span class="keyword">lambda</span> s: s[<span class="number">0</span>]))</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">7</span>:</span><br><span class="line">            print(<span class="string">"0.输出进程"</span>)</span><br><span class="line">            print(<span class="string">"1.创建进程"</span>)</span><br><span class="line">            print(<span class="string">"2.进入阻塞状态"</span>)</span><br><span class="line">            print(<span class="string">"3.时间片完"</span>)</span><br><span class="line">            print(<span class="string">"4.唤醒"</span>)</span><br><span class="line">            print(<span class="string">"5.结束进程"</span>)</span><br><span class="line">            print(<span class="string">"6.显示内存"</span>)</span><br><span class="line">            print(<span class="string">"7.帮助"</span>)</span><br><span class="line">            print(<span class="string">"8.退出"</span>)</span><br><span class="line">        <span class="keyword">if</span> a == <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>OS</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,28 +1963,6 @@
       <tags>
         <tag>python</tag>
         <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>返回顶部案例</title>
-    <url>/2020/05/23/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%A1%88%E4%BE%8B/</url>
-    <content><![CDATA[<p>效果：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1genbs99m4jg304s05cn1z.gif" alt="未命名"></p>
-<p>重点：</p>
-<ol>
-<li>返回顶部按钮最开始隐藏</li>
-<li>滑动滚轮的时候判断滚动的距离</li>
-<li>到达指定的距离按钮出现</li>
-</ol>
-<p>代码：</p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 指定的出现位置</span></span><br><span class="line">    <span class="keyword">var</span> boxTop = $(<span class="string">".container"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">document</span>).scrollTop() &gt;= boxTop) &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeIn();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">".back"</span>).fadeOut();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 返回顶部按钮</span></span><br><span class="line">    $(<span class="string">".back"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"body, html"</span>).stop().animate(&#123;</span><br><span class="line">            scrollTop: <span class="number">0</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
