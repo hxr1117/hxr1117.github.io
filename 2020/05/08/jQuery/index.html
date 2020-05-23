@@ -28,12 +28,10 @@
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="$是jQuery中的顶级元素，是jQuery的代替。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gejxdny0yug305c03e10n.gif">
 <meta property="og:updated_time" content="2020-05-23T09:13:09.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery基础">
 <meta name="twitter:description" content="$是jQuery中的顶级元素，是jQuery的代替。">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gejxdny0yug305c03e10n.gif">
 
 <link rel="canonical" href="http://yoursite.com/2020/05/08/jQuery/">
 
@@ -375,7 +373,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeTo(<span class="string">"slow"</span>, <span class="number">0.5</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeIn(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">".nav&gt;li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).children(<span class="string">"ul"</span>).fadeOut(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gejxdny0yug305c03e10n.gif" alt="未命名"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gejxdny0yug305c03e10n.gif" alt="未命名"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">".wrap li"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).siblings().stop().fadeTo(<span class="number">100</span>, <span class="number">0.5</span>);</span><br><span class="line">    	&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        	$(<span class="keyword">this</span>).siblings().stop().fadeTo(<span class="number">100</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <ol start="14">
 <li>自定义动画效果</li>

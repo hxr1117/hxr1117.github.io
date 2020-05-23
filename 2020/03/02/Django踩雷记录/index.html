@@ -28,32 +28,10 @@
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="Django（疯狂踩雷为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！ python3.7+Django3+Bootstrap4 行了，最不稳定的就是我了！ 如果想Django+bootstrap，可以装django-boostrap4库。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg">
 <meta property="og:updated_time" content="2020-05-23T09:10:39.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django（疯狂踩雷">
 <meta name="twitter:description" content="Django（疯狂踩雷为什么我总是在折磨自己，甚至没找回之前的例子。我好难。我甚至还要重学bootstrap。啊！ python3.7+Django3+Bootstrap4 行了，最不稳定的就是我了！ 如果想Django+bootstrap，可以装django-boostrap4库。">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg">
 
 <link rel="canonical" href="http://yoursite.com/2020/03/02/Django踩雷记录/">
 
@@ -269,8 +247,8 @@
 <ol>
 <li>创建project</li>
 </ol>
-<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
-<p><small>题外话……为什么在md里写了<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
+<p>在pycharm上建Django项目。为了能用bootstrap，要在setting.py的installed_apps这个列表里加bootstrap4。然后要在templates里面的html头上加<img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hls0j42j30by01ut8n.jpg" alt="image-20200523165746211" style="zoom:33%;"></p>
+<p><small>题外话……为什么在md里写了<img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hl7x24pj302s01g0sj.jpg" alt="image-20200523165711419" style="zoom:30%;">，hexo就会报错？？？</small></p>
 <p>不知道为什么，我始终用不了网址导入的bootstrap。所以我在和templates同级的目录下建了一个static，再在里面建了一个css的文件夹，把<code>bootstrap.min.css</code>放在里面。然后还要改setting.py，在末尾加一句<code>STATICFILES_DIRS = (os.path.join(BASE_DIR, &quot;static&quot;),)</code></p>
 <ol start="2">
 <li>创建app</li>
@@ -279,29 +257,29 @@
 <p><code>python3 manage.py startapp app_name</code></p>
 <p>在pycharm的命令行里运行👆就行。</p>
 <p>项目里面可以有多个app，我就根据用户来建app了，毕竟我这个就两种用户¯_(ツ)_/¯</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcdc13cu8wj30g20l6mz6.jpg" alt="image-20200229160510160" style="zoom:50%;"></p>
 <p>你有多少个app就要在setting里的installed_app里面把你app的加进列表里。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgjzv9klnj30iu0a8gmo.jpg" alt="image-20200303105728621" style="zoom: 50%;"></p>
 <p>框里的是我的app</p>
 <ol start="3">
 <li>分离各个app的urls（方便管理</li>
 </ol>
 <p>project自带的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej45l4bzj30ju07sdgv.jpg" alt="image-20200301165552085" style="zoom:50%;"></p>
 <p>app的urls.py⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcej5b2jitj30ik07gjs0.jpg" alt="image-20200301165658610" style="zoom:50%;"></p>
 <ol start="4">
 <li>连接数据库（mysql）</li>
 </ol>
 <p>自带的数据库的splite，如果想用mysql要修改setting.py里的database为⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem2tla9xj30jo09edgn.jpg" alt="image-20200301183824053" style="zoom:50%;"></p>
 <p>如果你装了mysql也依旧会出现⬇️这个问题：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcem59yb6dj30tc022jro.jpg" alt="image-20200301184044189"></p>
 <p>⚠️<strong>Django2.0-</strong>的解决方法（行不通找bing）：</p>
 <p>在setting同级的<code>_init_.py</code>文件里写：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
 <p>……然后Django嫌弃我的mysql，行叭。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcemcwhju5j317m01y74u.jpg" alt="image-20200301184805235"></p>
 <p>认真的说，Django3是不是和我有仇。</p>
 <p>经过一系列波折，包括mysql_config not found，然后把mysql加入环境变量（我总记得我加过）等等等等，终于连上数据库了！耶！我真棒！🐎</p>
 <p>⚠️<strong>Django3/2.0+</strong>的解决方法：</p>
@@ -309,22 +287,22 @@
 <ol start="5">
 <li>使用数据库（？</li>
 </ol>
-<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
+<p>就是在每个app的models.py文件里把各自app要用到的表连上。<img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gceo7e7dzpj30r0092ab7.jpg" alt="image-20200301195159625" style="zoom:50%;"></p>
 <p>对于Django来说，</p>
 <p>Views.py-&gt;MVC中的Control</p>
 <p>Models.py-&gt;MVC中的Model</p>
 <p>各种html-&gt;MVC中的View</p>
 <p>以登录来讲，第一步要在model连上数据库（感觉是建了一张表的对象），然后在view里面使用这个对象进行配对。</p>
 <p>view里面的代码⬇️</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfduiskr9j30n00dswgw.jpg" alt="image-20200302103905918" style="zoom:50%;"></p>
 <ol start="6">
 <li>提交表单（POST</li>
 </ol>
 <p>遇到问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe665mg8j30gy09cmxv.jpg" alt="image-20200302105021185" style="zoom:50%;"></p>
 <p>也给出了解答</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
-<p>要在form的标签里面加<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfe7lfr03j31v8068ju3.jpg" alt="image-20200302105143274"></p>
+<p>要在form的标签里面加<img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hocp6bnj309801ct8m.jpg" alt="image-20200523170014550" style="zoom:40%;"></p>
 <ol start="7">
 <li>在html里面显示数据</li>
 </ol>
@@ -338,22 +316,22 @@
 <ul>
 <li>前台使用Django的……我也不知道叫什么</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hmjlgqpj315601s74k.jpg" alt="image-20200523165830348" style="zoom:40%;"></p>
 <ul>
-<li>在上面代码的区域里面用<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
+<li>在上面代码的区域里面用<img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hw5p6v9j30l401mwen.jpg" alt="image-20200523170744234" style="zoom:40%;">来使用。</li>
 </ul>
 <p>例子：</p>
 <p>我的models：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxk484jfj30li07wmyg.jpg" alt="image-20200302220108600" style="zoom:50%;"></p>
 <p>我的views：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxkq8czcj30ps01uq36.jpg" alt="image-20200302220145969" style="zoom:50%;"></p>
 <p>我的html：</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcfxl9hu5gj30gg06w752.jpg" alt="image-20200302220214712" style="zoom:50%;"></p>
 <ol start="8">
 <li>在a标签的链接里带参数</li>
 </ol>
-<p>格式是<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
+<p>格式是<img data-src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gf2hn4l8qrj30lw01mdfv.jpg" alt="image-20200523165904023" style="zoom: 50%;"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/00831rSTgy1gcgk23lw7hj30xi06st9t.jpg" alt="image-20200303105937625" style="zoom:50%;"></p>
 <ol start="9">
 <li>Django使用session</li>
 </ol>
