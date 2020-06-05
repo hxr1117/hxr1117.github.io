@@ -20,17 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="格式：@color: pink;">
+  <meta name="description" content="格式：@color: pink;  嵌套：子元素的样式直接写到父元素里。  12345678.header &amp;#123;	width: 200px;	height: 200px;	background-color: pink;	a &amp;#123;		color: #1c97da;	&amp;#125;&amp;#125;">
+<meta name="keywords" content="less">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Less">
 <meta property="og:url" content="http://yoursite.com/2020/05/03/Less/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="格式：@color: pink;">
+<meta property="og:description" content="格式：@color: pink;  嵌套：子元素的样式直接写到父元素里。  12345678.header &amp;#123;	width: 200px;	height: 200px;	background-color: pink;	a &amp;#123;		color: #1c97da;	&amp;#125;&amp;#125;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-23T09:12:35.957Z">
+<meta property="og:updated_time" content="2020-06-05T11:16:48.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Less">
-<meta name="twitter:description" content="格式：@color: pink;">
+<meta name="twitter:description" content="格式：@color: pink;  嵌套：子元素的样式直接写到父元素里。  12345678.header &amp;#123;	width: 200px;	height: 200px;	background-color: pink;	a &amp;#123;		color: #1c97da;	&amp;#125;&amp;#125;">
 
 <link rel="canonical" href="http://yoursite.com/2020/05/03/Less/">
 
@@ -223,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-23 17:12:35" itemprop="dateModified" datetime="2020-05-23T17:12:35+08:00">2020-05-23</time>
+                <time title="修改时间：2020-06-05 19:16:48" itemprop="dateModified" datetime="2020-06-05T19:16:48+08:00">2020-06-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,7 +249,6 @@
       
         <ol>
 <li><p>格式：<code>@color: pink;</code></p>
-<a id="more"></a>
 </li>
 <li><p>嵌套：子元素的样式直接写到父元素里。</p>
 <ol>
@@ -256,6 +256,9 @@
 </li>
 </ol>
 </li>
+</ol>
+<a id="more"></a>
+<ol start="3">
 <li><p>使用<code>&amp;</code>表示是伪类/伪元素/交集选择器。</p>
 <ol>
 <li><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#1c97da</span>;</span><br><span class="line">	<span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#2eaae0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -290,6 +293,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/less/" rel="tag"># less</a>
+          </div>
 
         
 
@@ -388,7 +394,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
