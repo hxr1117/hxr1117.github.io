@@ -20,20 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hermite插值多项式">
-<meta name="keywords" content="python,数值分析">
+  <meta name="description" content="展开查看123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hermite">
-<meta property="og:url" content="http://yoursite.com/2018/04/27/Hermite/index.html">
+<meta property="og:title" content="markdown内容折叠">
+<meta property="og:url" content="http://yoursite.com/2020/08/04/markdown内容折叠/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="Hermite插值多项式">
+<meta property="og:description" content="展开查看123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-27T13:16:43.382Z">
+<meta property="og:updated_time" content="2020-08-04T05:21:10.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hermite">
-<meta name="twitter:description" content="Hermite插值多项式">
+<meta name="twitter:title" content="markdown内容折叠">
+<meta name="twitter:description" content="展开查看123">
 
-<link rel="canonical" href="http://yoursite.com/2018/04/27/Hermite/">
+<link rel="canonical" href="http://yoursite.com/2020/08/04/markdown内容折叠/">
 
 
 <script id="page-configurations">
@@ -46,7 +45,7 @@
   };
 </script>
 
-  <title>Hermite | BLOG</title>
+  <title>markdown内容折叠 | BLOG</title>
   
 
 
@@ -194,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/Hermite/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/04/markdown内容折叠/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hermite
+          markdown内容折叠
         </h1>
 
         <div class="post-meta">
@@ -218,16 +217,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2018-04-27 19:02:08 / 修改时间：21:16:43" itemprop="dateCreated datePublished" datetime="2018-04-27T19:02:08+08:00">2018-04-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数值分析/" itemprop="url" rel="index"><span itemprop="name">数值分析</span></a>
-                </span>
+              <time title="创建时间：2020-08-04 13:20:32 / 修改时间：13:21:10" itemprop="dateCreated datePublished" datetime="2020-08-04T13:20:32+08:00">2020-08-04</time>
             </span>
 
           
@@ -241,9 +231,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>Hermite插值多项式</strong></p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l</span><span class="params">(x, x1, k)</span>:</span></span><br><span class="line">    n = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> j != k:</span><br><span class="line">            n *= (x1 - x[j])/(x[k] - x[j])</span><br><span class="line">    <span class="keyword">return</span> n*n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">l1</span><span class="params">(x, j)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        <span class="keyword">if</span> k != j:</span><br><span class="line">            n += <span class="number">1.0</span>/(x[j] - x[k])</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hermite</span><span class="params">(x, y, m, x1)</span>:</span></span><br><span class="line">    n = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(x)):</span><br><span class="line">        a = (<span class="number">1</span> - <span class="number">2</span> * (x1 - x[j]) * l1(x, j)) * l(x, x1, j)</span><br><span class="line">        b = (x1 - x[j])*l(x, x1, j)</span><br><span class="line">        n += y[j] * a + m[j] * b</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    x = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">1.0</span>], np.float32)</span><br><span class="line">    y = np.array([<span class="number">0.904837</span>, <span class="number">0.818731</span>, <span class="number">0.740818</span>, <span class="number">0.670320</span>, <span class="number">0.606531</span>, <span class="number">0.548812</span>, <span class="number">0.496585</span>,</span><br><span class="line">                  <span class="number">0.449329</span>, <span class="number">0.406570</span>, <span class="number">0.367879</span>], np.float32)</span><br><span class="line">    m = np.array([<span class="number">-0.904837</span>, <span class="number">-0.818731</span>, <span class="number">-0.740818</span>, <span class="number">-0.670320</span>, <span class="number">-0.606531</span>, <span class="number">-0.548812</span>, <span class="number">-0.496585</span>,</span><br><span class="line">                  <span class="number">-0.449329</span>, <span class="number">-0.406570</span>, <span class="number">-0.367879</span>], np.float32)</span><br><span class="line">    print(hermite(x, y, m, <span class="number">0.55</span>))</span><br><span class="line">    a = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        a.append(i*<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    <span class="comment"># print(a)</span></span><br><span class="line">    b = [hermite(x, y, m, i) <span class="keyword">for</span> i <span class="keyword">in</span> a]</span><br><span class="line">    <span class="comment"># print(hermite(x, y, m, 3))</span></span><br><span class="line">    plt.figure(<span class="string">"play"</span>)</span><br><span class="line">    ax1 = plt.subplot(<span class="number">211</span>)</span><br><span class="line">    plt.sca(ax1)</span><br><span class="line">    <span class="comment"># plt.plot(x, y, linestyle=' ', marker='o', color='b')</span></span><br><span class="line">    plt.plot(a, b, linestyle=<span class="string">'--'</span>, color=<span class="string">'r'</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+        <details><br><summary>展开查看</summary><br><pre>123</pre><br></details>
+
 
     </div>
 
@@ -252,10 +241,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/数值分析/" rel="tag"># 数值分析</a>
-          </div>
 
         
 
@@ -263,13 +248,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/04/27/复化求积公式/" rel="prev" title="复化求积公式">
-      <i class="fa fa-chevron-left"></i> 复化求积公式
+    <a href="/2020/08/01/SimpleEbook实现过程/" rel="prev" title="SimpleEbook实现过程">
+      <i class="fa fa-chevron-left"></i> SimpleEbook实现过程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2018/04/27/进程控制/" rel="next" title="进程控制">
-      进程控制 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
